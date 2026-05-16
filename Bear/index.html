@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bear the Painter | Professional Painter | Northern Beaches NSW</title>
+  <meta name="description" content="Bear the Painter — trusted local painters on the Northern Beaches, NSW. Residential & commercial painting, free quotes. Call 0423 799 958." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--primary:#17234e;--primary-fg:#ffffff;--accent:#f0a500;--accent-dark:#c98a00;--bg:#ffffff;--bg-alt:#f4f6fa;--fg:#17234e;--muted:#64748b;--border:#e2e8f0;--card:#ffffff;--radius:12px;--font-display:'Playfair Display',serif;--font-body:'Inter',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    img{max-width:100%;display:block;} a{text-decoration:none;color:inherit;} ul{list-style:none;}
+    .container{max-width:1200px;margin:0 auto;padding:0 1.25rem;}
+    .section{padding:4rem 1.25rem;} .section-alt{background:var(--bg-alt);}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:700;color:var(--fg);margin-bottom:.75rem;}
+    .section-subtitle{font-size:1rem;color:var(--muted);max-width:600px;margin:0 auto 3rem;line-height:1.7;}
+    .text-center{text-align:center;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap;}
+    .btn-gold{background:var(--accent);color:var(--primary);}
+    .btn-gold:hover{background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(240,165,0,.35);}
+    .btn-nav{background:var(--accent);color:var(--primary);padding:.6rem 1.25rem;font-size:.9rem;}
+    .btn-nav:hover{background:var(--accent-dark);}
+    .icon-badge{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .icon-badge svg{width:22px;height:22px;}
+    .icon-gold{background:#fef3c7;color:#d97706;} .icon-blue{background:#dbeafe;color:#2563eb;}
+    .icon-green{background:#d1fae5;color:#059669;} .icon-purple{background:#ede9fe;color:#7c3aed;}
+    .number-badge{width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s ease;}
+    .card-hover:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-3px);border-color:rgba(240,165,0,.4);}
+    .stars{display:flex;gap:2px;} .star{color:var(--accent);font-size:.9rem;}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .fade-up{animation:fadeInUp .6s ease-out forwards;}
+    .d1{animation-delay:.1s;opacity:0;} .d2{animation-delay:.2s;opacity:0;} .d3{animation-delay:.3s;opacity:0;} .d4{animation-delay:.4s;opacity:0;}
+    #header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(23,35,78,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .header-right{display:flex;align-items:center;gap:1.5rem;}
+    .header-phone{color:rgba(255,255,255,.9);font-size:.9rem;text-align:right;display:none;}
+    .header-phone span{display:block;font-size:.7rem;opacity:.7;}
+    @media(min-width:768px){.header-inner{height:76px;}.header-phone{display:block;}}
+    #hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:64px;}
+    .hero-bg{position:absolute;inset:0;background-image:url('images/hero.jpg');background-size:cover;background-position:center center;}
+    @media(max-width:767px){.hero-bg{background-position:60% center;}}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,35,78,.78) 0%,rgba(23,35,78,.58) 40%,rgba(23,35,78,.22) 70%,transparent 100%);}
+    @media(max-width:767px){.hero-overlay{background:rgba(23,35,78,.55);}}
+    .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:2rem 1.25rem;text-align:center;}
+    @media(min-width:1024px){.hero-content{text-align:left;}}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.95);border-radius:999px;padding:.4rem 1rem;margin-bottom:1.25rem;font-size:.9rem;font-weight:600;color:var(--fg);}
+    .hero-h1{font-family:var(--font-display);font-size:clamp(2rem,6vw,4rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:.5rem;text-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .hero-h1 .accent{color:var(--accent);}
+    .hero-sub1{font-size:clamp(1rem,2.5vw,1.35rem);font-weight:600;color:#fff;margin-bottom:.4rem;text-shadow:0 1px 4px rgba(0,0,0,.4);}
+    .hero-sub2{font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.88);max-width:520px;margin:0 auto 1.75rem;text-shadow:0 1px 3px rgba(0,0,0,.35);}
+    @media(min-width:1024px){.hero-sub2{margin-left:0;}}
+    .hero-trust{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;justify-content:center;align-items:center;color:rgba(255,255,255,.9);font-size:.85rem;font-weight:500;}
+    @media(min-width:1024px){.hero-trust{justify-content:flex-start;}}
+    .hero-trust-dot{opacity:.5;}
+    .why-grid{display:grid;gap:1.25rem;}
+    @media(min-width:768px){.why-grid{grid-template-columns:repeat(3,1fr);gap:2rem;}}
+    .why-card{padding:1.75rem 1.5rem;}
+    .why-card .icon-badge{margin-bottom:1.25rem;}
+    .why-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;}
+    .why-card p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;}
+    @media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem;}}
+    .service-card{padding:1.25rem;text-align:center;}
+    .service-card:hover{border-color:rgba(240,165,0,.5);box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px);}
+    .service-icon{width:48px;height:48px;border-radius:12px;background:#fef3c7;color:#d97706;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;transition:transform .3s ease;}
+    .service-card:hover .service-icon{transform:scale(1.1);}
+    .service-icon svg{width:22px;height:22px;}
+    .service-card h3{font-size:.9rem;font-weight:600;margin-bottom:.35rem;}
+    .service-card p{font-size:.8rem;color:var(--muted);line-height:1.6;display:none;}
+    @media(min-width:640px){.service-card p{display:block;}}
+    .steps-wrap{max-width:680px;margin:0 auto;}
+    .step{display:flex;gap:.9rem;margin-bottom:1.5rem;align-items:flex-start;}
+    .step-text h3{font-size:.95rem;font-weight:700;margin-bottom:.25rem;}
+    .step-text p{font-size:.875rem;color:var(--muted);line-height:1.7;}
+    .gallery-carousel{position:relative;padding:0 2.5rem;}
+    @media(min-width:768px){.gallery-carousel{padding:0 3rem;}}
+    .gallery-track-wrap{overflow:hidden;border-radius:10px;}
+    .gallery-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;cursor:grab;}
+    .gallery-track.dragging{cursor:grabbing;transition:none;}
+    .gallery-slide{flex:0 0 100%;user-select:none;}
+    .gallery-item{aspect-ratio:16/9;overflow:hidden;border-radius:10px;pointer-events:none;}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;pointer-events:none;}
+    .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(23,35,78,.88);border:2px solid rgba(240,165,0,.45);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:0;}
+    .gallery-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--primary);transform:translateY(-50%) scale(1.05);}
+    .gallery-btn:disabled{opacity:.2;cursor:default;pointer-events:none;}
+    .gallery-btn svg{width:20px;height:20px;flex-shrink:0;}
+    .gallery-btn-prev{left:0;} .gallery-btn-next{right:0;}
+    .gallery-dots{display:flex;justify-content:center;gap:.4rem;margin-top:1.25rem;}
+    .gallery-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:all .25s ease;}
+    .gallery-dot.active{background:var(--accent);width:24px;border-radius:4px;}
+    .testi-scroll{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .testi-scroll::-webkit-scrollbar{display:none;}
+    .testi-grid-desktop{display:none;}
+    @media(min-width:768px){.testi-scroll{display:none;}.testi-grid-desktop{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}}
+    .testi-card{padding:1.5rem;flex-shrink:0;width:82vw;scroll-snap-align:center;}
+    @media(min-width:768px){.testi-card{width:auto;}}
+    .testi-quote{font-size:2rem;color:rgba(240,165,0,.25);line-height:1;margin-bottom:.5rem;}
+    .testi-text{font-size:.875rem;color:var(--fg);line-height:1.7;margin-bottom:1.25rem;}
+    .testi-author{border-top:1px solid var(--border);padding-top:.875rem;}
+    .testi-author strong{display:block;font-size:.9rem;}
+    .testi-author span{font-size:.8rem;color:var(--muted);}
+    .contact-wrap{max-width:540px;margin:0 auto;text-align:center;}
+    .contact-cards{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;}
+    .contact-card{display:flex;align-items:center;gap:1rem;padding:.875rem 1.25rem;text-align:left;}
+    .contact-card:hover{border-color:rgba(240,165,0,.5);}
+    .contact-card-text p:first-child{font-size:.75rem;color:var(--muted);}
+    .contact-card-text p:last-child{font-weight:700;font-size:1rem;}
+    #footer{background:var(--primary);color:rgba(255,255,255,.85);padding:3rem 1.25rem 5rem;}
+    @media(min-width:768px){#footer{padding:4rem 1.25rem 3rem;}}
+    .footer-grid{max-width:1200px;margin:0 auto;display:grid;gap:2.5rem;}
+    @media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr);}}
+    .footer-logo-text{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:1rem;display:block;}
+    .footer-about{font-size:.875rem;line-height:1.7;margin-bottom:1rem;}
+    .footer-h{font-weight:700;font-size:1rem;color:#fff;margin-bottom:1rem;}
+    .footer-list li{display:flex;align-items:center;gap:.5rem;font-size:.875rem;margin-bottom:.6rem;}
+    .footer-list li svg{width:14px;height:14px;color:var(--accent);flex-shrink:0;}
+    .footer-list a:hover{color:var(--accent);}
+    .footer-bottom{max-width:1200px;margin:2rem auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,.45);}
+    #mobile-bar{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(23,35,78,.97);border-top:1px solid rgba(240,165,0,.25);padding:.75rem 1rem;padding-bottom:max(.75rem,env(safe-area-inset-bottom));}
+    #mobile-bar a{display:block;}
+    #mobile-bar .btn{width:100%;justify-content:center;min-height:52px;font-size:1rem;}
+    @media(min-width:768px){#mobile-bar{display:none;}}
+  </style>
+</head>
+<body>
+
+<header id="header" role="banner">
+  <div class="header-inner">
+    <a href="#" aria-label="Bear the Painter - Home">
+      <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Bear the Painter</span>
+    </a>
+    <div class="header-right">
+      <div class="header-phone"><span>Call Us Now</span>0423 799 958</div>
+      <a href="tel:+61423799958" class="btn btn-nav">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <span>5.0 (38 Reviews)</span>
+    </div>
+    <h1 class="hero-h1 fade-up d1">Bear the <span class="accent">Painter</span></h1>
+    <p class="hero-sub1 fade-up d2">Northern Beaches Trusted Local Painter</p>
+    <p class="hero-sub2 fade-up d2">Professional residential and commercial painting across Dee Why, Manly, Collaroy and the Northern Beaches. Quality finishes, reliable service, free quotes.</p>
+    <div class="fade-up d3" style="margin-bottom:1.5rem;">
+      <a href="tel:+61423799958" class="btn btn-gold" style="font-size:1.05rem;padding:1rem 2rem;min-height:56px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 0423 799 958
+      </a>
+    </div>
+    <div class="hero-trust fade-up d4">
+      <span>✦ No obligation</span>
+      <span class="hero-trust-dot">•</span><span>Licensed &amp; Insured</span>
+      <span class="hero-trust-dot">•</span><span>Free quotes</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2.5rem;">
+      <h2 class="section-title">Why Northern Beaches Locals Choose Bear the Painter</h2>
+      <p class="section-subtitle">From Dee Why to Manly and beyond, homeowners and businesses trust us for quality painting that lasts.</p>
+    </div>
+    <div class="why-grid">
+      <div class="card why-card">
+        <div class="icon-badge icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Local Knowledge, Proven Results</h3>
+        <p>We understand the Northern Beaches climate and what it takes for paintwork to hold up here. Our materials and techniques are chosen to look great and last long-term.</p>
+      </div>
+      <div class="card why-card">
+        <div class="icon-badge icon-green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Attention to Detail, Every Job</h3>
+        <p>We take pride in doing the job properly from surface prep through to the final coat. No shortcuts — just a clean, professional finish you will be proud of.</p>
+      </div>
+      <div class="card why-card">
+        <div class="icon-badge icon-purple"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Friendly and Reliable Service</h3>
+        <p>We show up when we say we will, keep you in the loop, and will not leave until you are completely happy. That is the Bear the Painter promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2.5rem;">
+      <h2 class="section-title">Our Painting Services</h2>
+      <p class="section-subtitle">Whether it is a bedroom refresh or a full commercial repaint, Bear the Painter delivers quality results across the Northern Beaches.</p>
+    </div>
+    <div class="services-grid">
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Interior Painting</h3><p>Walls, ceilings, trims and feature walls painted to a smooth, lasting finish inside your home.</p></div>
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div><h3>Exterior Painting</h3><p>Weather-resistant coatings that protect your home and refresh its street appeal on the Northern Beaches.</p></div>
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Commercial Painting</h3><p>Professional repaints for offices, retail and strata buildings with minimal disruption to your business.</p></div>
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Surface Preparation</h3><p>Thorough sanding, filling and priming so your paint job looks perfect and lasts far longer.</p></div>
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><h3>Repaints and Touch-Ups</h3><p>Targeted repaints and precise touch-ups to refresh tired or peeling surfaces quickly and cleanly.</p></div>
+      <div class="card service-card card-hover"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Colour Consultation</h3><p>Expert colour advice to help you find the perfect palette for your home or business space.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="steps-wrap text-center">
+      <h2 class="section-title">How We Work</h2>
+      <p class="section-subtitle">Simple, transparent and stress-free from your first call to the final brushstroke.</p>
+      <div style="text-align:left;margin-bottom:2rem;">
+        <div class="step"><div class="number-badge">1</div><div class="step-text"><h3>Get Your Free Quote</h3><p>Call or message us and we will come out to assess the job and give you a clear, no-obligation written quote with no hidden costs and no pressure.</p></div></div>
+        <div class="step"><div class="number-badge">2</div><div class="step-text"><h3>We Plan the Job Together</h3><p>We walk you through what is involved, help with colour selection if needed, and agree on a timeline that suits you.</p></div></div>
+        <div class="step"><div class="number-badge">3</div><div class="step-text"><h3>Professional Prep and Painting</h3><p>We prepare all surfaces properly before we start painting — because a flawless finish starts with the right groundwork.</p></div></div>
+        <div class="step"><div class="number-badge">4</div><div class="step-text"><h3>Final Walkthrough and Clean-Up</h3><p>We inspect the finished job with you, tidy up completely, and make sure you are 100% happy before we call it done.</p></div></div>
+      </div>
+      <a href="tel:+61423799958" class="btn btn-gold" style="gap:.6rem;min-height:52px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 0423 799 958
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <h2 class="section-title">Our Work</h2>
+      <p class="section-subtitle">Recent interior and exterior painting jobs across Dee Why, Manly and the Northern Beaches.</p>
+    </div>
+    <div class="gallery-carousel" id="galleryCarousel">
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Interior bedroom painting — Bear the Painter" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Fresh white interior repaint — Bear the Painter" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Dark exterior house repaint — Bear the Painter" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Painted floor finished room — Bear the Painter" loading="lazy" /></div></div>
+        </div>
+      </div>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Honest feedback from homeowners and businesses across the Northern Beaches.</p>
+    </div>
+    <div class="testi-scroll">
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">Bear did a full interior repaint of our home in Dee Why before we moved in. Every room was done to an incredibly high standard — clean lines, smooth finish, and not a drop of paint anywhere it should not be. Absolutely recommend.</p><div class="testi-author"><strong>Jess and Tom W.</strong><span>Dee Why NSW</span></div></div>
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">We had our exterior done last spring and it is still looking perfect. Bear was punctual, professional and great to deal with from start to finish. The house looks like a new build — neighbours keep asking who we used.</p><div class="testi-author"><strong>Mark D.</strong><span>Collaroy NSW</span></div></div>
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">Used Bear the Painter for our office repaint in Manly. They worked around our hours, were tidy throughout and the result was outstanding. Staff noticed the difference immediately. Will be using them again for our second site.</p><div class="testi-author"><strong>Claire N.</strong><span>Manly NSW</span></div></div>
+    </div>
+    <div class="testi-grid-desktop">
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">Bear did a full interior repaint of our home in Dee Why before we moved in. Every room was done to an incredibly high standard — clean lines, smooth finish, and not a drop of paint anywhere it should not be. Absolutely recommend.</p><div class="testi-author"><strong>Jess and Tom W.</strong><span>Dee Why NSW</span></div></div>
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">We had our exterior done last spring and it is still looking perfect. Bear was punctual, professional and great to deal with from start to finish. The house looks like a new build — neighbours keep asking who we used.</p><div class="testi-author"><strong>Mark D.</strong><span>Collaroy NSW</span></div></div>
+      <div class="card testi-card"><div class="testi-quote">"</div><div class="stars" style="margin-bottom:.75rem;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">Used Bear the Painter for our office repaint in Manly. They worked around our hours, were tidy throughout and the result was outstanding. Staff noticed the difference immediately. Will be using them again for our second site.</p><div class="testi-author"><strong>Claire N.</strong><span>Manly NSW</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <h2 class="section-title">Get Your Free Quote Today</h2>
+      <p class="section-subtitle">Serving Dee Why, Manly, Collaroy, Narrabeen and all of the Northern Beaches. Get in touch for a free, no-obligation quote.</p>
+      <div class="contact-cards">
+        <a href="tel:+61423799958" class="card contact-card card-hover"><div class="icon-badge icon-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="contact-card-text"><p>Call Us Now</p><p>0423 799 958</p></div></a>
+        <div class="card contact-card"><div class="icon-badge icon-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="contact-card-text"><p>Our Location</p><p>82 Oaks Ave, Dee Why NSW 2099</p></div></div>
+        <div class="card contact-card"><div class="icon-badge icon-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="contact-card-text"><p>Customer Rating</p><p style="display:flex;align-items:center;gap:.5rem;"><span class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>5.0 (38 Reviews)</p></div></div>
+      </div>
+      <a href="tel:+61423799958" class="btn btn-gold" style="font-size:1rem;min-height:52px;padding:1rem 2rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 0423 799 958 — Free Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo-text">Bear the Painter</span>
+      <p class="footer-about">Trusted local painters serving Dee Why, Manly, Collaroy and all of the Northern Beaches. Quality residential and commercial painting you can count on.</p>
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span style="font-size:.8rem;color:rgba(255,255,255,.6);margin-left:.4rem;">5.0 (38 Reviews)</span></div>
+    </div>
+    <div>
+      <p class="footer-h">Our Services</p>
+      <ul class="footer-list">
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Interior Painting</li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Exterior Painting</li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Commercial Painting</li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Surface Preparation</li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Repaints and Touch-Ups</li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Colour Consultation</li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Contact Us</p>
+      <ul class="footer-list">
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+61423799958">0423 799 958</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>82 Oaks Ave, Dee Why NSW 2099</li>
+      </ul>
+      <br/><a href="tel:+61423799958" class="btn btn-nav">Get a Free Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© <span id="yr"></span> Bear the Painter. All rights reserved.</p></div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61423799958">
+    <button class="btn btn-gold">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call 0423 799 958 — Free Quote
+    </button>
+  </a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  (function(){
+    const track=document.getElementById('galleryTrack');
+    const slides=track.querySelectorAll('.gallery-slide');
+    const btnPrev=document.getElementById('galPrev');
+    const btnNext=document.getElementById('galNext');
+    const dotsWrap=document.getElementById('galleryDots');
+    const total=slides.length;
+    let current=0;
+    function maxIndex(){ return total-1; }
+    function slideWidth(){ return track.parentElement.offsetWidth; }
+    function buildDots(){
+      dotsWrap.innerHTML='';
+      for(let i=0;i<total;i++){
+        const d=document.createElement('button');
+        d.className='gallery-dot'+(i===current?' active':'');
+        d.setAttribute('aria-label','Image '+(i+1));
+        d.addEventListener('click',()=>goTo(i));
+        dotsWrap.appendChild(d);
+      }
+    }
+    function goTo(idx){
+      current=Math.max(0,Math.min(idx,maxIndex()));
+      track.style.transform='translateX(-'+(current*slideWidth())+'px)';
+      btnPrev.disabled=current===0;
+      btnNext.disabled=current>=maxIndex();
+      dotsWrap.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+    }
+    btnPrev.addEventListener('click',()=>goTo(current-1));
+    btnNext.addEventListener('click',()=>goTo(current+1));
+    let startX=0,isDragging=false,dragDelta=0;
+    track.addEventListener('mousedown',e=>{isDragging=true;startX=e.clientX;track.classList.add('dragging');});
+    window.addEventListener('mousemove',e=>{if(!isDragging)return;dragDelta=e.clientX-startX;});
+    window.addEventListener('mouseup',()=>{if(!isDragging)return;isDragging=false;track.classList.remove('dragging');if(dragDelta<-50)goTo(current+1);else if(dragDelta>50)goTo(current-1);dragDelta=0;});
+    track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+    track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(dx<-50)goTo(current+1);else if(dx>50)goTo(current-1);});
+    window.addEventListener('resize',()=>{buildDots();goTo(Math.min(current,maxIndex()));});
+    buildDots();
+    goTo(0);
+  })();
+</script>
+</body>
+</html>
