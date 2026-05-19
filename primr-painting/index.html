@@ -7,18 +7,18 @@
   <meta name="description" content="PRIMR Painting — trusted local painters for interior and exterior painting, surface preparation, repaints and colour consultation. Call 0478 154 304 for a free quote." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-body); color: var(--fg); background: var(--bg); }
     :root {
-      --primary: #17234e; --primary-fg: #ffffff;
-      --accent: #f0a500; --accent-dark: #c98a00;
-      --bg: #ffffff; --bg-alt: #f4f6fa;
-      --fg: #17234e; --muted: #64748b;
+      --primary: #161E31; --primary-fg: #ffffff;
+      --accent: #E6B800; --accent-dark: #b89200;
+      --bg: #ffffff; --bg-alt: #ffffff;
+      --fg: #161E31; --muted: #64748b;
       --border: #e2e8f0; --card: #ffffff;
       --radius: 12px;
-      --font-display: 'Playfair Display', serif;
+      --font-display: 'Merriweather', serif;
       --font-body: 'Inter', sans-serif;
     }
     a { color: inherit; text-decoration: none; }
@@ -32,29 +32,28 @@
     .btn-outline { border: 2px solid var(--accent); color: var(--accent); }
     .btn-outline:hover { background: var(--accent); color: var(--primary); }
     /* Header */
-    #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(23,35,78,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
+    #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
     @media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
     .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
     .header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
     @media(min-width:768px) { .header-phone { display: block; } }
     /* Hero */
-    #hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding-top: 64px; }
+    #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
     @media(min-width:768px) { #hero { padding-top: 76px; } }
     .hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
     @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,35,78,.78) 0%, rgba(23,35,78,.58) 40%, rgba(23,35,78,.22) 70%, transparent 100%); }
-    @media(max-width:767px) { .hero-overlay { background: rgba(23,35,78,.55); } }
-    .hero-content { position: relative; z-index: 1; padding: 3rem 1.25rem; max-width: 1200px; margin: 0 auto; width: 100%; text-align: center; }
-    @media(min-width:1024px) { .hero-content { text-align: left; max-width: 620px; } }
-    .hero-badge { display: inline-flex; align-items: center; gap: .4rem; background: rgba(240,165,0,.15); border: 1px solid rgba(240,165,0,.4); border-radius: 999px; padding: .35rem .85rem; margin-bottom: 1.25rem; color: var(--accent); font-size: .82rem; font-weight: 600; }
-    .hero-stars { letter-spacing: 2px; }
-    .hero-h1 { font-family: var(--font-display); font-size: clamp(2rem,6vw,4rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: .75rem; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+    .hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
+    .hero-stars { color: var(--accent); letter-spacing: 1px; }
+    .hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
     .accent { color: var(--accent); }
-    .hero-sub1 { font-size: clamp(1rem,2.5vw,1.35rem); color: rgba(255,255,255,.9); font-weight: 500; margin-bottom: .6rem; }
-    .hero-sub2 { font-size: clamp(.9rem,2vw,1.1rem); color: rgba(255,255,255,.75); margin-bottom: 1.5rem; line-height: 1.6; }
+    .hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+    .hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
     .hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
-    @media(min-width:1024px) { .hero-cta { justify-content: flex-start; } }
-    .hero-trust { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 1rem; letter-spacing: .03em; }
+    .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; border-radius: var(--radius); max-width: 340px; width: 100%; justify-content: center; }
+    .hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
     @keyframes fadeInUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
     .fade-up { animation: fadeInUp .6s ease-out forwards; }
     .d1 { animation-delay:.1s; opacity:0; } .d2 { animation-delay:.2s; opacity:0; }
@@ -62,17 +61,17 @@
     /* Sections */
     section { padding: 4rem 1.25rem; }
     @media(min-width:768px) { section { padding: 5rem 2rem; } }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
-    .section-label { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
-    .section-title { font-family: var(--font-display); font-size: clamp(1.6rem,4vw,2.5rem); font-weight: 700; color: var(--fg); margin-bottom: 1rem; line-height: 1.2; }
-    .section-sub { color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .section-label { display: none; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+    .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
     .bg-alt { background: var(--bg-alt); }
     /* Why */
     .why-grid { display: grid; gap: 1.25rem; }
     @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
     .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all .3s ease; }
-    .why-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(240,165,0,.4); }
-    .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .why-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+    .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
     .icon-blue { background:#dbeafe; color:#2563eb; } .icon-green { background:#d1fae5; color:#059669; }
     .icon-purple { background:#ede9fe; color:#7c3aed; } .icon-gold { background:#fef3c7; color:#d97706; }
     .why-card h3 { font-weight: 700; font-size: 1rem; margin-bottom: .5rem; }
@@ -81,22 +80,22 @@
     .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; }
     @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3,1fr); gap: 1.25rem; } }
     .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: all .3s ease; }
-    .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(240,165,0,.4); }
-    .service-card svg { color: var(--accent); margin-bottom: .6rem; }
+    .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+    .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
     .service-card h3 { font-weight: 700; font-size: .95rem; margin-bottom: .35rem; }
     .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.6; }
     @media(min-width:640px) { .service-card p { display: block; } }
     /* How */
-    .how-grid { display: grid; gap: 1.5rem; }
-    @media(min-width:768px) { .how-grid { grid-template-columns: repeat(4,1fr); } }
-    .how-step { text-align: center; padding: 1.5rem 1rem; }
-    .how-num { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
-    .how-step h3 { font-weight: 700; margin-bottom: .4rem; }
-    .how-step p { color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+    .how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; padding: 0; }
+    .how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .how-step-body { flex: 1; }
+    .how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+    .how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+    .how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
     /* Gallery */
-    #gallery { background: var(--primary); padding: 4rem 1.25rem; }
+    #gallery { background: var(--bg-alt); padding: 4rem 1.25rem; }
     @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
-    #gallery .section-title { color: #fff; }
     .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
     @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
     .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
@@ -105,12 +104,12 @@
     .gallery-slide { flex: 0 0 100%; user-select: none; }
     .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(23,35,78,.88); border: 2px solid rgba(240,165,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
     .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
     .gallery-btn:disabled { opacity:.2; pointer-events:none; }
     .gallery-btn-prev { left:0; } .gallery-btn-next { right:0; }
     .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
-    .gallery-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.3); transition:all .3s; border:none; padding:0; }
+    .gallery-dot { width:8px; height:8px; border-radius:50%; background:rgba(22,30,49,.2); transition:all .3s; border:none; padding:0; }
     .gallery-dot.active { width:24px; border-radius:4px; background:var(--accent); }
     /* Testimonials */
     .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; padding-bottom: .5rem; }
@@ -130,19 +129,28 @@
     .contact-card p { color:var(--muted); font-size:.9rem; line-height:1.6; }
     .contact-card a { color:var(--primary); font-weight:600; }
     /* Footer */
-    #footer { background:var(--primary); color:rgba(255,255,255,.75); padding:3rem 1.25rem 2rem; }
-    @media(min-width:768px) { #footer { padding:3.5rem 2rem 2rem; } }
+    #footer { background:var(--primary); color:rgba(255,255,255,.75); padding:3.5rem 1.25rem 0; }
+    @media(min-width:768px) { #footer { padding:4rem 2rem 0; } }
     .footer-inner { max-width:1200px; margin:0 auto; }
-    .footer-grid { display:grid; gap:2rem; }
-    @media(min-width:768px) { .footer-grid { grid-template-columns:2fr 1fr 1fr; } }
-    .footer-logo-text { font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:#fff; letter-spacing:-.5px; display:block; margin-bottom:.75rem; }
-    .footer-about { font-size:.88rem; line-height:1.7; }
-    .footer-heading { color:#fff; font-weight:700; margin-bottom:.75rem; font-size:.95rem; }
-    .footer-list { list-style:none; display:flex; flex-direction:column; gap:.35rem; font-size:.88rem; }
-    .footer-divider { border:none; border-top:1px solid rgba(255,255,255,.1); margin:2rem 0 1rem; }
-    .footer-copy { font-size:.8rem; color:rgba(255,255,255,.4); }
+    .footer-grid { display:grid; gap:2.5rem; }
+    @media(min-width:768px) { .footer-grid { grid-template-columns:1.4fr 1.3fr 1fr; gap:3rem; } }
+    .footer-logo-text { font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:#fff; letter-spacing:-.5px; display:block; margin-bottom:.85rem; }
+    .footer-about { font-size:.9rem; line-height:1.75; margin-bottom:1.1rem; }
+    .footer-stars { color:var(--accent); font-size:.9rem; display:flex; align-items:center; gap:.5rem; }
+    .footer-stars span { color:rgba(255,255,255,.7); font-size:.85rem; }
+    .footer-heading { color:#fff; font-weight:700; margin-bottom:1rem; font-size:1rem; }
+    .footer-list { list-style:none; display:flex; flex-direction:column; gap:.6rem; font-size:.9rem; }
+    .footer-list li { display:flex; align-items:center; gap:.6rem; }
+    .footer-list li::before { content:'✓'; color:var(--accent); font-weight:700; font-size:.9rem; flex-shrink:0; }
+    .footer-list-plain li::before { content:''; }
+    .footer-list-plain li { gap:.5rem; }
+    .footer-contact-item { display:flex; align-items:center; gap:.65rem; font-size:.9rem; margin-bottom:.75rem; }
+    .footer-contact-item svg { color:var(--accent); flex-shrink:0; }
+    .footer-contact-cta { display:block; background:var(--accent); color:var(--primary); font-weight:700; font-size:.95rem; text-align:center; padding:.8rem 1.25rem; border-radius:var(--radius); margin-top:1.5rem; }
+    .footer-divider { border:none; border-top:1px solid rgba(255,255,255,.1); margin:2.5rem 0 0; }
+    .footer-copy { font-size:.8rem; color:rgba(255,255,255,.35); text-align:center; padding:1.25rem 0; }
     /* Mobile bar */
-    #mobile-bar { display:block; position:fixed; bottom:0; left:0; right:0; z-index:100; background:rgba(23,35,78,.97); border-top:1px solid rgba(240,165,0,.25); padding:.75rem 1rem; padding-bottom:max(.75rem,env(safe-area-inset-bottom)); }
+    #mobile-bar { display:block; position:fixed; bottom:0; left:0; right:0; z-index:100; background:rgba(22,30,49,.97); border-top:1px solid rgba(230,184,0,.25); padding:.75rem 1rem; padding-bottom:max(.75rem,env(safe-area-inset-bottom)); }
     @media(min-width:768px) { #mobile-bar { display:none; } }
     .mobile-bar-btn { display:block; width:100%; padding:.8rem; background:var(--accent); color:var(--primary); border-radius:var(--radius); font-weight:700; font-size:.95rem; text-align:center; }
   </style>
@@ -153,8 +161,10 @@
 <header id="header">
   <div class="header-inner">
     <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">PRIMR Painting</span>
-    <span class="header-phone">0478 154 304</span>
-    <a href="tel:+61478154304" class="btn btn-accent">Request a Quote</a>
+    <div class="header-right">
+      <span class="header-phone">0478 154 304</span>
+      <a href="tel:+61478154304" class="btn btn-accent">Request a Quote</a>
+    </div>
   </div>
 </header>
 
@@ -163,15 +173,14 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span>&nbsp;Rated 5.0 from 43 reviews</div>
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (43 Reviews)</div>
     <h1 class="hero-h1 fade-up d2">PRIMR <span class="accent">Painting</span></h1>
     <p class="hero-sub1 fade-up d3">Your Trusted Local Painting Professionals</p>
     <p class="hero-sub2 fade-up d3">Interior and exterior painting services delivered with care, precision, and results that last — residential and commercial.</p>
     <div class="hero-cta fade-up d4">
-      <a href="tel:+61478154304" class="btn btn-accent">Call 0478 154 304</a>
-      <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+      <a href="tel:+61478154304" class="btn btn-accent">&#9742; Call 0478 154 304</a>
     </div>
-    <p class="hero-trust fade-up d4">No obligation &bull; Licensed &amp; Insured &bull; Free quotes</p>
+    <p class="hero-trust fade-up d4">&#9965; No obligation &bull; Licensed &amp; Insured &bull; Free quotes</p>
   </div>
 </section>
 
@@ -249,12 +258,12 @@
     <h2 class="section-title">Simple and Reliable, Every Time</h2>
     <p class="section-sub">We keep things straightforward from the first call to the final walkthrough.</p>
     <div class="how-grid">
-      <div class="how-step"><div class="how-num">1</div><h3>Free Quote</h3><p>We come to you, assess the job, and give you a clear obligation-free quote with no hidden costs.</p></div>
-      <div class="how-step"><div class="how-num">2</div><h3>Colour &amp; Material Plan</h3><p>We help you finalise colour choices and confirm the right paints and finishes for your surfaces.</p></div>
-      <div class="how-step"><div class="how-num">3</div><h3>Expert Prep &amp; Paint</h3><p>Every surface is thoroughly prepared before we apply a single coat — no shortcuts, no rushing.</p></div>
-      <div class="how-step"><div class="how-num">4</div><h3>Walkthrough &amp; Clean-Up</h3><p>We walk through the job with you, handle any touch-ups on the spot, and leave the site spotless.</p></div>
+      <div class="how-step"><div class="how-num">1</div><div class="how-step-body"><h3>Free Quote</h3><p>We come to you, assess the job, and give you a clear obligation-free quote with no hidden costs.</p></div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-step-body"><h3>Colour &amp; Material Plan</h3><p>We help you finalise colour choices and confirm the right paints and finishes for your surfaces.</p></div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-step-body"><h3>Expert Prep &amp; Paint</h3><p>Every surface is thoroughly prepared before we apply a single coat — no shortcuts, no rushing.</p></div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-step-body"><h3>Walkthrough &amp; Clean-Up</h3><p>We walk through the job with you, handle any touch-ups on the spot, and leave the site spotless.</p></div></div>
     </div>
-    <div style="text-align:center;margin-top:2.5rem;"><a href="tel:+61478154304" class="btn btn-accent" style="font-size:1rem;padding:.75rem 2rem;">Call 0478 154 304</a></div>
+    <a href="tel:+61478154304" class="how-cta">📞 Call 0478 154 304</a>
   </div>
 </section>
 
@@ -349,7 +358,7 @@
         <p>43 verified reviews</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2.5rem;"><a href="tel:+61478154304" class="btn btn-primary" style="font-size:1rem;padding:.75rem 2rem;">Call 0478 154 304 — Free Quote</a></div>
+    <div style="text-align:center;margin-top:2.5rem;"><a href="tel:+61478154304" class="btn btn-accent" style="font-size:1rem;padding:.85rem 2.5rem;display:inline-flex;align-items:center;gap:.6rem;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.95 5.95l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.8 16v.92z"/></svg> Call 0478 154 304 Now</a></div>
   </div>
 </section>
 
@@ -357,23 +366,36 @@
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-grid">
+      <!-- Col 1: Brand -->
       <div>
         <span class="footer-logo-text">PRIMR Painting</span>
-        <p class="footer-about">PRIMR Painting delivers quality residential and commercial painting with a focus on preparation, precision, and lasting results. We treat every property like our own.</p>
+        <p class="footer-about">Your trusted local painters for residential and commercial painting across the region. Quality preparation, precision finish, lasting results.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (43 Reviews)</span></div>
       </div>
+      <!-- Col 2: Services -->
       <div>
-        <p class="footer-heading">Services</p>
+        <p class="footer-heading">Our Services</p>
         <ul class="footer-list">
-          <li>Interior Painting</li><li>Exterior Painting</li><li>Surface Preparation</li>
-          <li>Commercial Painting</li><li>Repaints &amp; Touch-Ups</li><li>Colour Consultation</li>
+          <li>Interior Painting</li>
+          <li>Exterior Painting</li>
+          <li>Surface Preparation</li>
+          <li>Commercial Painting</li>
+          <li>Repaints &amp; Touch-Ups</li>
+          <li>Colour Consultation</li>
         </ul>
       </div>
+      <!-- Col 3: Contact -->
       <div>
-        <p class="footer-heading">Contact</p>
-        <ul class="footer-list">
-          <li><a href="tel:+61478154304" style="color:rgba(255,255,255,.75);">0478 154 304</a></li>
-          <li>Free quotes available</li><li>Licensed &amp; Insured</li>
-        </ul>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.95 5.95l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.8 16v.92z"/></svg>
+          <a href="tel:+61478154304" style="color:rgba(255,255,255,.8);">0478 154 304</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Licensed &amp; Insured — Free quotes</span>
+        </div>
+        <a href="tel:+61478154304" class="footer-contact-cta">Get a Free Quote</a>
       </div>
     </div>
     <hr class="footer-divider" />
