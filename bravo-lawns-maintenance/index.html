@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bravo Lawns &amp; Maintenance | Lawn Care &amp; Property Maintenance | Wyndham Vale VIC</title>
+  <meta name="description" content="Professional lawn mowing, garden maintenance and property upkeep across Wyndham Vale, Werribee, Hoppers Crossing and Melbourne's western suburbs. Call Bravo Lawns today." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #161E31;
+      --accent:  #E6B800;
+      --bg-alt:  #ffffff;
+      --text:    #1a1a1a;
+      --muted:   #555;
+      --radius:  8px;
+      --max:     1200px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--primary); padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Merriweather', serif; font-weight: 900;
+      font-size: 1.2rem; color: #fff; letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: var(--primary);
+      font-weight: 600; font-size: 0.9rem; padding: 10px 20px;
+      border-radius: var(--radius); white-space: nowrap;
+    }
+    .nav-cta:hover { background: #f0c800; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: flex-start;
+      padding-top: 80px; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('images/hero.jpg') center center / cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(22,30,49,0.88) 0%, rgba(22,30,49,0.55) 60%, rgba(22,30,49,0.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 640px; padding: 60px 24px 60px 48px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(230,184,0,0.15); border: 1px solid var(--accent);
+      color: var(--accent); font-size: 0.85rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Merriweather', serif; font-weight: 900;
+      font-size: clamp(2rem, 4.5vw, 3.2rem); color: #fff;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .hero-sub1 {
+      font-size: 1.05rem; color: var(--accent);
+      font-weight: 600; margin-bottom: 20px;
+    }
+    .hero-sub2 {
+      font-size: 1rem; color: rgba(255,255,255,0.85);
+      line-height: 1.75; margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: var(--primary);
+      font-weight: 700; font-size: 1rem; padding: 15px 30px;
+      border-radius: var(--radius); display: inline-block;
+    }
+    .btn-primary:hover { background: #f0c800; }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.6); color: #fff;
+      font-weight: 600; font-size: 1rem; padding: 13px 28px;
+      border-radius: var(--radius); display: inline-block;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* SECTION SHARED */
+    section { padding: 80px 0; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Merriweather', serif; font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--primary);
+      line-height: 1.25; margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--muted); line-height: 1.7;
+      max-width: 600px;
+    }
+    .section-head { margin-bottom: 48px; }
+
+    /* SERVICES */
+    .services { background: var(--bg-alt); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: #f8f9fb; border-radius: var(--radius);
+      padding: 32px 28px; border-top: 4px solid var(--accent);
+      transition: box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; }
+    .service-card h3 {
+      font-family: 'Merriweather', serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--primary); margin-bottom: 10px;
+    }
+    .service-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
+
+    /* WHY */
+    .why { background: var(--primary); }
+    .why .section-title { color: #fff; }
+    .why .section-sub { color: rgba(255,255,255,0.7); }
+    .why .section-label { color: var(--accent); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.06); border-radius: var(--radius);
+      padding: 32px 28px; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .why-card h3 {
+      font-family: 'Merriweather', serif; font-weight: 700;
+      font-size: 1.05rem; color: #fff; margin-bottom: 12px;
+    }
+    .why-card p { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.65; }
+    .why-number {
+      font-size: 2.5rem; font-weight: 900; color: var(--accent);
+      opacity: 0.4; margin-bottom: 12px; line-height: 1;
+    }
+
+    /* HOW WE WORK */
+    .how { background: #f8f9fb; }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .how-step { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--accent); color: var(--primary);
+      font-weight: 900; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .how-step h3 {
+      font-family: 'Merriweather', serif; font-weight: 700;
+      font-size: 1rem; color: var(--primary); margin-bottom: 10px;
+    }
+    .how-step p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
+
+    /* GALLERY */
+    .gallery { background: #fff; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 260px);
+      gap: 16px;
+    }
+    .gallery-item { border-radius: var(--radius); overflow: hidden; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item:first-child {
+      grid-column: 1; grid-row: 1;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: #f8f9fb; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .testi-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 14px; }
+    .testi-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { font-weight: 600; font-size: 0.9rem; color: var(--primary); }
+
+    /* CONTACT */
+    .contact { background: var(--primary); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .contact .section-title { color: #fff; }
+    .contact .section-sub { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+    .contact .section-label { color: var(--accent); }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(230,184,0,0.15); border: 1px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-item-text span {
+      display: block; font-size: 0.78rem; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+    }
+    .contact-item-text a, .contact-item-text p {
+      font-size: 1rem; color: #fff; font-weight: 600;
+    }
+    .contact-item-text a:hover { color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      background: #0d1420; color: rgba(255,255,255,0.6);
+      padding: 56px 0 32px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { font-size: 1.1rem; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+    footer h4 {
+      font-family: 'Merriweather', serif; font-weight: 700;
+      font-size: 0.9rem; color: #fff; margin-bottom: 16px;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer ul li { font-size: 0.88rem; }
+    footer ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px; text-align: center;
+      font-size: 0.82rem; color: rgba(255,255,255,0.35);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-content { padding: 40px 20px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-item { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Bravo<span> Lawns</span></div>
+  <a href="tel:+61401899253" class="nav-cta">Call 0401 899 253</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">★★★★★ 5.0 (19 Reviews)</div>
+    <h1>Wyndham Vale's Trusted Lawn Care Experts</h1>
+    <p class="hero-sub1">Servicing Wyndham Vale, Werribee, Hoppers Crossing, Point Cook &amp; Western Melbourne</p>
+    <p class="hero-sub2">Bravo Lawns &amp; Maintenance delivers professional lawn mowing, garden clean-ups, and complete property maintenance for residential homes across Melbourne's western suburbs. Reliable, local, and quality-focused on every job.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+61401899253" class="btn-outline">Call 0401 899 253</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Complete Lawn &amp; Property Care</h2>
+      <p class="section-sub">From regular lawn mowing to full property clean-ups, we cover everything your home needs to look its best all year round.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <h3>Lawn Mowing &amp; Edging</h3>
+        <p>Precise, consistent mowing and edging that delivers a clean, manicured result every single visit, keeping your lawn looking sharp.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Garden Maintenance</h3>
+        <p>Seasonal clean-ups, pruning, garden bed weeding and care to keep your garden healthy and well-presented throughout the year.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚛</div>
+        <h3>Green Waste Removal</h3>
+        <p>Full green waste and rubbish collection and disposal, so you don't have to worry about a thing once the job is done.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Turf &amp; Lawn Care</h3>
+        <p>New turf laying, lawn repairs, fertilising and ongoing lawn health management to grow and maintain a lush, green yard.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Property Maintenance</h3>
+        <p>General residential property upkeep covering all the outdoor maintenance tasks that keep your home in great condition.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛤️</div>
+        <h3>Verge &amp; Nature Strip</h3>
+        <p>Neat verge and nature strip mowing and edging for great street appeal and a tidy, well-maintained frontage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Local Experts You Can Rely On</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.7)">We're a local Wyndham Vale business that takes pride in delivering consistent, quality results for every property we service.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <h3>Local Melbourne Experts</h3>
+        <p>Based in the Wyndham Vale area with deep knowledge of local soil conditions, grass types and seasonal maintenance needs specific to Melbourne's western suburbs.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <h3>Reliable &amp; On Time</h3>
+        <p>Consistent scheduling you can count on. We show up when we say we will, communicate clearly, and get the job done right the first time, every time.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <h3>Complete Property Care</h3>
+        <p>Lawn, garden, waste removal and property maintenance all handled by one trusted local team, saving you time and the hassle of managing multiple contractors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <p class="section-label">Our Process</p>
+      <h2 class="section-title">How We Work</h2>
+      <p class="section-sub" style="margin:0 auto">Simple, straightforward and hassle-free from first contact to a freshly maintained property.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <h3>Get a Quote</h3>
+        <p>Contact us with your property details and we'll get back to you quickly with a fair, no-obligation quote tailored to your needs.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <h3>We Come to You</h3>
+        <p>Our team arrives on time, fully equipped and ready to handle any lawn or property job, big or small, with no fuss.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <h3>Quality Finish</h3>
+        <p>We leave your property looking its very best, clean up after ourselves and make sure you're completely satisfied before we go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-sub">A selection of recent lawn care and property maintenance jobs completed across Melbourne's western suburbs.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/gallery/project-1.jpg" alt="Lawn mowing service completed by Bravo Lawns, Wyndham Vale" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery/project-2.jpg" alt="Garden maintenance and pruning by Bravo Lawns, Werribee" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery/project-3.jpg" alt="Verge and nature strip mowing by Bravo Lawns, Hoppers Crossing" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery/project-4.jpg" alt="Turf and lawn care service by Bravo Lawns, Point Cook" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <p class="section-label">What Clients Say</p>
+      <h2 class="section-title">5-Star Reviews from Local Homeowners</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Bravo Lawns completely transformed our front and back yard in one visit. Neat, professional and great value. We couldn't recommend them more highly."</p>
+        <div class="testi-author">Jessica H. &mdash; Wyndham Vale</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Reliable and thorough. They mowed, edged and cleared all the green waste without us having to ask twice. The property looks immaculate every time."</p>
+        <div class="testi-author">Michael T. &mdash; Hoppers Crossing</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"We have been using Bravo for over six months now and the service is always consistent and professional. It is the kind of local business you just keep calling back."</p>
+        <div class="testi-author">Sarah &amp; Ben K. &mdash; Point Cook</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Ready to Book? Let's Talk</h2>
+        <p class="section-sub">Contact Bravo Lawns &amp; Maintenance today for a free, no-obligation quote. We service Wyndham Vale, Werribee, Hoppers Crossing, Point Cook, Williams Landing and surrounds.</p>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <span>Phone</span>
+            <a href="tel:+61401899253">0401 899 253</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <span>Service Area</span>
+            <p>Wyndham Vale, Werribee, Hoppers Crossing, Point Cook &amp; Western Melbourne</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-item-text">
+            <span>Hours</span>
+            <p>Monday to Saturday, 7am to 6pm</p>
+          </div>
+        </div>
+        <a href="tel:+61401899253" class="btn-primary" style="align-self:flex-start;margin-top:8px">Call 0401 899 253</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Bravo<span> Lawns</span></div>
+        <p>Professional lawn mowing, garden maintenance and property care across Wyndham Vale, Werribee, Hoppers Crossing, Point Cook and Melbourne's western suburbs. Local, reliable and quality-focused.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Lawn Mowing &amp; Edging</li>
+          <li>Garden Maintenance</li>
+          <li>Green Waste Removal</li>
+          <li>Turf &amp; Lawn Care</li>
+          <li>Property Maintenance</li>
+          <li>Verge Mowing</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Wyndham Vale</li>
+          <li>Werribee</li>
+          <li>Hoppers Crossing</li>
+          <li>Point Cook</li>
+          <li>Williams Landing</li>
+          <li>Tarneit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Bravo Lawns &amp; Maintenance. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
