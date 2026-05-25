@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>LKS Handyman | Handyman Services | Australia</title>
+<meta name="description" content="LKS Handyman, your trusted local handyman for repairs, maintenance and installations. General handyman services for homes and businesses. Call 0474 575 102 for a free quote."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);color:var(--fg);background:var(--bg);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+:root{
+  --primary:#161E31;--primary-fg:#ffffff;--accent:#E6B800;--accent-dark:#b89200;
+  --bg:#ffffff;--bg-alt:#ffffff;--fg:#161E31;--muted:#64748b;--border:#e2e8f0;
+  --card:#ffffff;--radius:12px;--font-display:'Merriweather',serif;--font-body:'Inter',sans-serif;
+}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:var(--radius);font-weight:700;font-size:.95rem;transition:all .2s;cursor:pointer;border:none}
+.btn-accent{background:var(--accent);color:var(--primary)}
+.btn-accent:hover{background:var(--accent-dark)}
+#header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(22,30,49,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);height:64px;display:flex;align-items:center;padding:0 1.25rem}
+@media(min-width:768px){#header{height:76px;padding:0 2rem}}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto}
+.header-right{display:flex;align-items:center;gap:1rem}
+.header-phone{display:none;color:rgba(255,255,255,.85);font-size:.9rem}
+@media(min-width:768px){.header-phone{display:block}}
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding-top:64px}
+@media(min-width:768px){#hero{padding-top:76px}}
+.hero-bg{position:absolute;inset:0;background-image:url('images/hero.jpg');background-size:cover;background-position:center center}
+@media(max-width:767px){.hero-bg{background-position:60% center}}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.2)}
+.hero-content{position:relative;z-index:1;padding:2.5rem 1.5rem;max-width:720px;margin:0 auto;width:100%;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.95);border:none;border-radius:999px;padding:.45rem 1rem;margin-bottom:1.5rem;color:var(--fg);font-size:.9rem;font-weight:600}
+.hero-stars{color:var(--accent);letter-spacing:1px}
+.hero-h1{font-family:var(--font-display);font-size:clamp(1.87rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:1rem;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.accent{color:var(--accent)}
+.hero-sub1{font-size:clamp(1.1rem,2.5vw,1.4rem);color:#fff;font-weight:700;margin-bottom:.6rem;line-height:1.35;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.hero-sub2{font-size:clamp(.95rem,2vw,1.05rem);color:rgba(255,255,255,.88);margin-bottom:1.75rem;line-height:1.65;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.hero-cta .btn-accent{display:inline-flex;align-items:center;gap:.5rem;font-size:1rem;padding:.9rem 2rem;max-width:340px;width:100%;justify-content:center}
+.hero-trust{font-size:.85rem;color:rgba(255,255,255,.8);margin-top:1.25rem;letter-spacing:.02em;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeInUp .6s ease-out forwards}
+.d1{animation-delay:.1s;opacity:0}.d2{animation-delay:.2s;opacity:0}.d3{animation-delay:.3s;opacity:0}.d4{animation-delay:.4s;opacity:0}
+section{padding:4rem 1.25rem}
+@media(min-width:768px){section{padding:5rem 2rem}}
+.section-label{display:none}
+.section-inner{max-width:1200px;margin:0 auto;text-align:center}
+.section-title{font-family:var(--font-display);font-size:clamp(1.04rem,2.3vw,1.61rem);font-weight:900;color:var(--fg);margin-bottom:1rem;line-height:1.15}
+.section-sub{color:var(--muted);max-width:600px;line-height:1.7;margin:0 auto 2.5rem;font-size:1rem}
+.why-grid{display:grid;gap:1.25rem}
+@media(min-width:768px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;transition:all .25s}
+.why-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-3px);border-color:rgba(230,184,0,.4)}
+.why-card h3{font-weight:700;margin-bottom:.6rem;font-size:1.05rem}
+.why-card p{color:var(--muted);font-size:.9rem;line-height:1.7}
+.icon-badge{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.icon-blue{background:#dbeafe;color:#2563eb}.icon-green{background:#d1fae5;color:#059669}.icon-purple{background:#ede9fe;color:#7c3aed}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+@media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem}}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all .25s}
+.service-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-3px);border-color:rgba(230,184,0,.4)}
+.service-card svg{color:var(--accent);margin:0 auto .6rem;display:block}
+.service-card h3{font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.service-card p{display:none;color:var(--muted);font-size:.85rem;line-height:1.65}
+@media(min-width:640px){.service-card p{display:block}}
+.how-grid{display:flex;flex-direction:column;gap:1.75rem;max-width:680px;margin:0 auto}
+.how-step{display:flex;gap:1.25rem;align-items:flex-start;text-align:left}
+.how-num{flex-shrink:0;width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--primary);font-family:var(--font-display);font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.how-step-body{flex:1}
+.how-step h3{font-weight:700;margin-bottom:.35rem;font-size:1rem}
+.how-step p{color:var(--muted);font-size:.9rem;line-height:1.65}
+.how-cta{display:block;width:100%;max-width:680px;margin:2.5rem auto 0;padding:1rem;background:var(--accent);color:var(--primary);border-radius:var(--radius);font-weight:700;font-size:1rem;text-align:center}
+#gallery{background:var(--bg);padding:4rem 1.25rem}
+@media(min-width:768px){#gallery{padding:5rem 2rem}}
+.gallery-carousel{position:relative;padding:0 2.5rem;margin-top:1.5rem}
+@media(min-width:768px){.gallery-carousel{padding:0 3rem}}
+.gallery-track-wrap{overflow:hidden;border-radius:10px}
+.gallery-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;cursor:grab}
+.gallery-track.dragging{cursor:grabbing;transition:none}
+.gallery-slide{flex:0 0 100%;user-select:none}
+.gallery-item{aspect-ratio:16/9;overflow:hidden;border-radius:10px}
+.gallery-item img{width:100%;height:100%;object-fit:cover}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(22,30,49,.88);border:2px solid rgba(230,184,0,.45);color:#fff;display:flex;align-items:center;justify-content:center;transition:all .2s;cursor:pointer}
+.gallery-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--primary);transform:translateY(-50%) scale(1.05)}
+.gallery-btn:disabled{opacity:.2;pointer-events:none}
+.gallery-btn-prev{left:0}.gallery-btn-next{right:0}
+.gallery-dots{display:flex;gap:.4rem;justify-content:center;margin-top:1rem}
+.gallery-dot{width:8px;height:8px;border-radius:50%;background:rgba(22,30,49,.2);transition:all .3s;border:none;padding:0;cursor:pointer}
+.gallery-dot.active{width:24px;border-radius:4px;background:var(--accent)}
+.testi-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:1rem;padding:1rem .25rem}
+.testi-scroll::-webkit-scrollbar{display:none}
+.testi-grid-desktop{display:none}
+@media(min-width:768px){.testi-scroll{display:none}.testi-grid-desktop{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}}
+.testi-card{flex-shrink:0;width:82vw;scroll-snap-align:center;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem}
+@media(min-width:768px){.testi-card{width:auto}}
+.testi-stars{color:var(--accent);margin-bottom:.75rem;letter-spacing:1px}
+.testi-text{color:var(--fg);font-size:.92rem;line-height:1.75;margin-bottom:1rem}
+.testi-author{font-weight:700;font-size:.85rem;color:var(--muted)}
+.contact-grid{display:grid;gap:1.25rem;margin-bottom:2rem}
+@media(min-width:768px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center}
+.contact-card h3{font-weight:700;margin-bottom:.5rem;font-size:1rem}
+.contact-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.contact-card a{color:var(--fg);font-weight:700;font-size:1.1rem}
+.contact-cta{display:flex;justify-content:center}
+.contact-stars{color:var(--accent);font-size:1.2rem;margin-bottom:.25rem}
+#footer{background:var(--primary);color:rgba(255,255,255,.75);padding:3.5rem 1.25rem 0}
+@media(min-width:768px){#footer{padding:4rem 2rem 0}}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;gap:2.5rem}
+@media(min-width:768px){.footer-grid{grid-template-columns:1.4fr 1.3fr 1fr;gap:3rem}}
+.footer-logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;display:block;margin-bottom:.85rem}
+.footer-about{font-size:.9rem;line-height:1.75;margin-bottom:.6rem}
+.footer-suburbs{font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:1rem;line-height:1.6}
+.footer-stars{color:var(--accent);font-size:.9rem;display:flex;align-items:center;gap:.5rem}
+.footer-stars span{color:rgba(255,255,255,.7);font-size:.85rem}
+.footer-heading{color:#fff;font-weight:700;margin-bottom:1rem;font-size:1rem}
+.footer-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;font-size:.9rem}
+.footer-list li{display:flex;align-items:center;gap:.6rem}
+.footer-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:.9rem;flex-shrink:0}
+.footer-contact-item{display:flex;align-items:center;gap:.65rem;font-size:.9rem;margin-bottom:.75rem}
+.footer-contact-item svg{color:var(--accent);flex-shrink:0}
+.footer-contact-cta{display:block;background:var(--accent);color:var(--primary);font-weight:700;font-size:.95rem;text-align:center;padding:.8rem 1.25rem;border-radius:var(--radius);margin-top:1.5rem}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:2.5rem 0 0}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.35);text-align:center;padding:1.25rem 0}
+#mobile-bar{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(22,30,49,.97);border-top:1px solid rgba(230,184,0,.25);padding:.75rem 1rem;padding-bottom:max(.75rem,env(safe-area-inset-bottom))}
+@media(min-width:768px){#mobile-bar{display:none}}
+.mobile-bar-btn{display:block;width:100%;padding:.8rem;background:var(--accent);color:var(--primary);border-radius:var(--radius);font-weight:700;font-size:.95rem;text-align:center}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">LKS Handyman</span>
+    <div class="header-right">
+      <span class="header-phone">0474 575 102</span>
+      <a href="tel:+61474575102" class="btn btn-accent">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (41 Reviews)</div>
+    <h1 class="hero-h1 fade-up d2">LKS <span class="accent">Handyman</span></h1>
+    <p class="hero-sub1 fade-up d3">Your Trusted Local Handyman for Repairs and Maintenance</p>
+    <p class="hero-sub2 fade-up d3">Reliable, skilled handyman services for homes and businesses. From repairs and installations to decking and fencing, we get the job done right the first time.</p>
+    <div class="hero-cta fade-up d4">
+      <a href="tel:+61474575102" class="btn btn-accent">&#9742; Call 0474 575 102</a>
+    </div>
+    <p class="hero-trust fade-up d4">&#9965; No obligation &bull; Free quotes &bull; Reliable &amp; insured</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">Why LKS Handyman</p>
+    <h2 class="section-title">Practical Solutions Done Properly</h2>
+    <p class="section-sub">LKS Handyman takes pride in getting every job done right, on time and with minimum fuss. No job is too small and no corner is cut.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge icon-blue">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Quality Work, Every Single Job</h3>
+        <p>Whether it is a minor repair or a larger installation, LKS Handyman applies the same standard of care and workmanship. Jobs are done properly the first time so you are not calling again next week.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-green">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>On Time, Every Time</h3>
+        <p>Homeowners and businesses rely on LKS Handyman because the job actually happens when it is supposed to. Clear communication before, during and after every job means no surprises and no wasted days waiting around.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-purple">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>A Handyman You Can Trust</h3>
+        <p>LKS Handyman works with homeowners and small businesses who want a reliable person they can call back. Practical, honest and focused on getting results that last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">Everything Around the Home and Property</h2>
+    <p class="section-sub">From quick fixes to larger maintenance jobs, LKS Handyman handles the tasks that pile up and the projects you want done once and done right.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <h3>General Repairs</h3>
+        <p>Door handles, hinges, locks, leaky taps, cracked tiles and all the small jobs that need a reliable set of hands to sort them out for good.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <h3>Fixture Installation</h3>
+        <p>Light fittings, ceiling fans, blinds, curtain rails, shelving, TV mounts and all fixture and fitting installations done safely and correctly.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <h3>Carpentry and Timber Work</h3>
+        <p>Decking, timber repairs, cabinet fixes, door adjustments and minor renovation carpentry carried out with care and a clean finish.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/></svg>
+        <h3>Fencing and Gates</h3>
+        <p>Installation, repairs and maintenance of timber and metal fencing, gates and panels to keep your property secure and looking tidy.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 5.34L3.93 6.75M21 12h-2M5 12H3M19.07 19.07l-1.41-1.41M5.34 18.66l-1.41 1.41M12 21v-2M12 5V3"/></svg>
+        <h3>Property Maintenance</h3>
+        <p>Ongoing maintenance for homes and investment properties, including gutter clearing, pressure washing, weatherproofing and general upkeep.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        <h3>Minor Renovations</h3>
+        <p>Bathroom and kitchen touch-ups, tiling, patching, painting prep and other small-scale renovation tasks to freshen up your space without a full trade crew.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Getting the Job Done Is Simple</h2>
+    <p class="section-sub">No complicated process, no waiting weeks. LKS Handyman keeps it straightforward from first call to finished job.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-body">
+          <h3>Free Quote, No Obligation</h3>
+          <p>Call or message to describe what you need. LKS Handyman provides a clear, upfront quote with no hidden costs. No obligation to proceed until you are happy with the price.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-body">
+          <h3>Book a Time That Works for You</h3>
+          <p>Once you are ready to go, lock in a time that suits your schedule. LKS Handyman shows up when agreed and keeps you informed if anything changes.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-body">
+          <h3>The Work Gets Done Properly</h3>
+          <p>Every job is carried out with quality tools and genuine care. LKS Handyman works cleanly, efficiently and to a standard that holds up over time.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-step-body">
+          <h3>Check, Clean Up and Sign Off</h3>
+          <p>Before leaving, the work is checked, the site is left clean and you are walked through what was done. You are happy before anyone goes home.</p>
+        </div>
+      </div>
+    </div>
+    <a href="tel:+61474575102" class="how-cta">&#9742; Call 0474 575 102</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-inner">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">Recent Work</h2>
+    <p class="section-sub">A sample of jobs completed by LKS Handyman, from decking and fencing to on-site repairs and installations.</p>
+    <div class="gallery-carousel">
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Handyman on job site with tools, LKS Handyman" loading="lazy"/></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Completed timber deck platform, LKS Handyman" loading="lazy"/></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Deck construction work in progress, LKS Handyman" loading="lazy"/></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Installed metal fence panels, LKS Handyman" loading="lazy"/></div></div>
+        </div>
+      </div>
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-sub">Real feedback from homeowners and businesses who called LKS Handyman and would call again.</p>
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Had LKS Handyman come out to repair a rotting section of our deck and replace a broken gate latch. The work was solid and the deck looks better than it has in years. Really happy with the quality and the price was fair for the time it took.</p>
+        <p class="testi-author">Mark T., homeowner</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous about letting someone into the house but LKS Handyman was professional from the first call. Turned up exactly when they said, explained what they were doing and left everything clean. Will absolutely be using them again for a list of things I have been putting off.</p>
+        <p class="testi-author">Sandra W., homeowner</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We got a couple of quotes for some maintenance work on our rental property and went with LKS Handyman. Best decision. The job was done faster than expected, the tenant was happy and I did not have to follow up once. That is exactly what you want from a handyman.</p>
+        <p class="testi-author">David and Liz R., landlords</p>
+      </div>
+    </div>
+    <div class="testi-grid-desktop">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Had LKS Handyman come out to repair a rotting section of our deck and replace a broken gate latch. The work was solid and the deck looks better than it has in years. Really happy with the quality and the price was fair for the time it took.</p>
+        <p class="testi-author">Mark T., homeowner</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous about letting someone into the house but LKS Handyman was professional from the first call. Turned up exactly when they said, explained what they were doing and left everything clean. Will absolutely be using them again for a list of things I have been putting off.</p>
+        <p class="testi-author">Sandra W., homeowner</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We got a couple of quotes for some maintenance work on our rental property and went with LKS Handyman. Best decision. The job was done faster than expected, the tenant was happy and I did not have to follow up once. That is exactly what you want from a handyman.</p>
+        <p class="testi-author">David and Liz R., landlords</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Get a Free Quote Today</h2>
+    <p class="section-sub">Call LKS Handyman to discuss your job, get a straight answer and lock in a time that works for you.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <a href="tel:+61474575102">0474 575 102</a>
+        <p>Free quotes, no obligation</p>
+      </div>
+      <div class="contact-card">
+        <h3>Service Area</h3>
+        <p>Servicing residential and commercial customers across Australia. Call to confirm availability in your area.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Our Rating</h3>
+        <div class="contact-stars">★★★★★</div>
+        <p>5.0 (41 Reviews)</p>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <a href="tel:+61474575102" class="btn btn-accent">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Request a Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo-text">LKS Handyman</span>
+        <p class="footer-about">LKS Handyman provides reliable, skilled handyman services for homes and businesses across Australia. From everyday repairs and fixture installations to decking, fencing and minor renovations, every job is handled with practical expertise and genuine care for the result.</p>
+        <p class="footer-suburbs">Servicing residential and commercial properties across Australia.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (41 Reviews)</span></div>
+      </div>
+      <div>
+        <p class="footer-heading">Our Services</p>
+        <ul class="footer-list">
+          <li>General Repairs and Maintenance</li>
+          <li>Fixture Installation</li>
+          <li>Carpentry and Timber Work</li>
+          <li>Fencing and Gates</li>
+          <li>Property Maintenance</li>
+          <li>Minor Renovations</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <a href="tel:+61474575102">0474 575 102</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Licensed and insured. Free quotes.</span>
+        </div>
+        <a href="tel:+61474575102" class="footer-contact-cta">Get a Free Quote</a>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> LKS Handyman. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61474575102" class="mobile-bar-btn">Call 0474 575 102 for a Free Quote</a>
+</div>
+
+<script>
+(function(){
+  const track=document.getElementById('galleryTrack');
+  const slides=track.querySelectorAll('.gallery-slide');
+  const btnPrev=document.getElementById('galPrev');
+  const btnNext=document.getElementById('galNext');
+  const dotsWrap=document.getElementById('galleryDots');
+  const total=slides.length;
+  let current=0;
+  function slideWidth(){return track.parentElement.offsetWidth}
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    for(let i=0;i<total;i++){
+      const d=document.createElement('button');
+      d.className='gallery-dot'+(i===current?' active':'');
+      d.setAttribute('aria-label','Image '+(i+1));
+      d.addEventListener('click',()=>goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goTo(idx){
+    current=Math.max(0,Math.min(idx,total-1));
+    track.style.transform='translateX(-'+(current*slideWidth())+'px)';
+    btnPrev.disabled=current===0;
+    btnNext.disabled=current>=total-1;
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+  }
+  btnPrev.addEventListener('click',()=>goTo(current-1));
+  btnNext.addEventListener('click',()=>goTo(current+1));
+  let startX=0,isDragging=false,dragDelta=0;
+  track.addEventListener('mousedown',e=>{isDragging=true;startX=e.clientX;track.classList.add('dragging')});
+  window.addEventListener('mousemove',e=>{if(!isDragging)return;dragDelta=e.clientX-startX});
+  window.addEventListener('mouseup',()=>{
+    if(!isDragging)return;
+    isDragging=false;track.classList.remove('dragging');
+    if(dragDelta<-50)goTo(current+1);
+    else if(dragDelta>50)goTo(current-1);
+    dragDelta=0;
+  });
+  track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});
+  track.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-startX;
+    if(dx<-50)goTo(current+1);
+    else if(dx>50)goTo(current-1);
+  });
+  window.addEventListener('resize',()=>{buildDots();goTo(Math.min(current,total-1))});
+  buildDots();goTo(0);
+})();
+</script>
+</body>
+</html>
