@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spraytech Group Goldcoast | Professional Spray Painting | Gold Coast QLD</title>
+  <meta name="description" content="Spraytech Group Goldcoast, trusted spray painting specialists on the Gold Coast. Residential, commercial and industrial spray painting and protective coatings. Servicing Gold Coast, Surfers Paradise, Broadbeach and surrounds. Call 0414 149 665 for a free quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:      #161E31;
+      --primary-fg:   #ffffff;
+      --accent:       #E6B800;
+      --accent-dark:  #b89200;
+      --bg:           #ffffff;
+      --bg-alt:       #ffffff;
+      --fg:           #161E31;
+      --muted:        #64748b;
+      --border:       #e2e8f0;
+      --card:         #ffffff;
+      --radius:       12px;
+      --font-display: 'Merriweather', serif;
+      --font-body:    'Inter', sans-serif;
+    }
+    body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .95rem; transition: all .2s; }
+    .btn-accent { background: var(--accent); color: var(--primary); }
+    .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
+    @media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
+    @media(min-width:768px) { .header-phone { display: block; } }
+
+    #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
+    @media(min-width:768px) { #hero { padding-top: 76px; } }
+    .hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
+    @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+    .hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
+    .hero-stars { color: var(--accent); letter-spacing: 1px; }
+    .hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+    .accent { color: var(--accent); }
+    .hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+    .hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+    .hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+    .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
+    .hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeInUp .6s ease-out forwards; }
+    .d1 { animation-delay: .1s; opacity: 0; } .d2 { animation-delay: .2s; opacity: 0; }
+    .d3 { animation-delay: .3s; opacity: 0; } .d4 { animation-delay: .4s; opacity: 0; }
+
+    section { padding: 4rem 1.25rem; }
+    @media(min-width:768px) { section { padding: 5rem 2rem; } }
+    .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .section-label { display: none; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+    .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
+
+    #why { background: var(--bg); }
+    .why-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
+    .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s; }
+    .why-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+    .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .icon-blue { background: #dbeafe; color: #2563eb; }
+    .icon-green { background: #d1fae5; color: #059669; }
+    .icon-purple { background: #ede9fe; color: #7c3aed; }
+    .why-card h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: .6rem; }
+    .why-card p { color: var(--muted); font-size: .9rem; line-height: 1.7; }
+
+    #services { background: var(--bg-alt); }
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; }
+    @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3,1fr); gap: 1.25rem; } }
+    .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; text-align: center; transition: all .25s; }
+    .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+    .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
+    .service-card h3 { font-weight: 700; font-size: .95rem; }
+    .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.65; margin-top: .4rem; }
+    @media(min-width:640px) { .service-card p { display: block; } }
+
+    #how { background: var(--bg); }
+    .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+    .how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; }
+    .how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .how-step-body { flex: 1; }
+    .how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+    .how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+    .how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
+    .how-cta:hover { background: var(--accent-dark); }
+
+    #gallery { background: var(--bg); padding: 4rem 1.25rem; }
+    @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+    .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
+    @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+    .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
+    .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
+    .gallery-track.dragging { cursor: grabbing; transition: none; }
+    .gallery-slide { flex: 0 0 100%; user-select: none; }
+    .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
+    .gallery-btn:disabled { opacity: .2; pointer-events: none; }
+    .gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
+    .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
+    .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+    .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+    #testimonials { background: var(--bg-alt); padding: 4rem 1.25rem; }
+    @media(min-width:768px) { #testimonials { padding: 5rem 2rem; } }
+    .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; padding-bottom: .5rem; }
+    .testi-scroll::-webkit-scrollbar { display: none; }
+    .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .testi-grid-desktop { display: none; }
+    @media(min-width:768px) {
+      .testi-scroll { display: none; }
+      .testi-grid-desktop { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+      .testi-grid-desktop .testi-card { width: auto; }
+    }
+    .testi-stars { color: var(--accent); font-size: 1rem; margin-bottom: .6rem; letter-spacing: 1px; }
+    .testi-text { color: var(--muted); font-size: .9rem; line-height: 1.7; margin-bottom: .75rem; }
+    .testi-name { font-weight: 700; font-size: .9rem; }
+    .testi-suburb { font-size: .8rem; color: var(--muted); }
+
+    #contact { background: var(--bg); }
+    .contact-grid { display: grid; gap: 1.25rem; margin-bottom: 2rem; }
+    @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3,1fr); } }
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.5rem; text-align: center; }
+    .contact-card-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto .85rem; background: #fef3c7; color: #d97706; }
+    .contact-card h3 { font-weight: 700; margin-bottom: .4rem; font-size: 1rem; }
+    .contact-card p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+    .contact-card a { color: var(--fg); font-weight: 600; }
+    .contact-cta { display: flex; justify-content: center; }
+
+    #footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
+    @media(min-width:768px) { #footer { padding: 4rem 2rem 0; } }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; gap: 2.5rem; }
+    @media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+    .footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
+    .footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
+    .footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
+    .footer-stars { color: var(--accent); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+    .footer-stars span { color: rgba(255,255,255,.7); font-size: .85rem; }
+    .footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
+    .footer-list li { display: flex; align-items: center; gap: .6rem; }
+    .footer-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+    .footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
+    .footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
+    .footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
+    .footer-contact-cta:hover { background: var(--accent-dark); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
+    .footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
+
+    #mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+    @media(min-width:768px) { #mobile-bar { display: none; } }
+    .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-inner">
+      <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Spraytech Group Goldcoast</span>
+      <div class="header-right">
+        <span class="header-phone">0414 149 665</span>
+        <a href="tel:+61414149665" class="btn btn-accent">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-bg" role="img" aria-label="Modern white house exterior spray finish, Spraytech Group Goldcoast"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (47 Reviews)</div>
+      <h1 class="hero-h1 fade-up d2">Spraytech Group <span class="accent">Goldcoast</span></h1>
+      <p class="hero-sub1 fade-up d3">The Gold Coast's Leading Spray Painting Specialists</p>
+      <p class="hero-sub2 fade-up d3">Professional spray painting and protective coating services for residential, commercial and industrial clients across the Gold Coast. Servicing Surfers Paradise, Broadbeach, Southport, Robina and surrounding areas.</p>
+      <div class="hero-cta fade-up d4">
+        <a href="tel:+61414149665" class="btn btn-accent">&#9742; Call 0414 149 665</a>
+      </div>
+      <p class="hero-trust fade-up d4">&#9965; No obligation &bull; Licensed &amp; Insured &bull; Free quotes</p>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="section-inner">
+      <p class="section-label">Why Spraytech Group Goldcoast</p>
+      <h2 class="section-title">Industry-Grade Results for Every Client</h2>
+      <p class="section-sub">Professional spray painting techniques and quality materials applied with precision across every project we take on.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon-badge icon-blue">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Expert Preparation and Application</h3>
+          <p>A flawless spray finish starts with thorough surface preparation. We clean, prime and prepare every substrate correctly so the coating adheres properly and delivers a lasting, even result.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-badge icon-green">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Reliable, Professional Team</h3>
+          <p>We show up on time, communicate clearly and keep your site clean throughout the job. From residential homes to commercial facilities, every client receives the same professional standard of service.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-badge icon-purple">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Local Gold Coast Experts</h3>
+          <p>Based on the Gold Coast, we understand the local climate and its effect on exterior surfaces. We select the right coatings and application methods for the Queensland coastal environment so finishes hold up long-term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-inner">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-sub">Spray painting and protective coating solutions for residential, commercial and industrial properties across the Gold Coast.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <h3>Residential Spray Painting</h3>
+          <p>Interior and exterior spray painting for homes across the Gold Coast, delivering smooth, consistent finishes that refresh and protect your property.</p>
+        </div>
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          <h3>Commercial Spray Painting</h3>
+          <p>Commercial buildings, retail fit-outs and strata properties painted with industry-grade spray equipment for a clean, professional result with minimal downtime.</p>
+        </div>
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <h3>Industrial Coatings</h3>
+          <p>Protective coatings for industrial structures, machinery and surfaces requiring heavy-duty protection against corrosion, UV and wear.</p>
+        </div>
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <h3>Protective Coatings</h3>
+          <p>Specialist protective coatings applied to exterior surfaces to guard against weathering, moisture and the harsh Gold Coast coastal conditions.</p>
+        </div>
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <h3>Surface Preparation</h3>
+          <p>Thorough cleaning, sanding, priming and repair of all surfaces before application to ensure the coating bonds correctly and lasts.</p>
+        </div>
+        <div class="service-card">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+          <h3>Recoats and Maintenance</h3>
+          <p>Recoat existing surfaces and maintain protective finishes to extend the life of your property and keep it looking its best year-round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="section-inner">
+      <p class="section-label">How We Work</p>
+      <h2 class="section-title">A Clear Process from Quote to Completion</h2>
+      <p class="section-sub">Straightforward and transparent at every stage, from your first call through to the finished result.</p>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-num">1</div>
+          <div class="how-step-body">
+            <h3>Free Quote</h3>
+            <p>We assess your project on-site and provide a clear, itemised quote outlining exactly what will be done, what products will be used, and what it will cost.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">2</div>
+          <div class="how-step-body">
+            <h3>Colour and Coating Plan</h3>
+            <p>We confirm your colour or coating selections and specify the right products for your surfaces and environment, so there are no delays once we start.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">3</div>
+          <div class="how-step-body">
+            <h3>Expert Preparation and Spray</h3>
+            <p>Every surface is prepared to the correct standard before we spray. Industry-grade equipment and materials are used to achieve a smooth, even finish that protects and performs.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">4</div>
+          <div class="how-step-body">
+            <h3>Inspection and Clean-Up</h3>
+            <p>We inspect the finished work with you, address any final details, and leave the site completely clean. You sign off when you are satisfied, not before.</p>
+          </div>
+        </div>
+      </div>
+      <a href="tel:+61414149665" class="how-cta">&#9742; Call 0414 149 665</a>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-inner">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-sub">A selection of residential, commercial and industrial work completed by the Spraytech Group Goldcoast team.</p>
+      <div class="gallery-carousel">
+        <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="gallery-track-wrap">
+          <div class="gallery-track" id="galleryTrack">
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Completed residential building with stonework, Spraytech Group Goldcoast" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Two storey residential spray coating job, Spraytech Group Goldcoast" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Finished home exterior with landscaping, Spraytech Group Goldcoast" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Completed coating project, Spraytech Group Goldcoast" loading="lazy" /></div></div>
+          </div>
+        </div>
+        <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="section-inner">
+      <p class="section-label">What Our Customers Say</p>
+      <h2 class="section-title">Trusted Across the Gold Coast</h2>
+      <p class="section-sub">Real feedback from homeowners, business owners and facility managers on the Gold Coast.</p>
+
+      <div class="testi-scroll">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">The spray finish on our home exterior is flawless. The prep work they did beforehand was incredibly thorough and you can see it in the result. The surface is perfectly smooth and even all the way around. Absolutely worth every cent.</p>
+          <p class="testi-name">Brad &amp; Karen S.</p>
+          <p class="testi-suburb">Surfers Paradise</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">From the moment they arrived on site to the final walkthrough, the whole experience was professional and stress-free. They protected everything that needed protecting, kept the area clean every day, and the result was exactly what we wanted. Highly recommend.</p>
+          <p class="testi-name">Natalie F.</p>
+          <p class="testi-suburb">Broadbeach</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">I got three quotes for the commercial job and Spraytech was the most detailed and transparent. They explained exactly what was involved and stuck to it. The finished result looked excellent and has held up perfectly since. Would not go anywhere else on the Gold Coast.</p>
+          <p class="testi-name">Marcus T.</p>
+          <p class="testi-suburb">Southport</p>
+        </div>
+      </div>
+
+      <div class="testi-grid-desktop">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">The spray finish on our home exterior is flawless. The prep work they did beforehand was incredibly thorough and you can see it in the result. The surface is perfectly smooth and even all the way around. Absolutely worth every cent.</p>
+          <p class="testi-name">Brad &amp; Karen S.</p>
+          <p class="testi-suburb">Surfers Paradise</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">From the moment they arrived on site to the final walkthrough, the whole experience was professional and stress-free. They protected everything that needed protecting, kept the area clean every day, and the result was exactly what we wanted. Highly recommend.</p>
+          <p class="testi-name">Natalie F.</p>
+          <p class="testi-suburb">Broadbeach</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">I got three quotes for the commercial job and Spraytech was the most detailed and transparent. They explained exactly what was involved and stuck to it. The finished result looked excellent and has held up perfectly since. Would not go anywhere else on the Gold Coast.</p>
+          <p class="testi-name">Marcus T.</p>
+          <p class="testi-suburb">Southport</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub">Call us for a free, no-obligation quote on your next spray painting or coating project on the Gold Coast.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+61414149665">0414 149 665</a></p>
+          <p>Free quotes, no obligation</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Service Area</h3>
+          <p>Servicing Surfers Paradise, Broadbeach, Southport, Robina, Burleigh Heads and surrounding Gold Coast areas.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Our Rating</h3>
+          <p>★★★★★ 5.0 (47 Reviews)</p>
+          <p>Trusted by homeowners and businesses across the Gold Coast</p>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <a href="tel:+61414149665" class="btn btn-accent" style="padding:1rem 2.5rem;font-size:1rem;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Request a Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-logo-text">Spraytech Group Goldcoast</span>
+          <p class="footer-about">Professional spray painting and protective coating specialists serving the Gold Coast region. We deliver high-quality finishes for residential, commercial and industrial clients using industry-grade materials and techniques tailored to each project.</p>
+          <p class="footer-suburbs">Proudly servicing Surfers Paradise, Broadbeach, Southport and the Gold Coast.</p>
+          <div class="footer-stars">★★★★★ <span>5.0 (47 Reviews)</span></div>
+        </div>
+        <div>
+          <p class="footer-heading">Our Services</p>
+          <ul class="footer-list">
+            <li>Residential Spray Painting</li>
+            <li>Commercial Spray Painting</li>
+            <li>Industrial Coatings</li>
+            <li>Protective Coatings</li>
+            <li>Surface Preparation</li>
+            <li>Recoats and Maintenance</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact Us</p>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+61414149665" style="color:rgba(255,255,255,.85);">0414 149 665</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Gold Coast, Queensland</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Licensed and Insured. Free quotes.</span>
+          </div>
+          <a href="tel:+61414149665" class="footer-contact-cta">Get a Free Quote</a>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Spraytech Group Goldcoast. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="mobile-bar">
+    <a href="tel:+61414149665" class="mobile-bar-btn">Call 0414 149 665 for a Free Quote</a>
+  </div>
+
+  <script>
+  (function(){
+    const track=document.getElementById('galleryTrack'),slides=track.querySelectorAll('.gallery-slide'),btnPrev=document.getElementById('galPrev'),btnNext=document.getElementById('galNext'),dotsWrap=document.getElementById('galleryDots'),total=slides.length;let current=0;
+    function maxIndex(){return total-1;}function slideWidth(){return track.parentElement.offsetWidth;}
+    function buildDots(){dotsWrap.innerHTML='';for(let i=0;i<total;i++){const d=document.createElement('button');d.className='gallery-dot'+(i===current?' active':'');d.setAttribute('aria-label','Image '+(i+1));d.addEventListener('click',()=>goTo(i));dotsWrap.appendChild(d);}}
+    function goTo(idx){current=Math.max(0,Math.min(idx,maxIndex()));track.style.transform='translateX(-'+(current*slideWidth())+'px)';btnPrev.disabled=current===0;btnNext.disabled=current>=maxIndex();dotsWrap.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===current));}
+    btnPrev.addEventListener('click',()=>goTo(current-1));btnNext.addEventListener('click',()=>goTo(current+1));
+    let startX=0,isDragging=false,dragDelta=0;
+    track.addEventListener('mousedown',e=>{isDragging=true;startX=e.clientX;track.classList.add('dragging');});
+    window.addEventListener('mousemove',e=>{if(!isDragging)return;dragDelta=e.clientX-startX;});
+    window.addEventListener('mouseup',()=>{if(!isDragging)return;isDragging=false;track.classList.remove('dragging');if(dragDelta<-50)goTo(current+1);else if(dragDelta>50)goTo(current-1);dragDelta=0;});
+    track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+    track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(dx<-50)goTo(current+1);else if(dx>50)goTo(current-1);});
+    window.addEventListener('resize',()=>{buildDots();goTo(Math.min(current,maxIndex()));});
+    buildDots();goTo(0);
+  })();
+  </script>
+
+</body>
+</html>
