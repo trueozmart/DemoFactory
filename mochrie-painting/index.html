@@ -165,12 +165,12 @@
     .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; margin-top: 2rem; padding-bottom: .5rem; }
     .testi-scroll::-webkit-scrollbar { display: none; }
     .testi-grid-desktop { display: none; margin-top: 2rem; }
+    .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: left; }
     @media(min-width:768px) {
       .testi-scroll { display: none; }
       .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-      .testi-card { width: auto; }
+      .testi-card { width: auto; flex-shrink: unset; }
     }
-    .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: left; }
     .testi-stars { color: var(--accent); font-size: 1rem; margin-bottom: .75rem; }
     .testi-text { font-size: .9rem; color: var(--fg); line-height: 1.7; margin-bottom: 1rem; }
     .testi-author { font-size: .8rem; font-weight: 700; color: var(--muted); }
