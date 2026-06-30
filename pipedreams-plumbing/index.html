@@ -16,7 +16,7 @@
       --accent:       #E6B800;
       --accent-dark:  #b89200;
       --bg:           #ffffff;
-      --bg-alt:       #ffffff;
+      --bg-alt:       #f8fafc;
       --fg:           #161E31;
       --muted:        #64748b;
       --border:       #e2e8f0;
@@ -71,11 +71,12 @@
     .section { padding: 4rem 1.25rem; background: var(--bg); }
     @media(min-width:768px) { .section { padding: 5rem 2rem; } }
     .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-    .section-label { display: none; }
+    .section-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
     .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
     .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
 
     /* Why Choose Us */
+    #why { background: var(--bg-alt); }
     .why-grid { display: grid; gap: 1.25rem; }
     @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
     .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s; }
@@ -94,11 +95,10 @@
     .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
     .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
     .service-card h3 { font-weight: 700; font-size: .95rem; margin-bottom: .4rem; }
-    .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.65; }
-    @media(min-width:640px) { .service-card p { display: block; } }
+    .service-card p { color: var(--muted); font-size: .82rem; line-height: 1.65; }
 
     /* How We Work */
-    #how { padding: 4rem 1.25rem; background: var(--bg); }
+    #how { padding: 4rem 1.25rem; background: var(--bg-alt); }
     @media(min-width:768px) { #how { padding: 5rem 2rem; } }
     .how-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
     .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
@@ -114,13 +114,15 @@
     #gallery { background: var(--bg); padding: 4rem 1.25rem; }
     @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
     .gallery-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+
+    /* Mobile carousel */
     .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
-    @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+    @media(min-width:768px) { .gallery-carousel { display: none; } }
     .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
     .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
     .gallery-track.dragging { cursor: grabbing; transition: none; }
     .gallery-slide { flex: 0 0 100%; user-select: none; }
-    .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+    .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; cursor: pointer; }
     .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
@@ -130,8 +132,16 @@
     .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; cursor: pointer; }
     .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
 
+    /* Desktop grid */
+    .gallery-grid { display: none; margin-top: 1.5rem; }
+    @media(min-width:768px) {
+      .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; transition: transform .3s, box-shadow .3s; }
+      .gallery-grid img:hover { transform: scale(1.02); box-shadow: 0 12px 32px rgba(0,0,0,.15); }
+    }
+
     /* Testimonials */
-    #testimonials { padding: 4rem 1.25rem; background: var(--bg); }
+    #testimonials { padding: 4rem 1.25rem; background: var(--bg-alt); }
     @media(min-width:768px) { #testimonials { padding: 5rem 2rem; } }
     .testi-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
     .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; padding-bottom: .5rem; }
@@ -278,7 +288,7 @@
           <p>When you need a plumber now, call Pipedreams Plumbing. We respond promptly to emergencies across Ocean Grove and surrounds.</p>
         </div>
         <div class="service-card">
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
           <h3>Hot Water Systems</h3>
           <p>Supply, installation and repair of hot water systems. We'll advise the best option for your home and budget.</p>
         </div>
@@ -336,30 +346,24 @@
     <div class="gallery-inner">
       <p class="section-label">Our Work</p>
       <h2 class="section-title">Local Plumbing Work, Done Right</h2>
-      <p class="section-sub">Quality results for Ocean Grove homeowners, inside and out.</p>
+      <p class="section-sub">Real jobs, real results — for Ocean Grove homeowners and across the Bellarine Peninsula.</p>
+
+      <!-- Mobile: carousel -->
       <div class="gallery-carousel">
         <div class="gallery-track-wrap">
           <div class="gallery-track" id="galleryTrack">
-            <div class="gallery-slide">
-              <div class="gallery-item">
-                <img src="images/gallery/project-1.jpg" alt="Residential plumbing job, Pipedreams Plumbing" />
-              </div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item">
-                <img src="images/gallery/project-2.jpg" alt="Professional plumbing work, Pipedreams Plumbing" />
-              </div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item">
-                <img src="images/gallery/project-3.jpg" alt="Plumbing repair and maintenance, Pipedreams Plumbing" />
-              </div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item">
-                <img src="images/gallery/project-4.jpg" alt="Quality plumbing services, Pipedreams Plumbing" />
-              </div>
-            </div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32308856_195631411077264_4517187224562827264_n.jpg" alt="Plumbing work by Pipedreams Plumbing" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32327042_195632841077121_1716917213845258240_n.jpg" alt="Residential plumbing job, Pipedreams Plumbing" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32337212_195631444410594_1336887555328573440_n.jpg" alt="Professional plumbing work, Ocean Grove" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32349427_195631437743928_4730145283785097216_n.jpg" alt="Pipedreams Plumbing on the job" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32381157_195632801077125_6636165896173780992_n.jpg" alt="Plumbing repair and installation" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32405625_195632754410463_762825851497611264_n.jpg" alt="Quality plumbing services, Bellarine Peninsula" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32446745_195632837743788_9179530380791775232_n.jpg" alt="Local plumbing work, Ocean Grove" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32458542_195632794410459_8931500739616833536_n.jpg" alt="Pipedreams Plumbing completed job" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_32480653_195631501077255_7486616227335372800_n.jpg" alt="Residential plumbing service, Ocean Grove" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_475677217_1596025637704494_6724847128445089725_n.jpg" alt="Pipedreams Plumbing team at work" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_476804160_1600551263918598_9158269820678558595_n.jpg" alt="Plumbing installation and repair" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/imgi_34_477796020_1600551230585268_4540883454140831854_n.jpg" alt="Quality plumbing, Ocean Grove VIC" loading="lazy" /></div></div>
           </div>
         </div>
         <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">
@@ -369,6 +373,22 @@
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
         </button>
         <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+
+      <!-- Desktop: grid -->
+      <div class="gallery-grid">
+        <img src="images/gallery/imgi_34_32308856_195631411077264_4517187224562827264_n.jpg" alt="Plumbing work by Pipedreams Plumbing" />
+        <img src="images/gallery/imgi_34_32327042_195632841077121_1716917213845258240_n.jpg" alt="Residential plumbing job, Pipedreams Plumbing" loading="lazy" />
+        <img src="images/gallery/imgi_34_32337212_195631444410594_1336887555328573440_n.jpg" alt="Professional plumbing work, Ocean Grove" loading="lazy" />
+        <img src="images/gallery/imgi_34_32349427_195631437743928_4730145283785097216_n.jpg" alt="Pipedreams Plumbing on the job" loading="lazy" />
+        <img src="images/gallery/imgi_34_32381157_195632801077125_6636165896173780992_n.jpg" alt="Plumbing repair and installation" loading="lazy" />
+        <img src="images/gallery/imgi_34_32405625_195632754410463_762825851497611264_n.jpg" alt="Quality plumbing services, Bellarine Peninsula" loading="lazy" />
+        <img src="images/gallery/imgi_34_32446745_195632837743788_9179530380791775232_n.jpg" alt="Local plumbing work, Ocean Grove" loading="lazy" />
+        <img src="images/gallery/imgi_34_32458542_195632794410459_8931500739616833536_n.jpg" alt="Pipedreams Plumbing completed job" loading="lazy" />
+        <img src="images/gallery/imgi_34_32480653_195631501077255_7486616227335372800_n.jpg" alt="Residential plumbing service, Ocean Grove" loading="lazy" />
+        <img src="images/gallery/imgi_34_475677217_1596025637704494_6724847128445089725_n.jpg" alt="Pipedreams Plumbing team at work" loading="lazy" />
+        <img src="images/gallery/imgi_34_476804160_1600551263918598_9158269820678558595_n.jpg" alt="Plumbing installation and repair" loading="lazy" />
+        <img src="images/gallery/imgi_34_477796020_1600551230585268_4540883454140831854_n.jpg" alt="Quality plumbing, Ocean Grove VIC" loading="lazy" />
       </div>
     </div>
   </section>
@@ -499,7 +519,7 @@
     <a href="tel:+61403694864" class="mobile-bar-btn">Call 0403 694 864 Now. Available Today.</a>
   </div>
 
-  <!-- Gallery JS -->
+  <!-- Gallery JS (mobile carousel only) -->
   <script>
   (function(){
     const track    = document.getElementById('galleryTrack');
