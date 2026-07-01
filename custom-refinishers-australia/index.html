@@ -16,7 +16,7 @@
       --accent:       #E6B800;
       --accent-dark:  #b89200;
       --bg:           #ffffff;
-      --bg-alt:       #ffffff;
+      --bg-alt:       #f8fafc;
       --fg:           #161E31;
       --muted:        #64748b;
       --border:       #e2e8f0;
@@ -31,7 +31,7 @@
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .95rem; cursor: pointer; border: none; transition: all .2s; }
     .btn-accent { background: var(--accent); color: var(--primary); }
     .btn-accent:hover { background: var(--accent-dark); }
-    .section-label { display: none; }
+    .section-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
     .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
     .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
     .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
@@ -87,8 +87,7 @@
     .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
     .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
     .service-card h3 { font-weight: 700; font-size: .95rem; margin-bottom: .4rem; }
-    .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.6; }
-    @media(min-width:640px) { .service-card p { display: block; } }
+    .service-card p { color: var(--muted); font-size: .82rem; line-height: 1.6; }
 
     /* How We Work */
     #how { padding: 4rem 1.25rem; background: var(--bg); }
@@ -104,21 +103,29 @@
     /* Gallery */
     #gallery { background: var(--bg); padding: 4rem 1.25rem; }
     @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+    /* Mobile carousel */
     .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
-    @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+    @media(min-width:768px) { .gallery-carousel { display: none; } }
     .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
     .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
     .gallery-track.dragging { cursor: grabbing; transition: none; }
     .gallery-slide { flex: 0 0 100%; user-select: none; }
-    .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+    .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; cursor: pointer; }
     .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
     .gallery-btn:disabled { opacity: .2; pointer-events: none; }
     .gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
     .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
     .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; cursor: pointer; }
     .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+    /* Desktop grid */
+    .gallery-grid { display: none; margin-top: 1.5rem; }
+    @media(min-width:768px) {
+      .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }
+      .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; transition: transform .3s, box-shadow .3s; }
+      .gallery-grid img:hover { transform: scale(1.02); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
+    }
 
     /* Testimonials */
     #testimonials { padding: 4rem 1.25rem; background: var(--bg-alt); }
@@ -319,27 +326,45 @@
       <p class="section-label">Our Work</p>
       <h2 class="section-title">Recent Work</h2>
       <p class="section-sub">A sample of custom paint and refinishing projects completed at our Inglewood workshop.</p>
+
+      <!-- Mobile: carousel -->
       <div class="gallery-carousel">
         <div class="gallery-track-wrap">
           <div class="gallery-track" id="galleryTrack">
-            <div class="gallery-slide">
-              <div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Silver car mid-refinish in the workshop, Custom Refinishers Australia" loading="lazy" /></div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Custom painted motorcycle with chrome detail work, Custom Refinishers Australia" loading="lazy" /></div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Blue Chrysler with airbrushed custom artwork, Custom Refinishers Australia" loading="lazy" /></div>
-            </div>
-            <div class="gallery-slide">
-              <div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="White work truck custom paint finish, Custom Refinishers Australia" loading="lazy" /></div>
-            </div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/38840301_1777297895640990_3045284876908494848_n.jpg" alt="Custom refinishing project, Custom Refinishers Australia" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/42678873_1841788945858551_1892505767647379456_n.jpg" alt="Automotive respray work, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/46479965_1905860506118061_2154750487851696128_n.jpg" alt="Custom paint finish, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/49587780_1971227036248074_6377794351707193344_n.jpg" alt="Vehicle refinishing, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/50724796_2003270659710378_4248142978423455744_n.jpg" alt="Panel respray detail, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/51223831_2010401962330581_1108622142469046272_n.jpg" alt="Custom paint and airbrushing, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/60467563_2170568762980566_2789239727247589376_n.jpg" alt="Completed refinishing job, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/68884197_2329726177064823_8080869027691364352_n.jpg" alt="Custom vehicle paintwork, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/70937654_2367869833250457_608877739524489216_n.jpg" alt="Automotive paint finish, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/482026518_963093662608611_5415547137952351214_n.jpg" alt="Refinishing project, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/482253158_964686685782642_7788047246232033636_n.jpg" alt="Custom paint detail work, Custom Refinishers Australia" loading="lazy" /></div></div>
+            <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/484151690_967343515516959_1558259236192324384_n.jpg" alt="Workshop refinishing result, Custom Refinishers Australia" loading="lazy" /></div></div>
           </div>
         </div>
         <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous">&#8592;</button>
         <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next">&#8594;</button>
       </div>
       <div class="gallery-dots" id="galleryDots"></div>
+
+      <!-- Desktop: grid -->
+      <div class="gallery-grid">
+        <img src="images/gallery/38840301_1777297895640990_3045284876908494848_n.jpg" alt="Custom refinishing project, Custom Refinishers Australia" />
+        <img src="images/gallery/42678873_1841788945858551_1892505767647379456_n.jpg" alt="Automotive respray work, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/46479965_1905860506118061_2154750487851696128_n.jpg" alt="Custom paint finish, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/49587780_1971227036248074_6377794351707193344_n.jpg" alt="Vehicle refinishing, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/50724796_2003270659710378_4248142978423455744_n.jpg" alt="Panel respray detail, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/51223831_2010401962330581_1108622142469046272_n.jpg" alt="Custom paint and airbrushing, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/60467563_2170568762980566_2789239727247589376_n.jpg" alt="Completed refinishing job, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/68884197_2329726177064823_8080869027691364352_n.jpg" alt="Custom vehicle paintwork, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/70937654_2367869833250457_608877739524489216_n.jpg" alt="Automotive paint finish, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/482026518_963093662608611_5415547137952351214_n.jpg" alt="Refinishing project, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/482253158_964686685782642_7788047246232033636_n.jpg" alt="Custom paint detail work, Custom Refinishers Australia" loading="lazy" />
+        <img src="images/gallery/484151690_967343515516959_1558259236192324384_n.jpg" alt="Workshop refinishing result, Custom Refinishers Australia" loading="lazy" />
+      </div>
     </div>
   </section>
 
