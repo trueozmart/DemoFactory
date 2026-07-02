@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coly Hardware | Hardware Store | Coleambally NSW</title>
+<meta name="description" content="Coly Hardware, Coleambally's trusted local hardware store. Tools, building and garden supplies for homes and trades. Servicing the Riverina. Call 0481 480 020." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --primary:      #161E31;
+  --primary-fg:   #ffffff;
+  --accent:       #E6B800;
+  --accent-dark:  #b89200;
+  --bg:           #ffffff;
+  --bg-alt:       #ffffff;
+  --fg:           #161E31;
+  --muted:        #64748b;
+  --border:       #e2e8f0;
+  --card:         #ffffff;
+  --radius:       12px;
+  --font-display: 'Merriweather', serif;
+  --font-body:    'Inter', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--fg); line-height: 1.5; -webkit-font-smoothing: antialiased; background: var(--bg); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section { padding: 4rem 1.25rem; }
+@media(min-width:768px) { .section { padding: 5rem 2rem; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .9rem; transition: all .2s; border: none; cursor: pointer; }
+.btn-accent { background: var(--accent); color: var(--primary); }
+.btn-accent:hover { background: var(--accent-dark); }
+
+/* Header */
+#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
+@media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
+.header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+.header-right { display: flex; align-items: center; gap: 1rem; }
+.header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
+@media(min-width:768px) { .header-phone { display: block; } }
+
+/* Hero */
+#hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
+@media(min-width:768px) { #hero { padding-top: 76px; } }
+.hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
+@media(max-width:767px) { .hero-bg { background-position: 60% center; } }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+.hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
+.hero-stars { color: var(--accent); letter-spacing: 1px; }
+.hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+.accent { color: var(--accent); }
+.hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+.hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+.hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
+.hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+
+/* Section headings */
+.section-label { display: none; }
+.section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+.section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
+
+/* Fade animation */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeInUp .6s ease-out forwards; }
+.d1 { animation-delay: .1s; opacity: 0; }
+.d2 { animation-delay: .2s; opacity: 0; }
+.d3 { animation-delay: .3s; opacity: 0; }
+.d4 { animation-delay: .4s; opacity: 0; }
+
+/* Cards */
+.why-grid, .contact-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media(min-width:768px) { .why-grid, .contact-grid { grid-template-columns: repeat(3,1fr); } }
+.why-card, .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .2s; }
+.why-card:hover, .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+.icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.icon-blue   { background: #dbeafe; color: #2563eb; }
+.icon-green  { background: #d1fae5; color: #059669; }
+.icon-purple { background: #ede9fe; color: #7c3aed; }
+.icon-gold   { background: #fef3c7; color: #d97706; }
+.why-card h3 { font-size: 1.1rem; margin-bottom: .6rem; }
+.why-card p, .contact-card p { color: var(--muted); font-size: .92rem; line-height: 1.65; }
+.contact-card h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+.contact-card a { color: var(--fg); font-weight: 700; }
+
+/* Services grid */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+@media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.service-card { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; }
+.service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
+.service-card h3 { font-size: 1rem; margin-bottom: .4rem; }
+.service-card p { display: none; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+@media(min-width:640px) { .service-card p { display: block; } }
+
+/* How We Work */
+.how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+.how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; }
+.how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.how-step-body { flex: 1; }
+.how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+.how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
+
+/* Gallery */
+#gallery { background: var(--bg); padding: 4rem 1.25rem; }
+@media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+.gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
+@media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+.gallery-track-wrap { overflow: hidden; border-radius: 10px; }
+.gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
+.gallery-track.dragging { cursor: grabbing; transition: none; }
+.gallery-slide { flex: 0 0 100%; user-select: none; }
+.gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+.gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
+.gallery-btn:disabled { opacity: .2; pointer-events: none; }
+.gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
+.gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+.gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+/* Testimonials */
+#testimonials { background: var(--bg-alt); }
+.testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
+.testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; }
+.testi-scroll::-webkit-scrollbar { display: none; }
+.testi-grid-desktop { display: none; }
+.testi-stars { color: var(--accent); margin-bottom: .75rem; letter-spacing: 1px; }
+.testi-text { color: var(--fg); font-size: .95rem; line-height: 1.7; margin-bottom: 1rem; }
+.testi-name { font-weight: 700; font-size: .9rem; }
+.testi-loc { color: var(--muted); font-size: .82rem; }
+@media(min-width:768px) {
+  .testi-scroll { display: none; }
+  .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .testi-card { width: auto; flex-shrink: unset; }
+}
+
+/* Contact CTA */
+.contact-cta-wrap { text-align: center; margin-top: 2rem; }
+
+/* Footer */
+#footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
+@media(min-width:768px) { #footer { padding: 4rem 2rem 0; } }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid { display: grid; gap: 2.5rem; }
+@media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+.footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
+.footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
+.footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
+.footer-stars { color: var(--accent); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+.footer-stars span { color: rgba(255,255,255,.7); font-size: .85rem; }
+.footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
+.footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
+.footer-list li { display: flex; align-items: center; gap: .6rem; }
+.footer-list li::before { content: '\2713'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+.footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
+.footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
+.footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
+.footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
+
+/* Mobile bar */
+#mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+@media(min-width:768px) { #mobile-bar { display: none; } }
+.mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
+body { padding-bottom: 64px; }
+@media(min-width:768px) { body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Coly Hardware</span>
+    <div class="header-right">
+      <span class="header-phone">0481 480 020</span>
+      <a href="tel:+61481480020" class="btn btn-accent">Call Us</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1"><span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 (37 Reviews)</div>
+    <h1 class="hero-h1 fade-up d2">Coly <span class="accent">Hardware</span></h1>
+    <p class="hero-sub1 fade-up d3">Coleambally's Trusted Local Hardware Store</p>
+    <p class="hero-sub2 fade-up d3">Stocking everything from tools and building supplies to garden and agricultural essentials, proudly serving Coleambally, Darlington Point, Whitton and the wider Riverina region.</p>
+    <div class="hero-cta fade-up d4">
+      <a href="tel:+61481480020" class="btn btn-accent">&#9742; Call 0481 480 020</a>
+    </div>
+    <p class="hero-trust fade-up d4">Friendly advice &bull; Wide range in stock &bull; Proudly local</p>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="section-inner">
+    <p class="section-label">Why Coly Hardware</p>
+    <h2 class="section-title">A Hardware Store Built Around the Community</h2>
+    <p class="section-sub">From weekend fix-its to full trade orders, we stock what the Riverina needs and back it up with advice you can trust.</p>
+    <div class="why-grid">
+      <div class="why-card fade-up d1">
+        <div class="icon-badge icon-blue">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Trusted Tools, Trusted Brands</h3>
+        <p>From hand tools to building supplies, we stock a wide range of hardware products so you can get the right gear for the job, the first time. Every product on our shelves is chosen for quality and reliability.</p>
+      </div>
+      <div class="why-card fade-up d2">
+        <div class="icon-badge icon-green">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </div>
+        <h3>Friendly, Knowledgeable Advice</h3>
+        <p>Whether you're a homeowner tackling a weekend job or a tradesperson stocking up for the week, our team takes the time to help you find exactly what you need, with no jargon and no upselling.</p>
+      </div>
+      <div class="why-card fade-up d3">
+        <div class="icon-badge icon-purple">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a8 8 0 0 1 16 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Proudly Serving Coleambally and the Riverina</h3>
+        <p>As a local, family-run hardware store, we understand the needs of homes, farms and trades across the region. We're part of this community, not just a supplier to it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-inner">
+    <p class="section-label">What We Stock</p>
+    <h2 class="section-title">Everything for the Job, Under One Roof</h2>
+    <p class="section-sub">A full range of hardware, building and garden supplies for homes, farms and trades across the Riverina.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up d1">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Hand &amp; Power Tools</h3>
+        <p>A full range of hand tools and power tools for trade and home use.</p>
+      </div>
+      <div class="service-card fade-up d2">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        <h3>Building &amp; Timber Supplies</h3>
+        <p>Timber, fixings and building materials for renovations and repairs.</p>
+      </div>
+      <div class="service-card fade-up d3">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 22v-6"/><path d="M4.93 4.93l4.24 4.24"/><path d="M14.83 14.83l4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3>Garden &amp; Agricultural Supplies</h3>
+        <p>Seeds, fertiliser, watering gear and farm essentials for the Riverina.</p>
+      </div>
+      <div class="service-card fade-up d4">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M3 21l3-1 11-11-2-2L4 18l-1 3z"/></svg>
+        <h3>Paint &amp; Finishing Products</h3>
+        <p>Paints, brushes and finishing supplies for interior and exterior jobs.</p>
+      </div>
+      <div class="service-card fade-up d1">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Hardware, Fixings &amp; Fasteners</h3>
+        <p>Screws, bolts, brackets and general hardware for every project.</p>
+      </div>
+      <div class="service-card fade-up d2">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M9 21V12h6v9"/></svg>
+        <h3>Home Maintenance Essentials</h3>
+        <p>Practical products to keep your home and property in good repair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section" style="background:#fafafa;">
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Simple, Friendly and Local</h2>
+    <p class="section-sub">Getting what you need from Coly Hardware is as easy as a phone call or a walk through the door.</p>
+    <div class="how-grid">
+      <div class="how-step fade-up d1">
+        <div class="how-num">1</div>
+        <div class="how-step-body"><h3>Call or Drop In</h3><p>Give us a call or pop into the store on Kestrel Rd. No appointment needed, we're always happy to help.</p></div>
+      </div>
+      <div class="how-step fade-up d2">
+        <div class="how-num">2</div>
+        <div class="how-step-body"><h3>Tell Us What You Need</h3><p>Let us know the job you're tackling, big or small, and we'll point you to the right tools, materials or supplies.</p></div>
+      </div>
+      <div class="how-step fade-up d3">
+        <div class="how-num">3</div>
+        <div class="how-step-body"><h3>Get Expert Advice</h3><p>Our team draws on years of local hardware experience to make sure you leave with exactly what the job requires.</p></div>
+      </div>
+      <div class="how-step fade-up d4">
+        <div class="how-num">4</div>
+        <div class="how-step-body"><h3>Ready to Get the Job Done</h3><p>Head off with quality products and honest advice behind you, ready to get stuck into the job.</p></div>
+      </div>
+    </div>
+    <a href="tel:+61481480020" class="how-cta">&#9742; Call 0481 480 020</a>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="section-inner">
+    <p class="section-label">Around the Store</p>
+    <h2 class="section-title">Take a Look Inside</h2>
+    <p class="section-sub">A well-stocked, easy to shop hardware store right in the heart of Coleambally.</p>
+    <div class="gallery-carousel">
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Organised store aisle with tools and DIY supplies, Coly Hardware" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Wall display of hand tools and hardware, Coly Hardware" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Bright store aisle with building and hardware supplies, Coly Hardware" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Garden and agricultural supplies on display, Coly Hardware" loading="lazy" /></div></div>
+        </div>
+      </div>
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8592;</button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8594;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <p class="section-label">What Locals Say</p>
+    <h2 class="section-title">Trusted by the Coleambally Community</h2>
+    <p class="section-sub">Real feedback from homeowners, tradespeople and farmers across the Riverina.</p>
+
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Found everything I needed for our fence rebuild in one trip, tools, timber and fittings. The range in a store this size is honestly impressive.</p>
+        <p class="testi-name">Sarah M.</p>
+        <p class="testi-loc">Coleambally, NSW</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Walked in not really sure what I needed for a leaking gutter and the bloke behind the counter talked me through it without making me feel silly. Fixed it that afternoon.</p>
+        <p class="testi-name">Dave T.</p>
+        <p class="testi-loc">Darlington Point, NSW</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">We used to drive to Griffith for hardware supplies until we gave Coly a go. Now it's our first stop, good prices, better advice and it's five minutes from home.</p>
+        <p class="testi-name">The Hendersons</p>
+        <p class="testi-loc">Whitton, NSW</p>
+      </div>
+    </div>
+
+    <div class="testi-grid-desktop">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Found everything I needed for our fence rebuild in one trip, tools, timber and fittings. The range in a store this size is honestly impressive.</p>
+        <p class="testi-name">Sarah M.</p>
+        <p class="testi-loc">Coleambally, NSW</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Walked in not really sure what I needed for a leaking gutter and the bloke behind the counter talked me through it without making me feel silly. Fixed it that afternoon.</p>
+        <p class="testi-name">Dave T.</p>
+        <p class="testi-loc">Darlington Point, NSW</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">We used to drive to Griffith for hardware supplies until we gave Coly a go. Now it's our first stop, good prices, better advice and it's five minutes from home.</p>
+        <p class="testi-name">The Hendersons</p>
+        <p class="testi-loc">Whitton, NSW</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section" style="background:#fafafa;">
+  <div class="section-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Visit or Call Coly Hardware</h2>
+    <p class="section-sub">7 Kestrel Rd, Coleambally NSW 2707. Friendly advice, no obligation.</p>
+    <div class="contact-grid">
+      <div class="contact-card fade-up d1">
+        <h3>Call Us</h3>
+        <p><a href="tel:+61481480020">0481 480 020</a></p>
+        <p>Friendly advice, no obligation</p>
+      </div>
+      <div class="contact-card fade-up d2">
+        <h3>Service Area</h3>
+        <p>Servicing Coleambally, Darlington Point, Whitton, Griffith and the surrounding Riverina region.</p>
+      </div>
+      <div class="contact-card fade-up d3">
+        <h3>Our Rating</h3>
+        <p class="hero-stars" style="font-size:1.1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p>5.0 (37 Reviews)</p>
+      </div>
+    </div>
+    <div class="contact-cta-wrap">
+      <a href="tel:+61481480020" class="btn btn-accent">&#9742; Call 0481 480 020</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo-text">Coly Hardware</span>
+        <p class="footer-about">Coly Hardware is Coleambally's local hardware store, stocking tools, building supplies and garden essentials for homeowners and tradespeople alike. Friendly service and honest advice, every time.</p>
+        <p class="footer-suburbs">Proudly servicing Coleambally, Darlington Point, Whitton and the Riverina region.</p>
+        <div class="footer-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>5.0 (37 Reviews)</span></div>
+      </div>
+      <div>
+        <p class="footer-heading">What We Stock</p>
+        <ul class="footer-list">
+          <li>Hand &amp; Power Tools</li>
+          <li>Building &amp; Timber Supplies</li>
+          <li>Garden &amp; Agricultural Supplies</li>
+          <li>Paint &amp; Finishing Products</li>
+          <li>Hardware, Fixings &amp; Fasteners</li>
+          <li>Home Maintenance Essentials</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+61481480020">0481 480 020</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a8 8 0 0 1 16 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>7 Kestrel Rd, Coleambally NSW 2707</span>
+        </div>
+        <a href="tel:+61481480020" class="footer-contact-cta">Call Us</a>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Coly Hardware. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61481480020" class="mobile-bar-btn">Call 0481 480 020</a>
+</div>
+
+<script>
+(function(){
+  const track    = document.getElementById('galleryTrack');
+  const slides   = track.querySelectorAll('.gallery-slide');
+  const btnPrev  = document.getElementById('galPrev');
+  const btnNext  = document.getElementById('galNext');
+  const dotsWrap = document.getElementById('galleryDots');
+  const total    = slides.length;
+  let current    = 0;
+
+  function maxIndex()   { return total - 1; }
+  function slideWidth() { return track.parentElement.offsetWidth; }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'gallery-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', 'Image ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    track.style.transform = 'translateX(-' + (current * slideWidth()) + 'px)';
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex();
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  let startX = 0, isDragging = false, dragDelta = 0;
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; track.classList.add('dragging'); });
+  window.addEventListener('mousemove', e => { if (!isDragging) return; dragDelta = e.clientX - startX; });
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false; track.classList.remove('dragging');
+    if (dragDelta < -50) goTo(current + 1);
+    else if (dragDelta > 50) goTo(current - 1);
+    dragDelta = 0;
+  });
+
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx < -50) goTo(current + 1);
+    else if (dx > 50) goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+  buildDots();
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>
