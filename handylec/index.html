@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Handylec | Electrician | Australia</title>
+<meta name="description" content="Handylec delivers safe, reliable electrical repairs, installations and safety inspections for homes and businesses across Australia. Call 0423 635 587 for a free quote.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --primary:      #161E31;
+  --primary-fg:   #ffffff;
+  --accent:       #E6B800;
+  --accent-dark:  #b89200;
+  --bg:           #ffffff;
+  --bg-alt:       #ffffff;
+  --fg:           #161E31;
+  --muted:        #64748b;
+  --border:       #e2e8f0;
+  --card:         #ffffff;
+  --radius:       12px;
+  --font-display: 'Merriweather', serif;
+  --font-body:    'Inter', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+section { padding: 4rem 1.25rem; }
+@media(min-width:768px) { section { padding: 5rem 2rem; } }
+.btn { display: inline-block; border-radius: var(--radius); font-weight: 700; padding: .8rem 1.75rem; text-align: center; transition: all .2s; }
+.btn-accent { background: var(--accent); color: var(--primary); }
+.btn-accent:hover { background: var(--accent-dark); }
+
+/* Header */
+#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
+@media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
+.header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+.header-right { display: flex; align-items: center; gap: 1rem; }
+.header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
+@media(min-width:768px) { .header-phone { display: block; } }
+
+/* Hero */
+#hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
+@media(min-width:768px) { #hero { padding-top: 76px; } }
+.hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
+@media(max-width:767px) { .hero-bg { background-position: 60% center; } }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+.hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
+.hero-stars { color: var(--accent); letter-spacing: 1px; }
+.hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+.accent { color: var(--accent); }
+.hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+.hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+.hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
+.hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.fade-up { animation: fadeInUp .6s ease-out forwards; }
+.d1 { animation-delay: .1s; opacity: 0; } .d2 { animation-delay: .2s; opacity: 0; } .d3 { animation-delay: .3s; opacity: 0; } .d4 { animation-delay: .4s; opacity: 0; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Section heading */
+.section-label { display: none; }
+.section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+.section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
+
+/* Why cards */
+.why-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media(min-width:768px) { .why-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .2s; }
+.why-card:hover, .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+.icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.icon-blue   { background: #dbeafe; color: #2563eb; }
+.icon-green  { background: #d1fae5; color: #059669; }
+.icon-purple { background: #ede9fe; color: #7c3aed; }
+.why-card h3 { font-size: 1.05rem; margin-bottom: .6rem; font-weight: 700; }
+.why-card p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+
+/* Services */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+@media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.service-card { text-align: center; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1rem; transition: all .2s; }
+.service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
+.service-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+.service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+@media(min-width:640px) { .service-card p { display: block; } }
+
+/* How We Work */
+.how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+.how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; }
+.how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.how-step-body { flex: 1; }
+.how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+.how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
+
+/* Gallery */
+#gallery { background: var(--bg); padding: 4rem 1.25rem; }
+@media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+.gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
+@media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+.gallery-track-wrap { overflow: hidden; border-radius: 10px; }
+.gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
+.gallery-track.dragging { cursor: grabbing; transition: none; }
+.gallery-slide { flex: 0 0 100%; user-select: none; }
+.gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+.gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
+.gallery-btn:disabled { opacity: .2; pointer-events: none; }
+.gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
+.gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+.gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+/* Testimonials */
+.testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; margin-top: 1.5rem; }
+.testi-scroll::-webkit-scrollbar { display: none; }
+.testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
+.testi-grid-desktop { display: none; }
+@media(min-width:768px) {
+  .testi-scroll { display: none; }
+  .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+  .testi-card { width: auto; flex-shrink: unset; }
+}
+.testi-stars { color: var(--accent); margin-bottom: .75rem; }
+.testi-body { font-size: .92rem; color: var(--fg); line-height: 1.7; margin-bottom: 1rem; }
+.testi-name { font-weight: 700; font-size: .9rem; }
+.testi-loc { color: var(--muted); font-size: .82rem; }
+
+/* Contact */
+#contact { background: var(--bg-alt); }
+.contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto 2rem; }
+@media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3, 1fr); } }
+.contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+.contact-card h3 { font-size: 1rem; margin-bottom: .5rem; font-weight: 700; }
+.contact-card p, .contact-card a { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+.contact-card a.phone-link { color: var(--fg); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: .3rem; }
+.contact-cta-wrap { text-align: center; }
+
+/* Footer */
+#footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
+@media(min-width:768px) { #footer { padding: 4rem 2rem 0; } }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid { display: grid; gap: 2.5rem; }
+@media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+.footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
+.footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
+.footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
+.footer-stars { color: var(--accent); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+.footer-stars span { color: rgba(255,255,255,.7); font-size: .85rem; }
+.footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
+.footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
+.footer-list li { display: flex; align-items: center; gap: .6rem; }
+.footer-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+.footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
+.footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
+.footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
+.footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
+
+/* Mobile bar */
+#mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+@media(min-width:768px) { #mobile-bar { display: none; } }
+.mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
+body { padding-bottom: 68px; }
+@media(min-width:768px) { body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Handylec</span>
+    <div class="header-right">
+      <span class="header-phone">0423 635 587</span>
+      <a href="tel:+61423635587" class="btn btn-accent">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (37 Reviews)</div>
+    <h1 class="hero-h1 fade-up d2">Handylec <span class="accent">Electrical</span></h1>
+    <p class="hero-sub1 fade-up d3">The Go-To Team for Safe, Expert Electrical Work</p>
+    <p class="hero-sub2 fade-up d3">Professional electrician providing safe, reliable installations, repairs and maintenance for homes and businesses, backed by full compliance with Australian electrical standards.</p>
+    <div class="hero-cta fade-up d4">
+      <a href="tel:+61423635587" class="btn btn-accent">&#9742; Call 0423 635 587</a>
+    </div>
+    <p class="hero-trust fade-up d4">&#9889; Available now &bull; Licensed &amp; Insured &bull; Upfront pricing</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">Why Handylec</p>
+    <h2 class="section-title">Electrical Work Done Right, Every Time</h2>
+    <p class="section-sub">From small repairs to full installations, every job is handled with the same care and attention to safety.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge icon-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3>Safety-First Electrical Work</h3>
+        <p>Every job at Handylec is completed to Australian electrical standards, with careful testing and clean workmanship from start to finish. No shortcuts, no guesswork.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3>Clear Communication, Every Step</h3>
+        <p>Handylec explains the work in plain language before it starts, so homeowners and business owners always know what to expect and why. No surprises on the day.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+        <h3>Experience Across Australian Homes</h3>
+        <p>From older properties with dated wiring to modern builds, Handylec knows what to look for and how to bring electrical systems up to a safe, compliant standard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--bg-alt);">
+  <div class="section-inner">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Electrical Services We Provide</h2>
+    <p class="section-sub">Reliable, fully compliant electrical work for residential and commercial properties.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+        <h3>Residential Repairs</h3>
+        <p>Fast, reliable fixes for faults, outlets and switches in the home.</p>
+      </div>
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <h3>Electrical Installations</h3>
+        <p>New wiring, outlets and fittings installed safely and to code.</p>
+      </div>
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path></svg>
+        <h3>Commercial Electrical</h3>
+        <p>Reliable electrical work for offices, shops and small businesses.</p>
+      </div>
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.7.5 1 1.3 1 2.3h6c0-1 .3-1.8 1-2.3A7 7 0 0 0 12 2z"></path></svg>
+        <h3>Lighting Installation</h3>
+        <p>Indoor and outdoor lighting fitted cleanly and to a high finish.</p>
+      </div>
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <h3>Safety Inspections</h3>
+        <p>Thorough checks that identify risks before they become problems.</p>
+      </div>
+      <div class="service-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"></path></svg>
+        <h3>Emergency Callouts</h3>
+        <p>Available now for urgent electrical faults and safety concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-inner">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">Simple, Straightforward, Start to Finish</h2>
+    <p class="section-sub">A clear process so you always know what happens next.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-body"><h3>Free Quote</h3><p>Call or send through the details and get a clear, obligation-free quote for the work.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-body"><h3>Plan the Work</h3><p>Handylec confirms the scope, timing and any parts needed before a spanner is picked up.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-body"><h3>Safe and Compliant Installation</h3><p>The work is carried out to Australian electrical standards, with careful attention to safety and finish.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-step-body"><h3>Test and Sign-Off</h3><p>Everything is tested, explained in plain language, and the site is left clean before Handylec leaves.</p></div>
+      </div>
+    </div>
+    <a href="tel:+61423635587" class="how-cta">&#9742; Call 0423 635 587</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-inner">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Recent Electrical Work</h2>
+    <p class="section-sub">A look at some of the installations and repairs completed by Handylec.</p>
+    <div class="gallery-carousel">
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Deck and outdoor maintenance work, Handylec"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Electrician at work on site, Handylec"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Installed outdoor wall light, Handylec"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Interior ceiling and lighting installation, Handylec"></div></div>
+        </div>
+      </div>
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8592;</button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8594;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" style="background:var(--bg-alt);">
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-sub">Real feedback from homes and businesses Handylec has worked with.</p>
+
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Handylec fixed our switchboard and installed new outdoor lighting exactly on time. The wiring is neat, everything's clearly labelled, and it's obvious they take pride in getting the small details right.</p>
+        <div class="testi-name">Sarah M.</div>
+        <div class="testi-loc">Homeowner</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">I was nervous about who to call for an electrical fault at home, but the team explained everything clearly before starting and left the place spotless. Genuinely reassuring to deal with.</p>
+        <div class="testi-name">James &amp; Priya T.</div>
+        <div class="testi-loc">Homeowners</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">We got a few quotes before choosing Handylec and I'm glad we did. Fast response, fair price, and the safety inspection gave us real peace of mind.</p>
+        <div class="testi-name">Michael R.</div>
+        <div class="testi-loc">Small Business Owner</div>
+      </div>
+    </div>
+
+    <div class="testi-grid-desktop">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Handylec fixed our switchboard and installed new outdoor lighting exactly on time. The wiring is neat, everything's clearly labelled, and it's obvious they take pride in getting the small details right.</p>
+        <div class="testi-name">Sarah M.</div>
+        <div class="testi-loc">Homeowner</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">I was nervous about who to call for an electrical fault at home, but the team explained everything clearly before starting and left the place spotless. Genuinely reassuring to deal with.</p>
+        <div class="testi-name">James &amp; Priya T.</div>
+        <div class="testi-loc">Homeowners</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">We got a few quotes before choosing Handylec and I'm glad we did. Fast response, fair price, and the safety inspection gave us real peace of mind.</p>
+        <div class="testi-name">Michael R.</div>
+        <div class="testi-loc">Small Business Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Get In Touch With Handylec</h2>
+    <p class="section-sub">Reach out for a free, no-obligation quote on your next electrical job.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <a href="tel:+61423635587" class="phone-link">0423 635 587</a>
+        <p>Free quotes, no obligation.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Service Area</h3>
+        <p>Servicing homes and businesses across Australia. Get in touch to confirm availability in your area.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Our Rating</h3>
+        <p style="color:var(--accent);font-size:1.1rem;margin-bottom:.2rem;">★★★★★</p>
+        <p>5.0 (37 Reviews)</p>
+      </div>
+    </div>
+    <div class="contact-cta-wrap">
+      <a href="tel:+61423635587" class="btn btn-accent">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo-text">Handylec</span>
+        <p class="footer-about">Handylec is a trusted electrical service delivering safe, reliable solutions for homes and businesses. From repairs to full installations, every job is completed to Australian safety standards.</p>
+        <p class="footer-suburbs">Proudly servicing homes and businesses across Australia.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (37 Reviews)</span></div>
+      </div>
+      <div>
+        <p class="footer-heading">Our Services</p>
+        <ul class="footer-list">
+          <li>Residential Repairs</li>
+          <li>Electrical Installations</li>
+          <li>Commercial Electrical</li>
+          <li>Lighting Installation</li>
+          <li>Safety Inspections</li>
+          <li>Emergency Callouts</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="tel:+61423635587">0423 635 587</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Licensed and Insured. Free quotes.</span>
+        </div>
+        <a href="tel:+61423635587" class="footer-contact-cta">Get a Quote</a>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Handylec. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61423635587" class="mobile-bar-btn">Call 0423 635 587 for a Free Quote</a>
+</div>
+
+<script>
+(function(){
+  const track    = document.getElementById('galleryTrack');
+  const slides   = track.querySelectorAll('.gallery-slide');
+  const btnPrev  = document.getElementById('galPrev');
+  const btnNext  = document.getElementById('galNext');
+  const dotsWrap = document.getElementById('galleryDots');
+  const total    = slides.length;
+  let current    = 0;
+
+  function maxIndex()   { return total - 1; }
+  function slideWidth() { return track.parentElement.offsetWidth; }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'gallery-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', 'Image ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    track.style.transform = 'translateX(-' + (current * slideWidth()) + 'px)';
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex();
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  let startX = 0, isDragging = false, dragDelta = 0;
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; track.classList.add('dragging'); });
+  window.addEventListener('mousemove', e => { if (!isDragging) return; dragDelta = e.clientX - startX; });
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false; track.classList.remove('dragging');
+    if (dragDelta < -50) goTo(current + 1);
+    else if (dragDelta > 50) goTo(current - 1);
+    dragDelta = 0;
+  });
+
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx < -50) goTo(current + 1);
+    else if (dx > 50) goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+  buildDots();
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>
