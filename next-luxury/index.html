@@ -110,21 +110,29 @@
   .how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
 
   #gallery { background: var(--bg); }
+  /* Mobile carousel */
   .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-  @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+  @media(min-width:768px) { .gallery-carousel { display: none; } }
   .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
   .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
   .gallery-track.dragging { cursor: grabbing; transition: none; }
   .gallery-slide { flex: 0 0 100%; user-select: none; }
-  .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+  .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-  .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+  .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; cursor: pointer; }
   .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
   .gallery-btn:disabled { opacity: .2; pointer-events: none; }
   .gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
   .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
-  .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+  .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; cursor: pointer; }
   .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+  /* Desktop grid */
+  .gallery-grid { display: none; margin-top: 1.5rem; }
+  @media(min-width:768px) {
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }
+    .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; transition: transform .3s, box-shadow .3s; }
+    .gallery-grid img:hover { transform: scale(1.02); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
+  }
 
   .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; margin-top: 1.5rem; }
   .testi-scroll::-webkit-scrollbar { display: none; }
@@ -308,13 +316,22 @@
     <p class="section-label">Our Work</p>
     <h2 class="section-title">Premium Results, Every Time</h2>
     <p class="section-sub">A look at the pristine standard we bring to every home and property we care for.</p>
+
+    <!-- Mobile: carousel -->
     <div class="gallery-carousel">
       <div class="gallery-track-wrap">
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Deck cleaning and detailing, Next Luxury" loading="lazy"></div></div>
-          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Pristine timber deck maintenance, Next Luxury" loading="lazy"></div></div>
-          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Well maintained property exterior, Next Luxury" loading="lazy"></div></div>
-          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Immaculately kept residential property, Next Luxury" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(1).webp" alt="Property care by Next Luxury" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(2).webp" alt="Premium property maintenance, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(3).webp" alt="Luxury property service, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(4).webp" alt="Immaculate property finish, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(5).webp" alt="Expert property care, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(6).webp" alt="High-end property maintenance, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(7).webp" alt="Premium home care, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Deck cleaning and detailing, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Pristine timber deck maintenance, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Well maintained property exterior, Next Luxury" loading="lazy" /></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Immaculately kept residential property, Next Luxury" loading="lazy" /></div></div>
         </div>
       </div>
       <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">
@@ -324,6 +341,21 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
       </button>
       <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+
+    <!-- Desktop: grid -->
+    <div class="gallery-grid">
+      <img src="images/gallery/unnamed%20(1).webp" alt="Property care by Next Luxury" />
+      <img src="images/gallery/unnamed%20(2).webp" alt="Premium property maintenance, Next Luxury" loading="lazy" />
+      <img src="images/gallery/unnamed%20(3).webp" alt="Luxury property service, Next Luxury" loading="lazy" />
+      <img src="images/gallery/unnamed%20(4).webp" alt="Immaculate property finish, Next Luxury" loading="lazy" />
+      <img src="images/gallery/unnamed%20(5).webp" alt="Expert property care, Next Luxury" loading="lazy" />
+      <img src="images/gallery/unnamed%20(6).webp" alt="High-end property maintenance, Next Luxury" loading="lazy" />
+      <img src="images/gallery/unnamed%20(7).webp" alt="Premium home care, Next Luxury" loading="lazy" />
+      <img src="images/gallery/project-1.jpg" alt="Deck cleaning and detailing, Next Luxury" loading="lazy" />
+      <img src="images/gallery/project-2.jpg" alt="Pristine timber deck maintenance, Next Luxury" loading="lazy" />
+      <img src="images/gallery/project-3.jpg" alt="Well maintained property exterior, Next Luxury" loading="lazy" />
+      <img src="images/gallery/project-4.jpg" alt="Immaculately kept residential property, Next Luxury" loading="lazy" />
     </div>
   </div>
 </section>
