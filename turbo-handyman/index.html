@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Turbo Handyman | Handyman Services | Western Sydney NSW</title>
-<meta name="description" content="Turbo Handyman, Western Sydney's go-to handyman service. General repairs, carpentry, maintenance and more. Servicing Parramatta, Blacktown, Penrith and surrounding areas. Call 0420 352 023 for a free quote.">
+<title>Turbo Handyman | Handyman | Baulkham Hills NSW</title>
+<meta name="description" content="Turbo Handyman, Baulkham Hills' go-to handyman specialists. General repairs, carpentry and property maintenance. Servicing Baulkham Hills, Castle Hill, Kellyville. Call 0420 352 023 for a free quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --primary:      #161E31;
     --primary-fg:   #ffffff;
@@ -26,11 +26,16 @@
     --font-body:    'Inter', sans-serif;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; padding-bottom: 76px; }
+  @media(min-width:768px) { body { padding-bottom: 0; } }
   a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
   img { max-width: 100%; display: block; }
-  .btn { display: inline-block; border-radius: var(--radius); font-weight: 700; cursor: pointer; border: none; }
-  .btn-accent { background: var(--accent); color: var(--primary); padding: .85rem 1.75rem; }
+  section { padding: 4rem 1.25rem; }
+  @media(min-width:768px) { section { padding: 5rem 2rem; } }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; border-radius: var(--radius); cursor: pointer; border: none; transition: all .2s; }
+  .btn-accent { background: var(--accent); color: var(--primary); padding: .75rem 1.5rem; }
   .btn-accent:hover { background: var(--accent-dark); }
 
   /* Header */
@@ -68,14 +73,13 @@
   .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
   .hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
 
-  /* Sections */
-  section { padding: 4rem 1.25rem; }
-  @media(min-width:768px) { section { padding: 5rem 2rem; } }
+  /* Section headings */
   .section-label { display: none; }
   .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
   .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
   .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
 
+  /* Fade animation */
   @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .fade-up { animation: fadeInUp .6s ease-out forwards; }
   .d1 { animation-delay: .1s; opacity: 0; }
@@ -86,22 +90,23 @@
   /* Why Choose Us */
   .why-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
   @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
-  .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s ease; }
+  .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s; }
   .why-card:hover, .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+  .why-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: .75rem; }
+  .why-card p { color: var(--muted); font-size: .92rem; line-height: 1.65; }
   .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
   .icon-blue   { background: #dbeafe; color: #2563eb; }
   .icon-green  { background: #d1fae5; color: #059669; }
   .icon-purple { background: #ede9fe; color: #7c3aed; }
-  .why-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: .6rem; }
-  .why-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
+  .icon-gold   { background: #fef3c7; color: #d97706; }
 
   /* Services */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
   @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
-  .service-card { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1rem; transition: all .25s ease; }
+  .service-card { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; transition: all .25s; }
   .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
-  .service-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: .4rem; }
-  .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+  .service-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+  .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.55; }
   @media(min-width:640px) { .service-card p { display: block; } }
 
   /* How We Work */
@@ -133,27 +138,28 @@
   .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
 
   /* Testimonials */
-  .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; }
+  .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-right: 1rem; }
+  .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-top: 1.5rem; }
   .testi-scroll::-webkit-scrollbar { display: none; }
-  .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: left; }
-  .testi-grid-desktop { display: none; }
+  .testi-grid-desktop { display: none; margin-top: 1.5rem; }
+  .testi-stars { color: var(--accent); margin-bottom: .75rem; letter-spacing: 1px; }
+  .testi-body { font-size: .92rem; line-height: 1.7; color: var(--fg); margin-bottom: 1rem; }
+  .testi-name { font-weight: 700; font-size: .9rem; }
+  .testi-loc { color: var(--muted); font-size: .82rem; }
   @media(min-width:768px) {
     .testi-scroll { display: none; }
     .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .testi-card { width: auto; flex-shrink: unset; }
+    .testi-card { width: auto; flex-shrink: unset; margin-right: 0; }
   }
-  .testi-stars { color: var(--accent); margin-bottom: .75rem; letter-spacing: 1px; }
-  .testi-text { color: var(--fg); font-size: .92rem; line-height: 1.7; margin-bottom: 1rem; }
-  .testi-name { font-weight: 700; font-size: .9rem; }
-  .testi-loc { color: var(--muted); font-size: .82rem; }
 
   /* Contact */
-  .contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto 2rem; }
+  .contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto 2.5rem; }
   @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3, 1fr); } }
   .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
-  .contact-card h3 { font-size: 1rem; margin-bottom: .5rem; font-family: var(--font-display); }
-  .contact-card p, .contact-card a { color: var(--muted); font-size: .9rem; line-height: 1.6; }
-  .contact-card a.phone-link { color: var(--fg); font-weight: 700; font-size: 1.05rem; }
+  .contact-card h3 { font-size: 1rem; margin-bottom: .5rem; }
+  .contact-card p, .contact-card a { color: var(--muted); font-size: .9rem; }
+  .contact-card a.phone-link { color: var(--fg); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: .35rem; }
+  .contact-cta-wrap { text-align: center; }
 
   /* Footer */
   #footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
@@ -169,20 +175,17 @@
   .footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
   .footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
   .footer-list li { display: flex; align-items: center; gap: .6rem; }
-  .footer-list li::before { content: '\2713'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+  .footer-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
   .footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
   .footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
   .footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
   .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
   .footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
 
-  /* Mobile bar */
+  /* Mobile sticky call bar */
   #mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
   @media(min-width:768px) { #mobile-bar { display: none; } }
   .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
-
-  body { padding-bottom: 70px; }
-  @media(min-width:768px) { body { padding-bottom: 0; } }
 </style>
 </head>
 <body>
@@ -192,7 +195,7 @@
     <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Turbo Handyman</span>
     <div class="header-right">
       <span class="header-phone">0420 352 023</span>
-      <a href="tel:+61420352023" class="btn btn-accent">Book a Handyman</a>
+      <a href="tel:+61420352023" class="btn btn-accent">Get a Free Quote</a>
     </div>
   </div>
 </header>
@@ -201,10 +204,10 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-up d1"><span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 (37 Reviews)</div>
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (37 Reviews)</div>
     <h1 class="hero-h1 fade-up d2">Turbo <span class="accent">Handyman</span></h1>
-    <p class="hero-sub1 fade-up d3">Western Sydney's Go-To Handyman Service</p>
-    <p class="hero-sub2 fade-up d3">Professional handyman servicing Parramatta, Blacktown, Penrith and surrounding areas with reliable repairs and quality workmanship.</p>
+    <p class="hero-sub1 fade-up d3">Baulkham Hills' Go-To Handyman Specialists</p>
+    <p class="hero-sub2 fade-up d3">Reliable, skilled handyman services for homes and small businesses, servicing Baulkham Hills, Castle Hill, Kellyville and the Hills District.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61420352023" class="btn btn-accent">&#9742; Call 0420 352 023</a>
     </div>
@@ -215,69 +218,69 @@
 <section id="why">
   <div class="section-inner">
     <p class="section-label">Why Turbo Handyman</p>
-    <h2 class="section-title">A Handyman Service Built on Reliability</h2>
-    <p class="section-sub">From a quick fix to a full carpentry job, we treat every task with the same care and attention to detail.</p>
+    <h2 class="section-title">Handyman Work Done Properly, the First Time</h2>
+    <p class="section-sub">We treat every job, big or small, with the same attention to detail and respect for your home.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="icon-badge icon-blue">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2l6 6-9 9-6 1 1-6 8-8z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3>Careful, Quality Workmanship</h3>
-        <p>Every repair and installation gets the same attention to detail, from a quick fix to a full carpentry job. Turbo Handyman gets it right the first time, with the tools and experience to match.</p>
+        <h3>Careful, Skilled Craftsmanship</h3>
+        <p>From a loose hinge to a full carpentry fit-out, every repair gets proper prep and a tidy finish, not a rushed patch job.</p>
       </div>
       <div class="why-card">
         <div class="icon-badge icon-green">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3>Reliable, No Long Waits</h3>
-        <p>Homeowners and small businesses need a handyman they can count on, not one who leaves them waiting. Turbo Handyman turns up on time and communicates clearly from quote to completion.</p>
+        <h3>Prompt, No Long Wait Times</h3>
+        <p>Clear communication from the first call to the final sign-off, with upfront costs and no guesswork, so you always know where the job stands.</p>
       </div>
       <div class="why-card">
         <div class="icon-badge icon-purple">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 5.5 5.5 5.5 0 0121.5 12c-2.5 4.65-9.5 9-9.5 9z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <h3>Local Knowledge, Western Sydney</h3>
-        <p>From older weatherboard homes to newer builds across Parramatta, Blacktown and Penrith, Turbo Handyman understands the common repair and maintenance needs of local properties.</p>
+        <h3>Local Hills District Knowledge</h3>
+        <p>We know the mix of older weatherboards and newer builds across Baulkham Hills and the Hills District, so the right fix and materials are used every time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="services">
+<section id="services" style="background:var(--bg-alt);">
   <div class="section-inner">
     <p class="section-label">Our Services</p>
-    <h2 class="section-title">Handyman Services We Offer</h2>
-    <p class="section-sub">A wide range of repairs, maintenance and home improvement tasks handled by one reliable team.</p>
+    <h2 class="section-title">Handyman Services We Provide</h2>
+    <p class="section-sub">A wide range of repairs, maintenance and home improvement work handled by one dependable team.</p>
     <div class="services-grid">
       <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2l6 6-9 9-6 1 1-6 8-8z"/></svg>
-        <h3>General Repairs</h3>
-        <p>Prompt fixes for everyday wear and tear around the home.</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+        <h3>General Home Repairs</h3>
+        <p>Fixing the everyday issues that pile up, from sticking doors to loose fittings.</p>
       </div>
       <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l7-7m0 0l7-7m-7 7L3 7m7 7l7 7"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         <h3>Carpentry &amp; Fittings</h3>
-        <p>Custom carpentry, shelving and fittings built to last.</p>
+        <p>Custom timber work, shelving and fittings built and installed to last.</p>
       </div>
       <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
-        <h3>Maintenance &amp; Odd Jobs</h3>
-        <p>Regular upkeep and one-off tasks handled without the hassle.</p>
-      </div>
-      <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
         <h3>Furniture Assembly</h3>
-        <p>Flat pack and custom furniture assembled quickly and correctly.</p>
+        <p>Flat-pack and custom furniture assembled properly and securely fixed.</p>
       </div>
       <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18M6 20V9l6-4 6 4v11"/></svg>
-        <h3>Fence &amp; Deck Repairs</h3>
-        <p>Timber fence and deck repairs, from a single board to a full rebuild.</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg>
+        <h3>Fixtures &amp; Fittings</h3>
+        <p>Taps, handles, blinds and light fittings installed neatly and correctly.</p>
       </div>
       <div class="service-card">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12a8 8 0 0016 0M4 12a8 8 0 0116 0"/></svg>
-        <h3>Kitchen &amp; Bathroom Fixes</h3>
-        <p>Cabinet, tap and fitting repairs for kitchens and bathrooms.</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6"/></svg>
+        <h3>Property Maintenance</h3>
+        <p>Ongoing upkeep for homes and small businesses, scheduled or on call.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <h3>Small Jobs &amp; Odd Tasks</h3>
+        <p>No job too small, the odd tasks other tradespeople won't take on.</p>
       </div>
     </div>
   </div>
@@ -286,104 +289,104 @@
 <section id="how">
   <div class="section-inner">
     <p class="section-label">How We Work</p>
-    <h2 class="section-title">Simple, Straightforward, Sorted</h2>
-    <p class="section-sub">Getting your repairs done shouldn't be complicated. Here's how it works.</p>
+    <h2 class="section-title">Getting the Job Done, Start to Finish</h2>
+    <p class="section-sub">A simple process built around clear communication and no long wait times.</p>
     <div class="how-grid">
       <div class="how-step">
         <div class="how-num">1</div>
-        <div class="how-step-body"><h3>Free Quote</h3><p>Reach out by phone and get a clear, no obligation quote for the job.</p></div>
+        <div class="how-step-body"><h3>Free Quote</h3><p>Call or send through the details of the job and get a straightforward, no-obligation quote.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">2</div>
-        <div class="how-step-body"><h3>Plan the Job</h3><p>We assess the scope, materials and timing so there are no surprises on the day.</p></div>
+        <div class="how-step-body"><h3>Job Assessment &amp; Plan</h3><p>We confirm the scope, materials and timing so there are no surprises once work begins.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">3</div>
-        <div class="how-step-body"><h3>Complete the Work</h3><p>Prompt, tidy work using the right tools and materials for a lasting result.</p></div>
+        <div class="how-step-body"><h3>Skilled Repair &amp; Craftsmanship</h3><p>Reliable, quality workmanship across repairs, maintenance and carpentry, done properly the first time.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">4</div>
-        <div class="how-step-body"><h3>Walkthrough and Clean-Up</h3><p>We walk you through the finished job and leave the site clean and tidy.</p></div>
+        <div class="how-step-body"><h3>Walkthrough &amp; Clean-Up</h3><p>We walk through the finished work with you and leave the site clean and tidy before we go.</p></div>
       </div>
     </div>
     <a href="tel:+61420352023" class="how-cta">&#9742; Call 0420 352 023</a>
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" >
   <div class="section-inner">
     <p class="section-label">Our Work</p>
-    <h2 class="section-title">Recent Jobs</h2>
-    <p class="section-sub">A look at some of the repairs, installations and maintenance work completed for local clients.</p>
+    <h2 class="section-title">Recent Handyman Projects</h2>
+    <p class="section-sub">A look at the repairs, carpentry and maintenance work we've completed for local homes.</p>
     <div class="gallery-carousel">
       <div class="gallery-track-wrap">
         <div class="gallery-track" id="galleryTrack">
           <div class="gallery-slide">
-            <div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Timber deck construction, Turbo Handyman" /></div>
+            <div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Timber deck construction, Turbo Handyman" loading="lazy"></div>
           </div>
           <div class="gallery-slide">
-            <div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Outdoor deck treatment, Turbo Handyman" /></div>
+            <div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Deck staining and treatment, Turbo Handyman" loading="lazy"></div>
           </div>
           <div class="gallery-slide">
-            <div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Kitchen cabinet installation, Turbo Handyman" /></div>
+            <div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Kitchen cabinet and sink repair, Turbo Handyman" loading="lazy"></div>
           </div>
           <div class="gallery-slide">
-            <div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Organised work vehicle setup, Turbo Handyman" /></div>
+            <div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Organised tools and equipment van, Turbo Handyman" loading="lazy"></div>
           </div>
         </div>
       </div>
-      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8249;</button>
-      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8250;</button>
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#10094;</button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#10095;</button>
       <div class="gallery-dots" id="galleryDots"></div>
     </div>
   </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" style="background:var(--bg-alt);">
   <div class="section-inner">
     <p class="section-label">Testimonials</p>
     <h2 class="section-title">What Our Customers Say</h2>
-    <p class="section-sub">Real feedback from homeowners and small businesses across Western Sydney.</p>
+    <p class="section-sub">Real feedback from homeowners and businesses across the Hills District.</p>
 
     <div class="testi-scroll">
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Turbo Handyman fixed our fence and rebuilt part of our deck. The finish was better than we expected and they cleaned up completely afterwards. Really happy with the result.</p>
-        <p class="testi-name">David M.</p>
-        <p class="testi-loc">Parramatta</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Turbo Handyman fixed up our deck and built a new set of steps out the back. The finish is spot on and they cleaned up completely before leaving. Really happy with the result.</p>
+        <p class="testi-name">Sarah M.</p>
+        <p class="testi-loc">Baulkham Hills</p>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">We were a bit nervous having tradespeople in the house, but Turbo Handyman was on time, explained everything clearly and kept the place tidy the whole job. Made the whole thing stress free.</p>
-        <p class="testi-name">Priya &amp; Alex</p>
-        <p class="testi-loc">Blacktown</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">I was a bit nervous about getting someone in, but they turned up on time, explained everything clearly and kept the place tidy the whole way through. No stress at all.</p>
+        <p class="testi-name">David and Kate R.</p>
+        <p class="testi-loc">Castle Hill</p>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Got a few quotes before choosing Turbo Handyman and I'm glad I did. Fast response, fair price and the cabinet repair in our kitchen looks brand new. Would call them again without hesitation.</p>
-        <p class="testi-name">Steve R.</p>
-        <p class="testi-loc">Penrith</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Got a few quotes before choosing Turbo Handyman and I'm glad I did. Fixed our kitchen cabinets and sink properly, not just a quick patch. Would call them again without hesitation.</p>
+        <p class="testi-name">Priya S.</p>
+        <p class="testi-loc">Kellyville</p>
       </div>
     </div>
 
     <div class="testi-grid-desktop">
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Turbo Handyman fixed our fence and rebuilt part of our deck. The finish was better than we expected and they cleaned up completely afterwards. Really happy with the result.</p>
-        <p class="testi-name">David M.</p>
-        <p class="testi-loc">Parramatta</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Turbo Handyman fixed up our deck and built a new set of steps out the back. The finish is spot on and they cleaned up completely before leaving. Really happy with the result.</p>
+        <p class="testi-name">Sarah M.</p>
+        <p class="testi-loc">Baulkham Hills</p>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">We were a bit nervous having tradespeople in the house, but Turbo Handyman was on time, explained everything clearly and kept the place tidy the whole job. Made the whole thing stress free.</p>
-        <p class="testi-name">Priya &amp; Alex</p>
-        <p class="testi-loc">Blacktown</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">I was a bit nervous about getting someone in, but they turned up on time, explained everything clearly and kept the place tidy the whole way through. No stress at all.</p>
+        <p class="testi-name">David and Kate R.</p>
+        <p class="testi-loc">Castle Hill</p>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Got a few quotes before choosing Turbo Handyman and I'm glad I did. Fast response, fair price and the cabinet repair in our kitchen looks brand new. Would call them again without hesitation.</p>
-        <p class="testi-name">Steve R.</p>
-        <p class="testi-loc">Penrith</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-body">Got a few quotes before choosing Turbo Handyman and I'm glad I did. Fixed our kitchen cabinets and sink properly, not just a quick patch. Would call them again without hesitation.</p>
+        <p class="testi-name">Priya S.</p>
+        <p class="testi-loc">Kellyville</p>
       </div>
     </div>
   </div>
@@ -391,9 +394,9 @@
 
 <section id="contact">
   <div class="section-inner">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">Get In Touch</h2>
-    <p class="section-sub">Call now for a free, no obligation quote on your next job.</p>
+    <p class="section-label">Contact Us</p>
+    <h2 class="section-title">Get Your Free Quote Today</h2>
+    <p class="section-sub">Reach out for prompt, reliable handyman service across the Hills District.</p>
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Call Us</h3>
@@ -402,16 +405,16 @@
       </div>
       <div class="contact-card">
         <h3>Service Area</h3>
-        <p>Servicing Parramatta, Blacktown, Penrith, Liverpool and surrounding areas.</p>
+        <p>Servicing Baulkham Hills, Castle Hill, Kellyville, Winston Hills, Norwest and surrounding areas.</p>
       </div>
       <div class="contact-card">
         <h3>Our Rating</h3>
-        <p style="color:var(--accent);font-size:1.1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p style="color:var(--accent);font-size:1.1rem;">★★★★★</p>
         <p>5.0 (37 Reviews)</p>
       </div>
     </div>
-    <div style="text-align:center;">
-      <a href="tel:+61420352023" class="btn btn-accent">&#9742; Call 0420 352 023</a>
+    <div class="contact-cta-wrap">
+      <a href="tel:+61420352023" class="btn btn-accent">&#9742; Get a Free Quote</a>
     </div>
   </div>
 </section>
@@ -421,32 +424,32 @@
     <div class="footer-grid">
       <div>
         <span class="footer-logo-text">Turbo Handyman</span>
-        <p class="footer-about">Turbo Handyman provides reliable, skilled handyman services for homeowners and small businesses. Known for prompt service and quality workmanship across repairs, maintenance and home improvement.</p>
-        <p class="footer-suburbs">Proudly servicing Parramatta, Blacktown, Penrith and the greater Western Sydney area.</p>
-        <div class="footer-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>5.0 (37 Reviews)</span></div>
+        <p class="footer-about">Turbo Handyman provides reliable, skilled handyman services for homes and small businesses. Known for prompt service and quality workmanship across repairs, maintenance and carpentry.</p>
+        <p class="footer-suburbs">Proudly servicing Baulkham Hills, Castle Hill, Kellyville and the Hills District.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (37 Reviews)</span></div>
       </div>
       <div>
         <p class="footer-heading">Our Services</p>
         <ul class="footer-list">
-          <li>General Repairs</li>
+          <li>General Home Repairs</li>
           <li>Carpentry &amp; Fittings</li>
-          <li>Maintenance &amp; Odd Jobs</li>
           <li>Furniture Assembly</li>
-          <li>Fence &amp; Deck Repairs</li>
-          <li>Kitchen &amp; Bathroom Fixes</li>
+          <li>Fixtures &amp; Fittings</li>
+          <li>Property Maintenance</li>
+          <li>Small Jobs &amp; Odd Tasks</li>
         </ul>
       </div>
       <div>
         <p class="footer-heading">Contact Us</p>
         <div class="footer-contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <a href="tel:+61420352023">0420 352 023</a>
         </div>
         <div class="footer-contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 5.5 5.5 5.5 0 0121.5 12c-2.5 4.65-9.5 9-9.5 9z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Licensed and Insured. Free quotes.</span>
         </div>
-        <a href="tel:+61420352023" class="footer-contact-cta">Book a Handyman</a>
+        <a href="tel:+61420352023" class="footer-contact-cta">Get a Free Quote</a>
       </div>
     </div>
     <hr class="footer-divider" />
@@ -455,7 +458,7 @@
 </footer>
 
 <div id="mobile-bar">
-  <a href="tel:+61420352023" class="mobile-bar-btn">Call 0420 352 023 Now. Available Today.</a>
+  <a href="tel:+61420352023" class="mobile-bar-btn">Call 0420 352 023 for a Free Quote</a>
 </div>
 
 <script>
