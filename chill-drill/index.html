@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chill&amp;Drill | Air Conditioning &amp; Refrigeration | Australia</title>
-<meta name="description" content="Chill&amp;Drill, your dependable air conditioning and refrigeration specialists. Installation, repairs and maintenance for homes and small businesses. Call 0406 300 223 for a free quote.">
+<title>Chill &amp; Drill | Handyman &amp; Carpentry | Northern Beaches &amp; North Shore</title>
+<meta name="description" content="Chill &amp; Drill are two mates running a handyman and carpentry business across the Northern Beaches and North Shore. Repairs, maintenance, custom furniture, doors and windows, timber work and more. Call 0406 300 223 for a free quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
   --accent:       #E6B800;
   --accent-dark:  #b89200;
   --bg:           #ffffff;
-  --bg-alt:       #ffffff;
+  --bg-alt:       #f8fafc;
   --fg:           #161E31;
   --muted:        #64748b;
   --border:       #e2e8f0;
@@ -45,9 +45,9 @@ section { padding: 4rem 1.25rem; }
 /* Hero */
 #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
 @media(min-width:768px) { #hero { padding-top: 76px; } }
-.hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
+.hero-bg { position: absolute; inset: 0; background-image: url('images/unnamed%20(10).webp'); background-size: cover; background-position: center center; }
 @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.35); }
 .hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
 .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
 .hero-stars { color: var(--accent); letter-spacing: 1px; }
@@ -67,7 +67,7 @@ section { padding: 4rem 1.25rem; }
 .d4 { animation-delay: .4s; opacity: 0; }
 
 /* Section headings */
-.section-label { display: none; }
+.section-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
 .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
 .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
 .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
@@ -90,8 +90,7 @@ section { padding: 4rem 1.25rem; }
 .service-card { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; }
 .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
 .service-card h3 { font-size: .98rem; margin-bottom: .4rem; }
-.service-card p { display: none; color: var(--muted); font-size: .88rem; line-height: 1.5; }
-@media(min-width:640px) { .service-card p { display: block; } }
+.service-card p { color: var(--muted); font-size: .82rem; line-height: 1.6; }
 
 /* How we work */
 .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
@@ -105,12 +104,12 @@ section { padding: 4rem 1.25rem; }
 /* Gallery */
 #gallery { background: var(--bg); }
 .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
-@media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+@media(min-width:768px) { .gallery-carousel { display: none; } }
 .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
 .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
 .gallery-track.dragging { cursor: grabbing; transition: none; }
 .gallery-slide { flex: 0 0 100%; user-select: none; }
-.gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+.gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
 .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
@@ -119,6 +118,14 @@ section { padding: 4rem 1.25rem; }
 .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
 .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
 .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+/* Gallery desktop grid */
+.gallery-grid { display: none; margin-top: 1.5rem; }
+@media(min-width:768px) {
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 2rem; }
+  .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; transition: transform .3s, box-shadow .3s; }
+  .gallery-grid img:hover { transform: scale(1.02); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
+}
 
 /* Testimonials */
 .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; }
@@ -136,7 +143,7 @@ section { padding: 4rem 1.25rem; }
 .testi-loc { color: var(--muted); font-size: .82rem; }
 
 /* Contact */
-#contact { background: #f8fafc; }
+#contact { background: var(--bg-alt); }
 .contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; }
 @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3,1fr); } }
 .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
@@ -191,81 +198,81 @@ body { padding-bottom: 70px; }
   <div class="hero-content">
     <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (37 Reviews)</div>
     <h1 class="hero-h1 fade-up d2">Chill &amp; <span class="accent">Drill</span></h1>
-    <p class="hero-sub1 fade-up d3">Your Trusted Air Conditioning and Refrigeration Specialists</p>
-    <p class="hero-sub2 fade-up d3">Expert technicians delivering efficient cooling and refrigeration installs, repairs and servicing for homes and small businesses across the local area.</p>
+    <p class="hero-sub1 fade-up d3">Northern Beaches &amp; North Shore Handyman &amp; Carpentry</p>
+    <p class="hero-sub2 fade-up d3">Two best mates with the skills to handle it all — repairs, maintenance, custom furniture, timber work, doors and windows, and much more. No job too big or too small.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61406300223" class="btn btn-accent">&#9742; Call 0406 300 223</a>
     </div>
-    <p class="hero-trust fade-up d4">No obligation quotes &bull; Licensed &amp; Insured &bull; Fast response</p>
+    <p class="hero-trust fade-up d4">Free quotes &bull; Licensed &amp; Insured &bull; Local to Northern Beaches</p>
   </div>
 </section>
 
 <section id="why">
   <div class="section-inner">
     <p class="section-label">Why Chill &amp; Drill</p>
-    <h2 class="section-title">Cooling and Refrigeration Done Right</h2>
-    <p class="section-sub">We treat every installation, repair and service call with the same level of care and attention to detail.</p>
+    <h2 class="section-title">Two Mates Who Take Pride in Their Work</h2>
+    <p class="section-sub">We're not a big faceless company — just two tradies who care about doing the job properly and leaving every customer happy.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="icon-badge icon-blue">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a1 1 0 000-1.4l-1.6-1.6a1 1 0 00-1.4 0l-3 3z"/><path d="M5 13l4 4L17 7"/></svg>
         </div>
-        <h3>Skilled, Precise Workmanship</h3>
-        <p>From split systems to commercial refrigeration units, we install and service equipment properly the first time, so it runs efficiently for years to come.</p>
+        <h3>Genuine Trade Skills</h3>
+        <p>From fine carpentry to general handyman work, we bring real trade experience to every job — built up over years working across homes across Sydney's north.</p>
       </div>
       <div class="why-card">
         <div class="icon-badge icon-green">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
         <h3>Reliable and Easy to Deal With</h3>
-        <p>We turn up on time, explain the job clearly and keep you updated throughout, so homeowners and small business owners always know what to expect.</p>
+        <p>We show up when we say we will, give you an honest quote and keep you in the loop throughout. No surprises, no runaround — just two good blokes who get the job done.</p>
       </div>
       <div class="why-card">
         <div class="icon-badge icon-purple">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0116 0c0 4.5-4 8-8 12z"/></svg>
         </div>
-        <h3>Local Cooling Expertise</h3>
-        <p>We understand the demands local heat places on air conditioning and refrigeration systems, and we size and service equipment to handle it comfortably.</p>
+        <h3>Local to the Northern Beaches</h3>
+        <p>We live and work in the area, so we're close by when you need us. Northern Beaches and North Shore homes are our backyard — we know them well.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="services" style="background:#f8fafc;">
+<section id="services" style="background:var(--bg-alt);">
   <div class="section-inner">
     <p class="section-label">Our Services</p>
-    <h2 class="section-title">Air Conditioning and Refrigeration Services</h2>
-    <p class="section-sub">A complete range of cooling and refrigeration solutions for residential and light commercial properties.</p>
+    <h2 class="section-title">Handyman &amp; Carpentry Services</h2>
+    <p class="section-sub">Whatever needs fixing, building or maintaining around your home — we handle it. One call, two mates, done right.</p>
     <div class="services-grid">
       <div class="service-card">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 16v2M12 16v2M17 16v2"/></svg>
-        <h3>AC Installation</h3>
-        <p>New split system and ducted air conditioning installs sized correctly for your space.</p>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a1 1 0 000-1.4l-1.6-1.6a1 1 0 00-1.4 0l-3 3z"/><path d="M5 13l4 4L17 7"/></svg>
+        <h3>Repairs</h3>
+        <p>From broken fixtures to structural repairs, we assess the problem properly and fix it to last — not just a patch job.</p>
       </div>
       <div class="service-card">
         <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/></svg>
-        <h3>AC Repairs</h3>
-        <p>Fast, accurate diagnosis and repair of air conditioning faults and breakdowns.</p>
+        <h3>Maintenance</h3>
+        <p>Regular upkeep to keep your home in great shape. We'll work through your list and keep everything ticking over.</p>
       </div>
       <div class="service-card">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/></svg>
-        <h3>Refrigeration Servicing</h3>
-        <p>Regular servicing and repairs for commercial and residential refrigeration units.</p>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        <h3>Custom Furniture</h3>
+        <p>Built-in wardrobes, shelving, benchtops, bed frames and more — custom made to fit your space and style perfectly.</p>
       </div>
       <div class="service-card">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-        <h3>Preventative Maintenance</h3>
-        <p>Scheduled maintenance plans that keep cooling and refrigeration equipment running efficiently.</p>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        <h3>Doors &amp; Windows</h3>
+        <p>Sticking doors, broken locks, worn frames, new installations — we keep your doors and windows working as they should.</p>
       </div>
       <div class="service-card">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
-        <h3>System Upgrades</h3>
-        <p>Replacing old, inefficient units with modern, energy efficient cooling systems.</p>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8l4-4 4 4 4-4"/><path d="M3 20h18"/><rect x="7" y="10" width="10" height="10" rx="1"/></svg>
+        <h3>Timber Work</h3>
+        <p>Decking, cladding, feature walls, timber framing and finishing — we love working with wood and it shows in the results.</p>
       </div>
       <div class="service-card">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
-        <h3>Emergency Callouts</h3>
-        <p>Fast response for urgent cooling and refrigeration breakdowns when you need it most.</p>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <h3>And Much More</h3>
+        <p>Got something that doesn't fit a category? Give us a call — if we can't do it, we'll point you in the right direction.</p>
       </div>
     </div>
   </div>
@@ -274,24 +281,24 @@ body { padding-bottom: 70px; }
 <section id="how">
   <div class="section-inner">
     <p class="section-label">How We Work</p>
-    <h2 class="section-title">Simple, Straightforward and Reliable</h2>
-    <p class="section-sub">From your first call to the final check, we make the process easy from start to finish.</p>
+    <h2 class="section-title">Simple, Honest, No Fuss</h2>
+    <p class="section-sub">We keep the process easy from your first call to the final handshake.</p>
     <div class="how-grid">
       <div class="how-step">
         <div class="how-num">1</div>
-        <div class="how-step-body"><h3>Free Quote</h3><p>Call or message us with the details of your job and we will give you a clear, no obligation quote.</p></div>
+        <div class="how-step-body"><h3>Free Quote</h3><p>Call or message us with the details. We'll give you a clear, upfront price — no vague estimates, no hidden extras.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">2</div>
-        <div class="how-step-body"><h3>Diagnose the Problem</h3><p>For repairs, we identify the exact issue before recommending the right fix, rather than guessing.</p></div>
+        <div class="how-step-body"><h3>Scope the Job</h3><p>For bigger or custom projects we'll come out, look at the space and confirm exactly what's needed before a single nail goes in.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">3</div>
-        <div class="how-step-body"><h3>Complete the Work</h3><p>Our technicians carry out the installation, repair or service efficiently, using quality parts and equipment.</p></div>
+        <div class="how-step-body"><h3>Get It Done</h3><p>We show up on time, work efficiently and use quality materials. You won't need to check up on us — we respect your home and get on with it.</p></div>
       </div>
       <div class="how-step">
         <div class="how-num">4</div>
-        <div class="how-step-body"><h3>Test, Check and Clean Up</h3><p>We test the system thoroughly, walk you through the work and leave the site clean and tidy.</p></div>
+        <div class="how-step-body"><h3>Final Walkthrough</h3><p>Before we leave, we walk you through the completed work and make sure you're completely happy. No loose ends.</p></div>
       </div>
     </div>
     <a href="tel:+61406300223" class="how-cta">&#9742; Call 0406 300 223</a>
@@ -302,67 +309,87 @@ body { padding-bottom: 70px; }
   <div class="section-inner">
     <p class="section-label">Our Work</p>
     <h2 class="section-title">Recent Jobs</h2>
-    <p class="section-sub">A look at some of our recent air conditioning and refrigeration work.</p>
+    <p class="section-sub">A look at some of the handyman and carpentry work we've completed across the Northern Beaches and North Shore.</p>
   </div>
+  <!-- Mobile: carousel -->
   <div class="gallery-carousel">
     <div class="gallery-track-wrap">
       <div class="gallery-track" id="galleryTrack">
-        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Air conditioning installation work, Chill and Drill" loading="lazy" /></div></div>
-        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Refrigeration servicing job, Chill and Drill" loading="lazy" /></div></div>
-        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Cooling system maintenance, Chill and Drill" loading="lazy" /></div></div>
-        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Completed air conditioning project, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(6).webp" alt="Carpentry and handyman work, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(7).webp" alt="Timber work and joinery, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(8).webp" alt="Home repairs and maintenance, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(9).webp" alt="Custom furniture build, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(10).webp" alt="Doors and windows installation, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/unnamed%20(11).webp" alt="Completed handyman project, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Handyman project, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Carpentry job, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Maintenance work, Chill and Drill" loading="lazy" /></div></div>
+        <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Completed project, Chill and Drill" loading="lazy" /></div></div>
       </div>
     </div>
     <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#10094;</button>
     <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#10095;</button>
     <div class="gallery-dots" id="galleryDots"></div>
   </div>
+  <!-- Desktop: grid -->
+  <div class="gallery-grid">
+    <img src="images/gallery/unnamed%20(6).webp" alt="Carpentry and handyman work, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/unnamed%20(7).webp" alt="Timber work and joinery, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/unnamed%20(8).webp" alt="Home repairs and maintenance, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/unnamed%20(9).webp" alt="Custom furniture build, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/unnamed%20(10).webp" alt="Doors and windows installation, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/unnamed%20(11).webp" alt="Completed handyman project, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/project-1.jpg" alt="Handyman project, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/project-2.jpg" alt="Carpentry job, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/project-3.jpg" alt="Maintenance work, Chill and Drill" loading="lazy" />
+    <img src="images/gallery/project-4.jpg" alt="Completed project, Chill and Drill" loading="lazy" />
+  </div>
 </section>
 
-<section id="testimonials" style="background:#f8fafc;">
+<section id="testimonials" style="background:var(--bg-alt);">
   <div class="section-inner">
     <p class="section-label">Testimonials</p>
     <h2 class="section-title">What Our Customers Say</h2>
-    <p class="section-sub">Real feedback from homeowners and business owners we have helped stay cool.</p>
+    <p class="section-sub">Real feedback from Northern Beaches and North Shore homeowners who've worked with us.</p>
   </div>
   <div class="testi-scroll">
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">Our old split system in the living room was struggling and Chill &amp; Drill replaced it in a single visit. The new unit is so much quieter and the finish around the install looks neat and tidy.</p>
-      <div class="testi-name">Rachel M.</div>
-      <div class="testi-loc">Home installation</div>
+      <p class="testi-body">We needed a custom built-in wardrobe for our spare room and Chill &amp; Drill absolutely nailed it. The fit, the finish, the whole thing looks like it was always part of the house. Brilliant work.</p>
+      <div class="testi-name">Sarah B.</div>
+      <div class="testi-loc">Custom furniture, Manly</div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">I was a bit nervous having someone come out for a same day repair but the technician called ahead, arrived on time and explained everything clearly before starting. Really put me at ease.</p>
-      <div class="testi-name">Daniel T.</div>
-      <div class="testi-loc">Repair callout</div>
+      <p class="testi-body">Our front door had been sticking for months. They came out quickly, sorted it properly and fixed two other small things while they were there. Really good value and easy to deal with from start to finish.</p>
+      <div class="testi-name">Michael O.</div>
+      <div class="testi-loc">Repairs &amp; maintenance, Dee Why</div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">We got a few quotes for our cafe's fridge servicing and Chill &amp; Drill was by far the most upfront about pricing. Glad we went with them, the unit has run perfectly since.</p>
-      <div class="testi-name">Priya and Sam K.</div>
-      <div class="testi-loc">Commercial refrigeration</div>
+      <p class="testi-body">I had a long list of odd jobs that had been building up. They worked through the whole thing in one visit, no complaints. Genuinely two of the most reliable tradies I've ever used. Already booked them again.</p>
+      <div class="testi-name">Jess and Tom R.</div>
+      <div class="testi-loc">General handyman, Frenchs Forest</div>
     </div>
   </div>
   <div class="testi-grid-desktop">
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">Our old split system in the living room was struggling and Chill &amp; Drill replaced it in a single visit. The new unit is so much quieter and the finish around the install looks neat and tidy.</p>
-      <div class="testi-name">Rachel M.</div>
-      <div class="testi-loc">Home installation</div>
+      <p class="testi-body">We needed a custom built-in wardrobe for our spare room and Chill &amp; Drill absolutely nailed it. The fit, the finish, the whole thing looks like it was always part of the house. Brilliant work.</p>
+      <div class="testi-name">Sarah B.</div>
+      <div class="testi-loc">Custom furniture, Manly</div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">I was a bit nervous having someone come out for a same day repair but the technician called ahead, arrived on time and explained everything clearly before starting. Really put me at ease.</p>
-      <div class="testi-name">Daniel T.</div>
-      <div class="testi-loc">Repair callout</div>
+      <p class="testi-body">Our front door had been sticking for months. They came out quickly, sorted it properly and fixed two other small things while they were there. Really good value and easy to deal with from start to finish.</p>
+      <div class="testi-name">Michael O.</div>
+      <div class="testi-loc">Repairs &amp; maintenance, Dee Why</div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-body">We got a few quotes for our cafe's fridge servicing and Chill &amp; Drill was by far the most upfront about pricing. Glad we went with them, the unit has run perfectly since.</p>
-      <div class="testi-name">Priya and Sam K.</div>
-      <div class="testi-loc">Commercial refrigeration</div>
+      <p class="testi-body">I had a long list of odd jobs that had been building up. They worked through the whole thing in one visit, no complaints. Genuinely two of the most reliable tradies I've ever used. Already booked them again.</p>
+      <div class="testi-name">Jess and Tom R.</div>
+      <div class="testi-loc">General handyman, Frenchs Forest</div>
     </div>
   </div>
 </section>
@@ -371,7 +398,7 @@ body { padding-bottom: 70px; }
   <div class="section-inner">
     <p class="section-label">Contact</p>
     <h2 class="section-title">Get In Touch</h2>
-    <p class="section-sub">Ready for reliable cooling and refrigeration service. Reach out today.</p>
+    <p class="section-sub">Got a job in mind? Call or message us and we'll get back to you with a free quote.</p>
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Call Us</h3>
@@ -380,7 +407,7 @@ body { padding-bottom: 70px; }
       </div>
       <div class="contact-card">
         <h3>Service Area</h3>
-        <p>Servicing homes and small businesses across the local region and surrounding areas.</p>
+        <p>Serving homes across the Northern Beaches and North Shore, Sydney.</p>
       </div>
       <div class="contact-card">
         <h3>Our Rating</h3>
@@ -390,7 +417,7 @@ body { padding-bottom: 70px; }
     <div class="contact-cta-wrap">
       <a href="tel:+61406300223" class="btn btn-accent">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:-3px;margin-right:6px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
-        Book a Service
+        Call for a Free Quote
       </a>
     </div>
   </div>
@@ -401,19 +428,19 @@ body { padding-bottom: 70px; }
     <div class="footer-grid">
       <div>
         <span class="footer-logo-text">Chill &amp; Drill</span>
-        <p class="footer-about">Chill &amp; Drill provides dependable air conditioning and refrigeration installation, repairs and maintenance for homes and small businesses. We keep customers comfortable year round with practical, honest service.</p>
-        <p class="footer-suburbs">Proudly servicing local homes and small businesses across the region.</p>
+        <p class="footer-about">Two best mates running a handyman and carpentry business across Sydney's Northern Beaches and North Shore. We take pride in every job — from quick repairs to custom builds — and won't leave until you're happy.</p>
+        <p class="footer-suburbs">Northern Beaches &bull; North Shore &bull; Manly &bull; Dee Why &bull; Frenchs Forest &bull; Mona Vale &bull; Pittwater &bull; And surrounding areas</p>
         <div class="footer-stars">★★★★★ <span>5.0 (37 Reviews)</span></div>
       </div>
       <div>
         <p class="footer-heading">Our Services</p>
         <ul class="footer-list">
-          <li>AC Installation</li>
-          <li>AC Repairs</li>
-          <li>Refrigeration Servicing</li>
-          <li>Preventative Maintenance</li>
-          <li>System Upgrades</li>
-          <li>Emergency Callouts</li>
+          <li>Repairs</li>
+          <li>Maintenance</li>
+          <li>Custom Furniture</li>
+          <li>Doors &amp; Windows</li>
+          <li>Timber Work</li>
+          <li>General Handyman</li>
         </ul>
       </div>
       <div>
@@ -424,9 +451,9 @@ body { padding-bottom: 70px; }
         </div>
         <div class="footer-contact-item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 8 12 8 12s8-6.6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-          <span>Licensed and Insured. Free quotes.</span>
+          <span>Northern Beaches &amp; North Shore, Sydney</span>
         </div>
-        <a href="tel:+61406300223" class="footer-contact-cta">Get a Quote</a>
+        <a href="tel:+61406300223" class="footer-contact-cta">Get a Free Quote</a>
       </div>
     </div>
     <hr class="footer-divider" />
