@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Antic Painting | Painting Contractor | Sydney NSW</title>
+<meta name="description" content="Antic Painting, Sydney's trusted local painting specialists. Interior, exterior and commercial painting with meticulous prep and lasting finishes. Call 0431 469 672 for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --primary:      #161E31;
+    --primary-fg:   #ffffff;
+    --accent:       #E6B800;
+    --accent-dark:  #b89200;
+    --bg:           #ffffff;
+    --bg-alt:       #ffffff;
+    --fg:           #161E31;
+    --muted:        #64748b;
+    --border:       #e2e8f0;
+    --card:         #ffffff;
+    --radius:       12px;
+    --font-display: 'Merriweather', serif;
+    --font-body:    'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  .btn { display: inline-block; padding: .8rem 1.5rem; border-radius: var(--radius); font-weight: 700; font-size: .95rem; transition: all .2s; cursor: pointer; border: none; }
+  .btn-accent { background: var(--accent); color: var(--primary); }
+  .btn-accent:hover { background: var(--accent-dark); }
+
+  /* Header */
+  #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); height: 64px; display: flex; align-items: center; padding: 0 1.25rem; }
+  @media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .header-right { display: flex; align-items: center; gap: 1rem; }
+  .header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
+  @media(min-width:768px) { .header-phone { display: block; } }
+
+  /* Hero */
+  #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
+  @media(min-width:768px) { #hero { padding-top: 76px; } }
+  .hero-bg { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; }
+  @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
+  .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+  .hero-content { position: relative; z-index: 1; padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.95); border: none; border-radius: 999px; padding: .45rem 1rem; margin-bottom: 1.5rem; color: var(--fg); font-size: .9rem; font-weight: 600; }
+  .hero-stars { color: var(--accent); letter-spacing: 1px; }
+  .hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+  .accent { color: var(--accent); }
+  .hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+  .hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+  .hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+  .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
+  .hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fadeInUp .6s ease-out forwards; }
+  .d1 { animation-delay: .1s; opacity: 0; }
+  .d2 { animation-delay: .2s; opacity: 0; }
+  .d3 { animation-delay: .3s; opacity: 0; }
+  .d4 { animation-delay: .4s; opacity: 0; }
+
+  /* Sections */
+  section { padding: 4rem 1.25rem; }
+  @media(min-width:768px) { section { padding: 5rem 2rem; } }
+  .section-label { display: none; }
+  .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+  .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
+
+  /* Why Choose Us */
+  .why-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3,1fr); gap: 2rem; } }
+  .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s; }
+  .why-card:hover, .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: rgba(230,184,0,.4); }
+  .why-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .6rem; }
+  .why-card p { color: var(--muted); font-size: .92rem; line-height: 1.65; }
+  .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+  .icon-blue   { background: #dbeafe; color: #2563eb; }
+  .icon-green  { background: #d1fae5; color: #059669; }
+  .icon-purple { background: #ede9fe; color: #7c3aed; }
+  .icon-gold   { background: #fef3c7; color: #d97706; }
+
+  /* Services */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+  .service-card { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1rem; }
+  .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
+  .service-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: .4rem; }
+  .service-card p { display: none; color: var(--muted); font-size: .87rem; line-height: 1.5; }
+  @media(min-width:640px) { .service-card p { display: block; } }
+
+  /* How We Work */
+  .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+  .how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; }
+  .how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .how-step-body { flex: 1; }
+  .how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+  .how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+  .how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
+
+  /* Gallery */
+  #gallery { background: var(--bg); padding: 4rem 1.25rem; }
+  @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+  .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; }
+  @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+  .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
+  .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
+  .gallery-track.dragging { cursor: grabbing; transition: none; }
+  .gallery-slide { flex: 0 0 100%; user-select: none; }
+  .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+  .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
+  .gallery-btn:disabled { opacity: .2; pointer-events: none; }
+  .gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
+  .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
+  .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+  .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+  /* Testimonials, base rule BEFORE media query */
+  .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; }
+  .testi-scroll::-webkit-scrollbar { display: none; }
+  .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: left; }
+  .testi-grid-desktop { display: none; }
+  @media(min-width:768px) {
+    .testi-scroll { display: none; }
+    .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .testi-card { width: auto; flex-shrink: unset; }
+  }
+  .testi-stars { color: var(--accent); margin-bottom: .75rem; letter-spacing: 1px; }
+  .testi-text { color: var(--fg); font-size: .93rem; line-height: 1.7; margin-bottom: 1rem; }
+  .testi-name { font-weight: 700; font-size: .9rem; }
+  .testi-loc { color: var(--muted); font-size: .82rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 900px; margin: 0 auto 2rem; }
+  @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3,1fr); } }
+  .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+  .contact-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+  .contact-card p, .contact-card a { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+  .contact-card a.phone-link { color: var(--fg); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: .3rem; }
+
+  /* Footer */
+  #footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
+  @media(min-width:768px) { #footer { padding: 4rem 2rem 0; } }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; gap: 2.5rem; }
+  @media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
+  .footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
+  .footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
+  .footer-stars { color: var(--accent); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+  .footer-stars span { color: rgba(255,255,255,.7); font-size: .85rem; }
+  .footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
+  .footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
+  .footer-list li { display: flex; align-items: center; gap: .6rem; }
+  .footer-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+  .footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
+  .footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
+  .footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
+  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
+  .footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
+
+  /* Mobile sticky bar */
+  #mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+  @media(min-width:768px) { #mobile-bar { display: none; } }
+  .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
+  body { padding-bottom: 70px; }
+  @media(min-width:768px) { body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Antic Painting</span>
+    <div class="header-right">
+      <span class="header-phone">0431 469 672</span>
+      <a href="tel:+61431469672" class="btn btn-accent">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (37 Reviews)</div>
+    <h1 class="hero-h1 fade-up d2">Antic <span class="accent">Painting</span></h1>
+    <p class="hero-sub1 fade-up d3">Sydney's Trusted Painting Specialists</p>
+    <p class="hero-sub2 fade-up d3">Professional, locally owned painting contractor delivering meticulous prep and lasting finishes for homeowners and businesses across Sydney and surrounding suburbs.</p>
+    <div class="hero-cta fade-up d4">
+      <a href="tel:+61431469672" class="btn btn-accent">&#9742; Call 0431 469 672</a>
+    </div>
+    <p class="hero-trust fade-up d4">No obligation &bull; Licensed &amp; Insured &bull; Free quotes</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">Why Antic Painting</p>
+    <h2 class="section-title">A Painting Service Built on Quality</h2>
+    <p class="section-sub">We treat every job, big or small, with the same attention to detail and commitment to a job done properly.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge icon-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><circle cx="19" cy="19" r="2"/></svg>
+        </div>
+        <h3>Meticulous Preparation, Lasting Results</h3>
+        <p>We take the time to properly prepare every surface, sanding, filling and priming before a single coat goes on. It is the difference between a paint job that looks good today and one that still looks great in five years.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Reliable From Quote to Clean-Up</h3>
+        <p>We turn up when we say we will, communicate clearly throughout the job, and always leave your property as tidy as we found it. Straightforward pricing, no surprises along the way.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <h3>Local Knowledge, Sydney Wide</h3>
+        <p>From coastal salt air to older weatherboard and brick homes, we understand what Sydney properties need to keep their paintwork protected and looking sharp season after season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Painting Services We Offer</h2>
+    <p class="section-sub">Full-service painting for homes and businesses, from a single feature wall to a full repaint.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+        <h3>Interior Painting</h3>
+        <p>Fresh, even finishes for living areas, bedrooms and ceilings with minimal disruption to your home.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+        <h3>Exterior Painting</h3>
+        <p>Weatherproof finishes that protect and refresh the outside of your property for years to come.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        <h3>Commercial Painting</h3>
+        <p>Efficient, low-disruption painting for offices, retail spaces and strata properties.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l7-7"/><path d="M14 7l3-3 3 3-3 3"/><path d="M13 8l-6 6 3 3 6-6"/></svg>
+        <h3>Surface Preparation</h3>
+        <p>Sanding, filling and priming done properly, so every coat goes on smooth and lasts longer.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20l8-14H4z"/><circle cx="12" cy="9" r="2"/></svg>
+        <h3>Repaints and Touch-Ups</h3>
+        <p>Refresh tired paintwork or fix scuffs and marks with a seamless colour and finish match.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18 4.5 4.5 0 000-9h4.5A4.5 4.5 0 0012 3z"/></svg>
+        <h3>Colour Consultation</h3>
+        <p>Expert guidance choosing colours and finishes that suit your property and your style.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:#fafafa;">
+  <div class="section-inner">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">A Straightforward Process, Start to Finish</h2>
+    <p class="section-sub">No jargon, no pressure. Just a clear path from your first call to a finished job you are happy with.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-body"><h3>Free Quote</h3><p>Call or message us with a few details about the job. We will give you a clear, no-obligation quote with no pushy sales talk.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-body"><h3>Colour and Material Plan</h3><p>We talk through colours, finishes and materials so you know exactly what to expect before any painting starts.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-body"><h3>Expert Prep and Paint</h3><p>Our team preps every surface properly, then applies each coat with the same care and attention we would give our own home.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-step-body"><h3>Walkthrough and Clean-Up</h3><p>We walk the finished job with you, tidy up completely, and only consider the job done once you are happy with it.</p></div>
+      </div>
+    </div>
+    <a href="tel:+61431469672" class="how-cta">&#9742; Call 0431 469 672</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-inner">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Recent Painting Projects</h2>
+    <p class="section-sub">A look at the standard of finish you can expect on your own property.</p>
+    <div class="gallery-carousel">
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Interior hallway painting, Antic Painting" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Interior staircase and wall painting, Antic Painting" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Exterior deck and timber painting, Antic Painting" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Room prepared for interior painting, Antic Painting" loading="lazy"></div></div>
+        </div>
+      </div>
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8249;</button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8250;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" style="background:#fafafa;">
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-sub">Real feedback from homeowners and businesses we have worked with across Sydney.</p>
+
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The finish on our living room and hallway is honestly better than we expected. They filled every little crack and sanded back properly before painting, you can really see the difference in the final result.</p>
+        <div class="testi-name">Sarah M.</div>
+        <div class="testi-loc">Waterloo</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous having tradies in the house for a few days, but the team turned up on time every day, kept everything covered and clean, and let me know exactly what was happening each step of the way.</p>
+        <div class="testi-name">David and Rachel T.</div>
+        <div class="testi-loc">Alexandria</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Got quotes from three painters before choosing Antic Painting and I am glad I did. Fair price, clear communication and the exterior repaint has completely changed how the house looks from the street.</p>
+        <div class="testi-name">James K.</div>
+        <div class="testi-loc">Redfern</div>
+      </div>
+    </div>
+
+    <div class="testi-grid-desktop">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The finish on our living room and hallway is honestly better than we expected. They filled every little crack and sanded back properly before painting, you can really see the difference in the final result.</p>
+        <div class="testi-name">Sarah M.</div>
+        <div class="testi-loc">Waterloo</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous having tradies in the house for a few days, but the team turned up on time every day, kept everything covered and clean, and let me know exactly what was happening each step of the way.</p>
+        <div class="testi-name">David and Rachel T.</div>
+        <div class="testi-loc">Alexandria</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Got quotes from three painters before choosing Antic Painting and I am glad I did. Fair price, clear communication and the exterior repaint has completely changed how the house looks from the street.</p>
+        <div class="testi-name">James K.</div>
+        <div class="testi-loc">Redfern</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact Us</p>
+    <h2 class="section-title">Get a Free, No-Obligation Quote</h2>
+    <p class="section-sub">Reach out today and we will get back to you quickly with a clear quote for your project.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <a href="tel:+61431469672" class="phone-link">0431 469 672</a>
+        <p>Free quotes, no obligation</p>
+      </div>
+      <div class="contact-card">
+        <h3>Service Area</h3>
+        <p>Servicing Waterloo, Redfern, Alexandria, Zetland and surrounding Sydney suburbs.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Our Rating</h3>
+        <p style="color:var(--accent);font-size:1.1rem;">★★★★★</p>
+        <p>5.0 from 37 reviews</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a href="tel:+61431469672" class="btn btn-accent" style="display:inline-flex;align-items:center;gap:.5rem;">&#9742; Call 0431 469 672</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo-text">Antic Painting</span>
+        <p class="footer-about">Antic Painting is a locally owned painting contractor providing high quality residential and commercial painting across Sydney. We take pride in careful preparation and finishes that are built to last.</p>
+        <p class="footer-suburbs">Proudly servicing Waterloo, Redfern, Alexandria and the greater Sydney area.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (37 Reviews)</span></div>
+      </div>
+      <div>
+        <p class="footer-heading">Our Services</p>
+        <ul class="footer-list">
+          <li>Interior Painting</li>
+          <li>Exterior Painting</li>
+          <li>Commercial Painting</li>
+          <li>Surface Preparation</li>
+          <li>Repaints and Touch-Ups</li>
+          <li>Colour Consultation</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+61431469672">0431 469 672</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Licensed and Insured. Free quotes.</span>
+        </div>
+        <a href="tel:+61431469672" class="footer-contact-cta">Get a Free Quote</a>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Antic Painting. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61431469672" class="mobile-bar-btn">Call 0431 469 672 for a Free Quote</a>
+</div>
+
+<script>
+(function(){
+  const track    = document.getElementById('galleryTrack');
+  const slides   = track.querySelectorAll('.gallery-slide');
+  const btnPrev  = document.getElementById('galPrev');
+  const btnNext  = document.getElementById('galNext');
+  const dotsWrap = document.getElementById('galleryDots');
+  const total    = slides.length;
+  let current    = 0;
+
+  function maxIndex()   { return total - 1; }
+  function slideWidth() { return track.parentElement.offsetWidth; }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'gallery-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', 'Image ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    track.style.transform = 'translateX(-' + (current * slideWidth()) + 'px)';
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex();
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  let startX = 0, isDragging = false, dragDelta = 0;
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; track.classList.add('dragging'); });
+  window.addEventListener('mousemove', e => { if (!isDragging) return; dragDelta = e.clientX - startX; });
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false; track.classList.remove('dragging');
+    if (dragDelta < -50) goTo(current + 1);
+    else if (dragDelta > 50) goTo(current - 1);
+    dragDelta = 0;
+  });
+
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx < -50) goTo(current + 1);
+    else if (dx > 50) goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+  buildDots();
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>
