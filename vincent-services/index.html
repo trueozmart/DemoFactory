@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vincent Service's | Appliance &amp; Equipment Repairs Australia</title>
+<meta name="description" content="Vincent Service's, your trusted appliance and equipment repair specialists. Fridge, oven, washer and dryer repairs, fast and affordable. Call 0459 253 205 for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --primary:      #161E31;
+    --primary-fg:   #ffffff;
+    --accent:       #E6B800;
+    --accent-dark:  #b89200;
+    --bg:           #ffffff;
+    --bg-alt:       #ffffff;
+    --fg:           #161E31;
+    --muted:        #64748b;
+    --border:       #e2e8f0;
+    --card:         #ffffff;
+    --radius:       12px;
+    --font-display: 'Merriweather', serif;
+    --font-body:    'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  .btn { display: inline-block; border-radius: var(--radius); font-weight: 700; cursor: pointer; border: none; }
+  .btn-accent { background: var(--accent); color: var(--primary); padding: .75rem 1.5rem; }
+  .btn-accent:hover { background: var(--accent-dark); }
+
+  /* Header */
+  #header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(22,30,49,.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    height: 64px; display: flex; align-items: center; padding: 0 1.25rem;
+  }
+  @media(min-width:768px) { #header { height: 76px; padding: 0 2rem; } }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .header-right { display: flex; align-items: center; gap: 1rem; }
+  .header-phone { display: none; color: rgba(255,255,255,.85); font-size: .9rem; }
+  @media(min-width:768px) { .header-phone { display: block; } }
+
+  /* Hero */
+  #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding-top: 64px; }
+  @media(min-width:768px) { #hero { padding-top: 76px; } }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('images/hero.jpg');
+    background-size: cover; background-position: center center;
+  }
+  @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
+  .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+  .hero-content {
+    position: relative; z-index: 1;
+    padding: 2.5rem 1.5rem; max-width: 720px; margin: 0 auto; width: 100%;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(255,255,255,.95); border: none; border-radius: 999px;
+    padding: .45rem 1rem; margin-bottom: 1.5rem;
+    color: var(--fg); font-size: .9rem; font-weight: 600;
+  }
+  .hero-stars { color: var(--accent); letter-spacing: 1px; }
+  .hero-h1 { font-family: var(--font-display); font-size: clamp(1.87rem,5vw,3.6rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+  .accent { color: var(--accent); }
+  .hero-sub1 { font-size: clamp(1.1rem,2.5vw,1.4rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+  .hero-sub2 { font-size: clamp(.95rem,2vw,1.05rem); color: rgba(255,255,255,.88); margin-bottom: 1.75rem; line-height: 1.65; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+  .hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+  .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; padding: .9rem 2rem; max-width: 340px; width: 100%; justify-content: center; }
+  .hero-trust { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: 1.25rem; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+
+  /* Section headings */
+  section { padding: 4rem 1.25rem; }
+  @media(min-width:768px) { section { padding: 5rem 2rem; } }
+  .section-label { display: none; }
+  .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.04rem,2.3vw,1.61rem); font-weight: 900; color: var(--fg); margin-bottom: 1rem; line-height: 1.15; }
+  .section-sub { color: var(--muted); max-width: 600px; line-height: 1.7; margin: 0 auto 2.5rem; font-size: 1rem; }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeInUp .6s ease-out forwards; }
+  .d1 { animation-delay: .1s; opacity: 0; }
+  .d2 { animation-delay: .2s; opacity: 0; }
+  .d3 { animation-delay: .3s; opacity: 0; }
+  .d4 { animation-delay: .4s; opacity: 0; }
+
+  /* Why Choose Us */
+  #why { background: var(--bg-alt); }
+  .why-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; max-width: 1000px; margin: 0 auto; }
+  @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+  .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all .25s ease; }
+  .why-card:hover, .service-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    transform: translateY(-3px);
+    border-color: rgba(230,184,0,.4);
+  }
+  .icon-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+  .icon-blue   { background: #dbeafe; color: #2563eb; }
+  .icon-green  { background: #d1fae5; color: #059669; }
+  .icon-purple { background: #ede9fe; color: #7c3aed; }
+  .why-card h3 { font-size: 1.1rem; margin-bottom: .6rem; font-weight: 700; }
+  .why-card p { color: var(--muted); font-size: .92rem; line-height: 1.65; }
+
+  /* Services */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; max-width: 1000px; margin: 0 auto; }
+  @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+  .service-card { text-align: center; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1rem; }
+  .service-card svg { color: var(--accent); margin: 0 auto .6rem; display: block; }
+  .service-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: .4rem; }
+  .service-card p { display: none; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+  @media(min-width:640px) { .service-card p { display: block; } }
+
+  /* How We Work */
+  #how { background: var(--bg-alt); }
+  .how-grid { display: flex; flex-direction: column; gap: 1.75rem; max-width: 680px; margin: 0 auto; }
+  .how-step { display: flex; gap: 1.25rem; align-items: flex-start; text-align: left; }
+  .how-num { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--primary); font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .how-step-body { flex: 1; }
+  .how-step h3 { font-weight: 700; margin-bottom: .35rem; font-size: 1rem; }
+  .how-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+  .how-cta { display: block; width: 100%; max-width: 680px; margin: 2.5rem auto 0; padding: 1rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-align: center; }
+
+  /* Gallery */
+  #gallery { background: var(--bg); padding: 4rem 1.25rem; }
+  @media(min-width:768px) { #gallery { padding: 5rem 2rem; } }
+  .gallery-carousel { position: relative; padding: 0 2.5rem; margin-top: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+  @media(min-width:768px) { .gallery-carousel { padding: 0 3rem; } }
+  .gallery-track-wrap { overflow: hidden; border-radius: 10px; }
+  .gallery-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; }
+  .gallery-track.dragging { cursor: grabbing; transition: none; }
+  .gallery-slide { flex: 0 0 100%; user-select: none; }
+  .gallery-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(22,30,49,.88); border: 2px solid rgba(230,184,0,.45); color: #fff; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+  .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); transform: translateY(-50%) scale(1.05); }
+  .gallery-btn:disabled { opacity: .2; pointer-events: none; }
+  .gallery-btn-prev { left: 0; } .gallery-btn-next { right: 0; }
+  .gallery-dots { display: flex; gap: .4rem; justify-content: center; margin-top: 1rem; }
+  .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(22,30,49,.2); transition: all .3s; border: none; padding: 0; }
+  .gallery-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+
+  /* Testimonials */
+  #testimonials { background: var(--bg-alt); }
+  .testi-card { flex-shrink: 0; width: 82vw; scroll-snap-align: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
+  .testi-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 1rem; }
+  .testi-scroll::-webkit-scrollbar { display: none; }
+  .testi-grid-desktop { display: none; }
+  @media(min-width:768px) {
+    .testi-scroll { display: none; }
+    .testi-grid-desktop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
+    .testi-card { width: auto; flex-shrink: unset; }
+  }
+  .testi-stars { color: var(--accent); margin-bottom: .75rem; letter-spacing: 1px; }
+  .testi-text { color: var(--fg); font-size: .95rem; line-height: 1.7; margin-bottom: 1rem; }
+  .testi-name { font-weight: 700; font-size: .9rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto 2rem; }
+  @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(3, 1fr); } }
+  .contact-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+  .contact-card h3 { font-size: 1rem; margin-bottom: .5rem; font-weight: 700; }
+  .contact-card p, .contact-card a { color: var(--muted); font-size: .92rem; line-height: 1.6; }
+  .contact-cta-wrap { text-align: center; }
+
+  /* Footer */
+  #footer { background: var(--primary); color: rgba(255,255,255,.75); padding: 3.5rem 1.25rem 0; }
+  @media(min-width:768px) { #footer { padding: 4rem 2rem 0; } }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; gap: 2.5rem; }
+  @media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
+  .footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
+  .footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
+  .footer-stars { color: var(--accent); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+  .footer-stars span { color: rgba(255,255,255,.7); font-size: .85rem; }
+  .footer-heading { color: #fff; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
+  .footer-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
+  .footer-list li { display: flex; align-items: center; gap: .6rem; }
+  .footer-list li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+  .footer-contact-item { display: flex; align-items: center; gap: .65rem; font-size: .9rem; margin-bottom: .75rem; }
+  .footer-contact-item svg { color: var(--accent); flex-shrink: 0; }
+  .footer-contact-cta { display: block; background: var(--accent); color: var(--primary); font-weight: 700; font-size: .95rem; text-align: center; padding: .8rem 1.25rem; border-radius: var(--radius); margin-top: 1.5rem; }
+  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin: 2.5rem 0 0; }
+  .footer-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; padding: 1.25rem 0; }
+
+  /* Mobile sticky call bar */
+  #mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); border-top: 1px solid rgba(230,184,0,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+  @media(min-width:768px) { #mobile-bar { display: none; } }
+  .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-align: center; }
+  body { padding-bottom: 70px; }
+  @media(min-width:768px) { body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <span style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-0.5px;">Vincent Service's</span>
+    <div class="header-right">
+      <span class="header-phone">0459 253 205</span>
+      <a href="tel:+61459253205" class="btn btn-accent">Book a Repair</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (37 Reviews)</div>
+    <h1 class="hero-h1 fade-up d2">Vincent <span class="accent">Service's</span></h1>
+    <p class="hero-sub1 fade-up d3">Your Local Appliance &amp; Equipment Repair Specialists</p>
+    <p class="hero-sub2 fade-up d3">Fast, professional repairs for fridges, ovens, washers and more, with efficient and affordable solutions to get your household or business running smoothly again.</p>
+    <div class="hero-cta fade-up d4">
+      <a href="tel:+61459253205" class="btn btn-accent">&#9742; Call 0459 253 205</a>
+    </div>
+    <p class="hero-trust fade-up d4">&#9989; Fast response &bull; Friendly &amp; professional &bull; Honest, upfront pricing</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">Why Vincent Service's</p>
+    <h2 class="section-title">Repairs Done Right, the First Time</h2>
+    <p class="section-sub">We treat every repair, big or small, with the same care and attention to detail.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge icon-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Correct Diagnosis, Every Time</h3>
+        <p>We take the time to properly diagnose the fault before we start, so repairs are efficient, affordable and actually fix the problem, not just the symptom.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Fast, Dependable Service</h3>
+        <p>We know a broken appliance can throw off your whole day. That is why we focus on quick response times and clear communication from the first call.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg>
+        </div>
+        <h3>Trusted by the Local Market</h3>
+        <p>Our reputation is built on professionalism and customer satisfaction. We show up when we say we will and treat every home and business with respect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Appliance &amp; Equipment Repair Services</h2>
+    <p class="section-sub">From everyday household appliances to small business equipment, we keep things running.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+        <h3>Fridge &amp; Freezer Repairs</h3>
+        <p>Fast, reliable fixes to stop food spoiling and get cooling back to normal.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3>Washer &amp; Dryer Repairs</h3>
+        <p>Leaks, drum faults and drying issues sorted efficiently and affordably.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h3>Oven &amp; Cooktop Repairs</h3>
+        <p>Heating elements, thermostats and ignition issues fixed safely and properly.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
+        <h3>Dishwasher Repairs</h3>
+        <p>From drainage problems to poor cleaning results, we get it back to full working order.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <h3>Equipment Servicing</h3>
+        <p>Routine servicing and maintenance to keep household and small business equipment reliable.</p>
+      </div>
+      <div class="service-card">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+        <h3>Emergency Repair Callouts</h3>
+        <p>Urgent appliance failures handled quickly, so you are not left without the essentials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-inner">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">Simple, Straightforward Repairs</h2>
+    <p class="section-sub">From your first call to a working appliance, here is what to expect.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-body"><h3>Free Quote</h3><p>Call or message us with the appliance or equipment issue you are having. No obligation, just straightforward advice from the start.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-body"><h3>Diagnose the Problem</h3><p>We inspect the appliance or equipment and identify the real fault, not just the symptom, before any work begins.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-body"><h3>Efficient, Affordable Repair</h3><p>We carry out the repair using the right parts and tools, focused on getting things running smoothly again without unnecessary cost.</p></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-step-body"><h3>Test, Check and Clean Up</h3><p>We test the appliance thoroughly, walk you through what was done, and leave your space clean and tidy.</p></div>
+      </div>
+    </div>
+    <a href="tel:+61459253205" class="how-cta">&#9742; Call 0459 253 205</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-inner">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Recent Jobs</h2>
+    <p class="section-sub">A look at the kind of work we do, day in, day out.</p>
+    <div class="gallery-carousel">
+      <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8592;</button>
+      <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8594;</button>
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Technicians servicing equipment, Vincent Service's" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Repair technician at work in a home kitchen, Vincent Service's" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Local business premises, Vincent Service's" loading="lazy"></div></div>
+          <div class="gallery-slide"><div class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Friendly team member, Vincent Service's" loading="lazy"></div></div>
+        </div>
+      </div>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-sub">Real feedback from households and small businesses we have helped.</p>
+
+    <div class="testi-scroll">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our fridge stopped cooling on a Friday night and I was dreading the cost. Vincent diagnosed it quickly, explained exactly what was wrong, and had it running properly again the same day. Really impressed with the level of care.</p>
+        <p class="testi-name">Sarah M.</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous having someone new come out to fix our washing machine, but he turned up on time, was upfront about the price before starting, and left everything clean afterwards. Made the whole thing stress free.</p>
+        <p class="testi-name">Daniel and Priya K.</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I called around a few repair services before deciding on Vincent Service's, and I am glad I did. The price was fair, the communication was clear, and our oven has worked perfectly ever since. Would recommend without hesitation.</p>
+        <p class="testi-name">Michael T.</p>
+      </div>
+    </div>
+
+    <div class="testi-grid-desktop">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our fridge stopped cooling on a Friday night and I was dreading the cost. Vincent diagnosed it quickly, explained exactly what was wrong, and had it running properly again the same day. Really impressed with the level of care.</p>
+        <p class="testi-name">Sarah M.</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a bit nervous having someone new come out to fix our washing machine, but he turned up on time, was upfront about the price before starting, and left everything clean afterwards. Made the whole thing stress free.</p>
+        <p class="testi-name">Daniel and Priya K.</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I called around a few repair services before deciding on Vincent Service's, and I am glad I did. The price was fair, the communication was clear, and our oven has worked perfectly ever since. Would recommend without hesitation.</p>
+        <p class="testi-name">Michael T.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact Us</p>
+    <h2 class="section-title">Get Your Appliance Fixed</h2>
+    <p class="section-sub">Reach out today for a free, no-obligation quote.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <a href="tel:+61459253205">0459 253 205</a>
+        <p>Free quotes, no obligation</p>
+      </div>
+      <div class="contact-card">
+        <h3>Service Area</h3>
+        <p>Mobile appliance and equipment repair service, available to homes and small businesses across Australia.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Our Rating</h3>
+        <p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>5.0 (37 Reviews)</p>
+      </div>
+    </div>
+    <div class="contact-cta-wrap">
+      <a href="tel:+61459253205" class="btn btn-accent">&#9742; Call 0459 253 205</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo-text">Vincent Service's</span>
+        <p class="footer-about">Vincent Service's is a reputable local business providing high quality, reliable appliance and equipment repairs. We focus on efficient, affordable solutions to keep your household or business running smoothly.</p>
+        <p class="footer-suburbs">Proudly servicing homes and small businesses across Australia.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (37 Reviews)</span></div>
+      </div>
+      <div>
+        <p class="footer-heading">Our Services</p>
+        <ul class="footer-list">
+          <li>Fridge &amp; Freezer Repairs</li>
+          <li>Washer &amp; Dryer Repairs</li>
+          <li>Oven &amp; Cooktop Repairs</li>
+          <li>Dishwasher Repairs</li>
+          <li>Equipment Servicing</li>
+          <li>Emergency Repair Callouts</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+61459253205">0459 253 205</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Friendly, professional and honest, every job.</span>
+        </div>
+        <a href="tel:+61459253205" class="footer-contact-cta">Book a Repair</a>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Vincent Service's. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="mobile-bar">
+  <a href="tel:+61459253205" class="mobile-bar-btn">Call 0459 253 205 Now for Fast, Reliable Repairs</a>
+</div>
+
+<script>
+(function(){
+  const track    = document.getElementById('galleryTrack');
+  const slides   = track.querySelectorAll('.gallery-slide');
+  const btnPrev  = document.getElementById('galPrev');
+  const btnNext  = document.getElementById('galNext');
+  const dotsWrap = document.getElementById('galleryDots');
+  const total    = slides.length;
+  let current    = 0;
+
+  function maxIndex()   { return total - 1; }
+  function slideWidth() { return track.parentElement.offsetWidth; }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'gallery-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', 'Image ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    track.style.transform = 'translateX(-' + (current * slideWidth()) + 'px)';
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex();
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  let startX = 0, isDragging = false, dragDelta = 0;
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; track.classList.add('dragging'); });
+  window.addEventListener('mousemove', e => { if (!isDragging) return; dragDelta = e.clientX - startX; });
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false; track.classList.remove('dragging');
+    if (dragDelta < -50) goTo(current + 1);
+    else if (dragDelta > 50) goTo(current - 1);
+    dragDelta = 0;
+  });
+
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx < -50) goTo(current + 1);
+    else if (dx > 50) goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+  buildDots();
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>
