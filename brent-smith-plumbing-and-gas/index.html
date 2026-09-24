@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brent Smith Plumbing &amp; Gas | Plumber | Gold Coast QLD</title>
-<meta name="description" content="Brent Smith Plumbing & Gas, the Gold Coast's leading plumbing and gas specialists. Hot water, drains, gas fitting. Servicing Southport, Nerang. Call 0422 453 929.">
+<title>Brent Smith Plumbing & Gas | Plumber | Manly NSW</title>
+<meta name="description" content="Brent Smith Plumbing & Gas, Manly's go-to plumbing and gas specialists. Hot water, drains and gas fitting. Servicing Manly, Fairlight and Balgowlah. Call 0422 453 929." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
   --primary: #121A2B; --primary-soft: #1D2842; --primary-fg: #ffffff;
   --accent: #D9A521; --accent-dark: #B4831A; --accent-tint: #F6EDD8;
   --gold-hair: rgba(217,165,33,.45);
-  /* Warm whites - a hair off pure white so the navy and gold read richer */
+  /* Warm whites, a hair off pure white so the navy and gold read richer */
   --bg: #FDFCFA; --bg-alt: #F5F1EA;
   --fg: #121A2B; --muted: #5A6472; --border: #E4DFD5; --card: #ffffff;
   --radius: 12px; --radius-img: 16px;
@@ -25,7 +25,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); color: var(--fg); background: var(--bg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-/* Barely-there plaster grain - gives flat surfaces something to catch */
+/* Barely-there plaster grain, gives flat surfaces something to catch */
 body::after { content: ''; position: fixed; inset: 0; z-index: 200; pointer-events: none; opacity: .035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
 /* Clear the fixed call bar so the footer is never covered */
@@ -39,7 +39,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .btn-accent { background: var(--accent); color: var(--primary); box-shadow: inset 0 -2px 0 rgba(0,0,0,.14); }
 .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
-/* ============ HEADER - transparent over hero, solid on scroll ============ */
+/* ============ HEADER, transparent over hero, solid on scroll ============ */
 #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: transparent; border-bottom: 1px solid transparent; height: 68px; display: flex; align-items: center; padding: 0 1.25rem; transition: background .3s, border-color .3s, box-shadow .3s; }
 #header.scrolled { background: rgba(18,26,43,.97); backdrop-filter: blur(10px); border-bottom-color: rgba(255,255,255,.07); box-shadow: 0 4px 24px rgba(0,0,0,.18); }
 /* Hairline reading-progress bar along the bottom of the header */
@@ -51,19 +51,19 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 @media(min-width:768px) { .header-logo { font-size: 1.25rem; letter-spacing: -.5px; } }
 .header-right { display: flex; align-items: center; gap: 1.1rem; }
 .header-phone { display: none; color: rgba(255,255,255,.9); font-size: .9rem; font-weight: 600; }
-/* On mobile the fixed bottom call bar is the CTA - keep the header uncluttered */
+/* On mobile the fixed bottom call bar is the CTA, keep the header uncluttered */
 @media(max-width:767px) { .header-right { display: none; } }
 @media(min-width:768px) { .header-phone { display: block; } }
 
-/* ============ HERO - bottom-weighted gradient, larger type ============ */
+/* ============ HERO, bottom-weighted gradient, larger type ============ */
 #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 0; }
 #hero { overflow: hidden; }
 .hero-bg { position: absolute; inset: -2%; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; animation: heroDrift 26s ease-in-out infinite alternate; }
 @keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.07); } }
 @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,14,26,.84) 0%, rgba(10,14,26,.44) 48%, rgba(10,14,26,.24) 100%); }
-/* Inset hairline frame - the one detail that makes the hero feel composed */
-/* Open at the bottom - the stats plinth rises out of it */
+/* Inset hairline frame, the one detail that makes the hero feel composed */
+/* Open at the bottom, the stats plinth rises out of it */
 #hero::after { content: ''; position: absolute; inset: 11px; border: 1px solid rgba(255,255,255,.15); border-bottom: none; pointer-events: none; z-index: 2; }
 @media(min-width:768px) { #hero::after { inset: 18px; border-bottom: none; } }
 .hero-content { position: relative; z-index: 1; padding: 5.5rem 1.25rem 6.5rem; max-width: 780px; margin: 0 auto; width: 100%; text-align: center; }
@@ -72,7 +72,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .hero-stars { color: var(--accent); letter-spacing: 1px; }
 .hero-h1 { font-family: var(--font-display); font-size: clamp(2.2rem,6.2vw,4.1rem); font-weight: 900; color: #fff; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.15rem; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
 .accent { color: var(--accent); }
-/* The headline's second half swings into italic - editorial, and it makes the
+/* The headline's second half swings into italic, editorial, and it makes the
    brand name read as a signature rather than a label. */
 .hero-h1 .accent { font-style: italic; font-weight: 700; }
 .hero-sub1 { font-size: clamp(1.15rem,2.6vw,1.5rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
@@ -87,21 +87,22 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .d1 { animation-delay: .1s; opacity: 0; } .d2 { animation-delay: .2s; opacity: 0; }
 .d3 { animation-delay: .3s; opacity: 0; } .d4 { animation-delay: .4s; opacity: 0; }
 
-/* ============ TRUST STRIP - numerals in the display face, hairline dividers ============ */
+/* ============ TRUST STRIP, numerals in the display face, hairline dividers ============ */
 /* Floating plinth: rises out of the hero's open frame and sits over the seam */
 #trust { position: relative; z-index: 5; background: var(--primary); color: #fff; padding: 1.7rem 1rem;
   width: calc(100% - 2.5rem); max-width: 1040px; margin: -2.9rem auto 0;
   border: 1px solid rgba(255,255,255,.09); border-radius: var(--radius);
   box-shadow: 0 2px 6px rgba(18,26,43,.18), 0 22px 50px rgba(18,26,43,.26); }
 #gallery { padding-top: 3rem; }
-.trust-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+/* Only two verified stats for this business, no years figure or locally-owned claim to show */
+.trust-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); }
 .trust-item { text-align: center; padding: 0 .5rem; position: relative; }
 .trust-item + .trust-item::before { content: ''; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; background: rgba(255,255,255,.14); }
 .trust-num { display: block; font-family: var(--font-display); font-size: clamp(1.55rem,5.2vw,2.35rem); font-weight: 900; line-height: 1; letter-spacing: -.02em; color: var(--accent); font-variant-numeric: tabular-nums; }
 .trust-label { display: block; margin-top: .5rem; font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.6); line-height: 1.4; }
 @media(min-width:768px) { #trust { padding: 2.3rem 2rem; margin-top: -3.6rem; } .trust-label { font-size: .72rem; } #gallery { padding-top: 4.5rem; } }
 
-/* ============ SECTION HEADINGS - letterspaced gold eyebrow, no filled rule ============ */
+/* ============ SECTION HEADINGS, letterspaced gold eyebrow, no filled rule ============ */
 .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
 .section-label { display: flex; align-items: center; justify-content: center; gap: .8rem; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--accent-dark); margin-bottom: 1rem; }
 .section-label::before, .section-label::after { content: ''; width: 26px; height: 1px; background: var(--gold-hair); flex-shrink: 0; }
@@ -119,7 +120,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   html { scroll-behavior: auto; }
 }
 
-/* ============ WHY - unified navy/gold icon system ============ */
+/* ============ WHY, unified navy/gold icon system ============ */
 .why-grid { display: grid; gap: 1.1rem; }
 @media(min-width:768px) { .why-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
 .why-card { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem 1.7rem 2rem; text-align: center; transition: border-color .25s, transform .25s; overflow: hidden; }
@@ -130,8 +131,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .why-card h3 { font-family: var(--font-display); font-size: 1.06rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.4; margin-bottom: .65rem; }
 .why-card p { color: var(--muted); font-size: .93rem; line-height: 1.7; }
 
-/* ============ SERVICES - gold icon discs ============ */
-/* Phone: single-column rows with the icon beside the text - far more readable
+/* ============ SERVICES, gold icon discs ============ */
+/* Phone: single-column rows with the icon beside the text, far more readable
    than two cramped columns. Tiles return from 640px up. */
 .services-grid { display: grid; grid-template-columns: 1fr; gap: .7rem; }
 .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.15rem; display: grid; grid-template-columns: 44px 1fr; column-gap: 1rem; align-items: start; text-align: left; transition: transform .25s, border-color .25s; }
@@ -149,7 +150,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 }
 @media(min-width:1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
 
-/* ============ HOW - connected gold timeline ============ */
+/* ============ HOW, connected gold timeline ============ */
 #how { background: var(--bg-alt); }
 .how-grid { display: flex; flex-direction: column; gap: 0; max-width: 680px; margin: 0 auto; position: relative; }
 .how-step { display: flex; gap: 1.4rem; align-items: flex-start; text-align: left; position: relative; padding-bottom: 2.2rem; }
@@ -169,7 +170,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .how-cta { display: block; width: 100%; max-width: 680px; margin: 3rem auto 0; padding: 1.05rem; background: var(--accent); color: var(--primary); border-radius: 8px; font-weight: 700; font-size: 1rem; letter-spacing: .01em; text-align: center; box-shadow: inset 0 -2px 0 rgba(0,0,0,.14); transition: background .2s, transform .2s; }
 .how-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
-/* ============ GALLERY - full-bleed on mobile, arrows over the photo ============ */
+/* ============ GALLERY, full-bleed on mobile, arrows over the photo ============ */
 #gallery { background: var(--bg-alt); }
 /* Escape the section gutter so images run edge to edge on a phone */
 .gallery-carousel { position: relative; margin: 1.5rem -1.25rem 0; }
@@ -208,11 +209,11 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   .gallery-btn-prev { left: 1.5rem; } .gallery-btn-next { right: 1.5rem; }
   .gallery-foot { padding: 0; }
 }
-/* On a wide screen a 16:10 slide grows taller than the viewport - widen the crop
+/* On a wide screen a 16:10 slide grows taller than the viewport, widen the crop
    so the whole photo stays visible above the fold. */
 @media(min-width:1024px) { .gallery-item { aspect-ratio: 16/9; } }
 
-/* ============ TESTIMONIALS - single markup, quote mark + initials ============ */
+/* ============ TESTIMONIALS, single markup, quote mark + initials ============ */
 #testimonials { background: var(--bg-alt); }
 /* The row scrolls on mobile, so it has to look scrollable: a narrower card so the
    next one clearly peeks, a fade at the edge, and dots + count below. */
@@ -240,7 +241,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .testi-name { font-weight: 700; font-size: .9rem; line-height: 1.3; }
 .testi-loc { color: var(--muted); font-size: .8rem; }
 
-/* ============ CONTACT - navy band pre-footer ============ */
+/* ============ CONTACT, navy band pre-footer ============ */
 #contact { background: radial-gradient(120% 90% at 15% 0%, var(--primary-soft) 0%, var(--primary) 55%); color: #fff; }
 #contact .section-title { color: #fff; }
 #contact .section-label { color: var(--accent); }
@@ -300,10 +301,10 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (31 Reviews)</div>
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (27 Reviews)</div>
     <h1 class="hero-h1 fade-up d2">Brent Smith <span class="accent">Plumbing &amp; Gas</span></h1>
-    <p class="hero-sub1 fade-up d3">The Gold Coast's Leading Plumbing and Gas Specialists</p>
-    <p class="hero-sub2 fade-up d3">A locally owned plumbing and gas fitting team servicing Southport, Nerang, Robina and the wider Gold Coast region.</p>
+    <p class="hero-sub1 fade-up d3">Manly's Go-To Plumbing and Gas Specialists</p>
+    <p class="hero-sub2 fade-up d3">A locally owned plumbing and gas service servicing Manly, Fairlight, Balgowlah and the wider Northern Beaches.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61422453929" class="btn btn-accent">&#9742; Call 0422 453 929</a>
       <a href="#gallery" class="hero-gallery-link">See our recent work &darr;</a>
@@ -315,24 +316,23 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <section id="trust">
   <div class="trust-inner">
     <div class="trust-item reveal"><span class="trust-num">5.0</span><span class="trust-label">Average rating</span></div>
-    <div class="trust-item reveal"><span class="trust-num">31</span><span class="trust-label">Google reviews</span></div>
-    <div class="trust-item reveal"><span class="trust-num">100%</span><span class="trust-label">Locally owned and run</span></div>
+    <div class="trust-item reveal"><span class="trust-num">27</span><span class="trust-label">Google reviews</span></div>
   </div>
 </section>
 
 <section id="gallery">
   <div class="section-inner">
     <p class="section-label reveal">Our Work</p>
-    <h2 class="section-title reveal">Recent Plumbing and Gas Projects Across the Gold Coast</h2>
+    <h2 class="section-title reveal">Recent Plumbing and Gas Jobs Around Manly</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">A few of the jobs we have completed for homes and businesses around Southport.</p>
+    <p class="section-sub reveal">A few of the installs and repairs we have completed recently for local homes.</p>
     <div class="gallery-carousel reveal">
       <div class="gallery-track-wrap">
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Gas line installation preparation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Gas line installation prep, Southport</figcaption></figure></div>
-          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Hot water system installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Hot water system installation, Nerang</figcaption></figure></div>
-          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Bathroom vanity plumbing rough-in, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Bathroom vanity rough-in, Robina</figcaption></figure></div>
-          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Fully equipped service vehicle, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Fully equipped service vehicle, Gold Coast</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-1.jpg" alt="New hot water system installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>New hot water system installation, Manly</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Drainage and pipe rough-in during renovation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Drainage and pipe rough-in, Fairlight</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Bathroom vanity plumbing fit-off, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Bathroom vanity plumbing fit-off, Balgowlah</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Water pump system installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Water pump system installation, Queenscliff</figcaption></figure></div>
         </div>
         <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8249;</button>
         <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8250;</button>
@@ -348,16 +348,16 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <section id="services">
   <div class="section-inner">
     <p class="section-label">Our Services</p>
-    <h2 class="section-title reveal">Plumbing and Gas Services for Every Home</h2>
+    <h2 class="section-title reveal">Plumbing and Gas Services for Every Part of Your Home</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">From a leaking tap to a full gas fitting job, we handle it all.</p>
+    <p class="section-sub reveal">From a blocked drain to a full gas appliance install, we handle it all.</p>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12a4 4 0 014-4h8a4 4 0 014 4M4 12v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg></div><h3>Hot Water Systems</h3><p>Installation and repair to keep the hot water running when you need it.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>Blocked Drain Clearing</h3><p>Fast, thorough clearing of blocked drains and pipe relining.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21v-4l11-11 4 4L7 21H3z"/><path d="M14 6l4 4"/></svg></div><h3>General Plumbing</h3><p>Repairs, maintenance and installations for every part of the home.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg></div><h3>Gas Fitting Services</h3><p>Safe, compliant gas fitting and appliance installations you can rely on.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 16l6-12 6 12"/></svg></div><h3>Leak Detection and Repairs</h3><p>Finding and fixing leaks before they become bigger problems.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></div><h3>Bathroom Renovations</h3><p>Full plumbing fit-outs for bathroom upgrades and renovations.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c3 4 6 7 6 11a6 6 0 01-12 0c0-4 3-7 6-11z"/></svg></div><h3>General Plumbing</h3><p>Repairs and maintenance for taps, toilets, pipes and everything in between.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 8h6M9 12h6"/></svg></div><h3>Hot Water Systems</h3><p>Installation and repair of hot water units, done fast and done right.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12a4 4 0 018 0 4 4 0 008 0"/></svg></div><h3>Drain Clearing</h3><p>Fast, thorough blocked drain clearing and pipe relining using the right gear.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div><h3>Gas Fitting</h3><p>Safe, compliant gas appliance installations and repairs from a licensed team.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="9" rx="1"/><path d="M7 10V7a5 5 0 0110 0v3"/></svg></div><h3>Bathroom Renovations</h3><p>Plumbing for full bathroom renovations, from rough-in to final fit-off.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"/></svg></div><h3>Emergency Plumbing</h3><p>Fast response for burst pipes and urgent plumbing problems that cannot wait.</p></div>
     </div>
   </div>
 </section>
@@ -367,12 +367,12 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <p class="section-label">Testimonials</p>
     <h2 class="section-title reveal">What Our Customers Say</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">Real feedback from homeowners across the Gold Coast.</p>
+    <p class="section-sub reveal">Real feedback from homeowners around Manly and the Northern Beaches.</p>
     <div class="testi-scroller reveal">
     <div class="testi-wrap">
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>The new hot water system installation is immaculate, every pipe run is neat and the fittings are all lined up perfectly. You can tell Brent takes real pride in the finish.</p><div class="testi-person"><div class="testi-avatar">SK</div><div><div class="testi-name">Sharon K.</div><div class="testi-loc">Southport</div></div></div></div>
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>I was nervous about a big gas fitting job but the team explained everything clearly, turned up on time and left the site spotless every day. Communication was excellent throughout.</p><div class="testi-person"><div class="testi-avatar">ML</div><div><div class="testi-name">Matt and Jenny L.</div><div class="testi-loc">Nerang</div></div></div></div>
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>We compared a few plumbers before choosing Brent Smith Plumbing and Gas. The quote was clear and upfront, and the finished bathroom plumbing exceeded what we expected.</p><div class="testi-person"><div class="testi-avatar">RP</div><div><div class="testi-name">Ryan P.</div><div class="testi-loc">Robina</div></div></div></div>
+      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>Brent sorted our gas cooktop install quickly and left everything tested and compliant. Neat work and no mess left behind, exactly what you want from a gas fitter.</p><div class="testi-person"><div class="testi-avatar">EW</div><div><div class="testi-name">Emma W.</div><div class="testi-loc">Manly</div></div></div></div>
+      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>I was nervous about a big plumbing job during our bathroom reno, but the team communicated well the whole way through and turned up exactly when they said they would.</p><div class="testi-person"><div class="testi-avatar">PL</div><div><div class="testi-name">Paul and Nina L.</div><div class="testi-loc">Fairlight</div></div></div></div>
+      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>Got a few quotes for a blocked drain and Brent Smith Plumbing was upfront about the price before starting. No hidden extras and the drain has been perfect since.</p><div class="testi-person"><div class="testi-avatar">TH</div><div><div class="testi-name">Tom H.</div><div class="testi-loc">Balgowlah</div></div></div></div>
     </div>
     </div>
     <div class="testi-foot">
@@ -386,24 +386,24 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <section id="why">
   <div class="section-inner">
     <p class="section-label">Why Brent Smith Plumbing &amp; Gas</p>
-    <h2 class="section-title reveal">A Plumbing and Gas Service You Can Rely On</h2>
+    <h2 class="section-title reveal">A Plumbing and Gas Service Built on Getting It Right</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">We focus on getting the job right the first time, every time.</p>
+    <p class="section-sub reveal">We treat every job, big or small, with the same focus on a proper fix.</p>
     <div class="why-grid">
       <div class="why-card reveal">
-        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>We Get It Right the First Time</h3>
-        <p>From hot water systems to gas fitting, we diagnose the real problem before we quote, so you get a lasting fix, not a temporary patch.</p>
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div>
+        <h3>Fixed Right, First Time</h3>
+        <p>We diagnose the real problem before we start, not just the symptom, so the fix actually lasts.</p>
       </div>
       <div class="why-card reveal">
         <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Prompt, Professional Service</h3>
-        <p>We respond quickly to urgent repairs and keep you informed every step of the way, so you are never left waiting or wondering.</p>
+        <h3>Prompt, Dependable Service</h3>
+        <p>We show up when we say we will and keep you informed, so hiring a tradesperson feels easy.</p>
       </div>
       <div class="why-card reveal">
         <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Gold Coast Local Knowledge</h3>
-        <p>From high-rise apartments to established Gold Coast homes, we understand the plumbing and gas systems typical of the region.</p>
+        <h3>Northern Beaches Locals</h3>
+        <p>We know the older homes and coastal apartments around Manly and what their plumbing tends to need.</p>
       </div>
     </div>
   </div>
@@ -416,10 +416,10 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <hr class="section-rule reveal" />
     <p class="section-sub reveal">Getting your plumbing and gas work sorted should be easy. Here is how we keep it that way.</p>
     <div class="how-grid">
-      <div class="how-step reveal"><div class="how-num">1</div><div class="how-step-body"><h3>Free Quote</h3><p>Call or request a quote. We assess the job and give you a clear price with no obligation.</p></div></div>
-      <div class="how-step reveal"><div class="how-num">2</div><div class="how-step-body"><h3>Diagnose the Problem</h3><p>We identify exactly what is causing the issue before any work begins.</p></div></div>
-      <div class="how-step reveal"><div class="how-num">3</div><div class="how-step-body"><h3>Complete the Work</h3><p>Licensed plumbing and gas fitting work carried out to a high standard.</p></div></div>
-      <div class="how-step reveal"><div class="how-num">4</div><div class="how-step-body"><h3>Test, Check and Clean Up</h3><p>We test everything, walk you through the work and leave the site clean.</p></div></div>
+      <div class="how-step reveal"><div class="how-num">1</div><div class="how-step-body"><h3>Free Quote</h3><p>Call or request a quote. We talk through the problem and give you a clear price with no obligation.</p></div></div>
+      <div class="how-step reveal"><div class="how-num">2</div><div class="how-step-body"><h3>Diagnose the Problem</h3><p>We find the actual cause before touching a pipe or fitting, so we are not guessing at a fix.</p></div></div>
+      <div class="how-step reveal"><div class="how-num">3</div><div class="how-step-body"><h3>Complete the Work</h3><p>We carry out the repair or installation with care, using quality parts built to last.</p></div></div>
+      <div class="how-step reveal"><div class="how-num">4</div><div class="how-step-body"><h3>Test, Check and Clean Up</h3><p>We test everything, walk you through it and leave your home as tidy as we found it.</p></div></div>
     </div>
     <a href="tel:+61422453929" class="how-cta reveal">&#9742; Call 0422 453 929</a>
   </div>
@@ -428,15 +428,15 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <section id="contact">
   <div class="section-inner">
     <p class="section-label">Contact</p>
-    <h2 class="section-title reveal">Need a Plumber You Can Trust?</h2>
+    <h2 class="section-title reveal">Need a Plumber or Gas Fitter Today?</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">Call today for a free, no obligation quote.</p>
+    <p class="section-sub reveal">Call now for upfront pricing and fast, friendly service.</p>
     <div class="contact-grid">
       <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>Call Us</h3><a href="tel:+61422453929" class="phone-link">0422 453 929</a><p>Free quotes, no obligation</p></div>
-      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Servicing Southport, Nerang, Robina, Broadbeach and the greater Gold Coast.</p></div>
-      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div><h3>Our Rating</h3><p><span style="color:var(--accent);letter-spacing:2px;">★★★★★</span><br />5.0 (31 Reviews)</p></div>
+      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Servicing Manly, Fairlight, Balgowlah, Queenscliff and surrounding areas.</p></div>
+      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div><h3>Our Rating</h3><p><span style="color:var(--accent);letter-spacing:2px;">★★★★★</span><br />5.0 (27 Reviews)</p></div>
     </div>
-    <a href="tel:+61422453929" class="btn btn-accent reveal">&#9742; Call for a Free Quote</a>
+    <a href="tel:+61422453929" class="btn btn-accent reveal">&#9742; Call 0422 453 929 Now. Available Today.</a>
   </div>
 </section>
 
@@ -445,25 +445,25 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <div class="footer-grid">
       <div>
         <span class="footer-logo-text">Brent Smith Plumbing &amp; Gas</span>
-        <p class="footer-about">A locally owned Gold Coast plumbing and gas fitting team focused on reliable, professional work and honest pricing. Licensed, insured and proud of every job we complete.</p>
-        <p class="footer-suburbs">Proudly servicing Southport, Nerang and the greater Gold Coast region.</p>
-        <div class="footer-stars">★★★★★ <span>5.0 (31 Reviews)</span></div>
+        <p class="footer-about">A locally owned plumbing and gas team based in Manly, focused on quality workmanship and prompt, dependable service for homes and small businesses across the Northern Beaches.</p>
+        <p class="footer-suburbs">Proudly servicing Manly, Fairlight and the wider Northern Beaches.</p>
+        <div class="footer-stars">★★★★★ <span>5.0 (27 Reviews)</span></div>
       </div>
       <div>
         <p class="footer-heading">Our Services</p>
         <ul class="footer-list">
-          <li>Hot Water Systems</li>
-          <li>Blocked Drain Clearing</li>
           <li>General Plumbing</li>
-          <li>Gas Fitting Services</li>
-          <li>Leak Detection and Repairs</li>
+          <li>Hot Water Systems</li>
+          <li>Drain Clearing</li>
+          <li>Gas Fitting</li>
           <li>Bathroom Renovations</li>
+          <li>Emergency Plumbing</li>
         </ul>
       </div>
       <div>
         <p class="footer-heading">Contact Us</p>
         <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+61422453929">0422 453 929</a></div>
-        <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg><span>Licensed and Insured. Free quotes.</span></div>
+        <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg><span>Licensed and Insured. Upfront pricing.</span></div>
         <a href="tel:+61422453929" class="footer-contact-cta">Book a Plumber</a>
       </div>
     </div>
@@ -491,7 +491,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   onScroll();
 })();
 
-/* Scroll reveal - siblings arrive in sequence rather than all at once */
+/* Scroll reveal, siblings arrive in sequence rather than all at once */
 (function(){
   const els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -564,7 +564,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   sync();
 })();
 
-/* Gallery carousel - peek layout + counter */
+/* Gallery carousel, peek layout + counter */
 (function(){
   const track    = document.getElementById('galleryTrack');
   const slides   = track.querySelectorAll('.gallery-slide');
@@ -622,6 +622,5 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   goTo(0);
 })();
 </script>
-
 </body>
 </html>
