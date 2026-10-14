@@ -29,10 +29,14 @@
     <h1 class="page-title">Collections</h1>
   </div>
   <section class="filters" aria-label="Filter products">
-    <div class="filter-group"><span class="filter-label">Size</span><div class="chip-row"><button type="button" class="chip" data-group="size" data-value="30x30" aria-pressed="false">30x30</button><button type="button" class="chip" data-group="size" data-value="30x30 KitKat" aria-pressed="false">30x30 KitKat</button><button type="button" class="chip" data-group="size" data-value="30x30 Mistro Mosaic" aria-pressed="false">30x30 Mistro Mosaic</button><button type="button" class="chip" data-group="size" data-value="30x60" aria-pressed="false">30x60</button><button type="button" class="chip" data-group="size" data-value="30x60 Feature Tile" aria-pressed="false">30x60 Feature Tile</button><button type="button" class="chip" data-group="size" data-value="40x60" aria-pressed="false">40x60</button><button type="button" class="chip" data-group="size" data-value="40x60 Drop Edge Bullnose" aria-pressed="false">40x60 Drop Edge Bullnose</button><button type="button" class="chip" data-group="size" data-value="40x60 Pencil Edge Bullnose" aria-pressed="false">40x60 Pencil Edge Bullnose</button><button type="button" class="chip" data-group="size" data-value="40x60 Round Edge Bullnose" aria-pressed="false">40x60 Round Edge Bullnose</button><button type="button" class="chip" data-group="size" data-value="60x60" aria-pressed="false">60x60</button><button type="button" class="chip" data-group="size" data-value="60x120" aria-pressed="false">60x120</button><button type="button" class="chip" data-group="size" data-value="60x120 3D Strato" aria-pressed="false">60x120 3D Strato</button></div></div>
-    <div class="filter-group"><span class="filter-label">Finish</span><div class="chip-row"><button type="button" class="chip" data-group="finish" data-value="Matt" aria-pressed="false">Matt</button><button type="button" class="chip" data-group="finish" data-value="Grip" aria-pressed="false">Grip</button><button type="button" class="chip" data-group="finish" data-value="External Bullnose" aria-pressed="false">External Bullnose</button><button type="button" class="chip" data-group="finish" data-value="External Paver" aria-pressed="false">External Paver</button><button type="button" class="chip" data-group="finish" data-value="SilkTec" aria-pressed="false">SilkTec</button><button type="button" class="chip" data-group="finish" data-value="External" aria-pressed="false">External</button></div></div>
-    <div class="filter-group"><span class="filter-label">Anti Slip Rating</span><div class="chip-row"><button type="button" class="chip" data-group="slip" data-value="P3" aria-pressed="false">P3</button><button type="button" class="chip" data-group="slip" data-value="P4" aria-pressed="false">P4</button><button type="button" class="chip" data-group="slip" data-value="P5" aria-pressed="false">P5</button></div></div>
-    <div class="filter-foot"><span id="count" aria-live="polite">10 products</span><button type="button" id="clear" class="link-btn">Clear filters</button></div>
+    <div class="fbar">
+      <span class="fbar-label">Filter by</span>
+      <details class="fdrop" data-group="size"><summary><span>Size</span><b class="fcount" hidden></b><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary><div class="fpanel" role="group" aria-label="Size"><p class="fsub">Tile sizes</p><div class="fopts"><label class="fopt"><input type="checkbox" data-group="size" value="30x30"><span>30x30</span></label><label class="fopt"><input type="checkbox" data-group="size" value="30x60"><span>30x60</span></label><label class="fopt"><input type="checkbox" data-group="size" value="40x60"><span>40x60</span></label><label class="fopt"><input type="checkbox" data-group="size" value="60x60"><span>60x60</span></label><label class="fopt"><input type="checkbox" data-group="size" value="60x120"><span>60x120</span></label></div><p class="fsub">Trims, mosaics and features</p><div class="fopts fopts-wide"><label class="fopt"><input type="checkbox" data-group="size" value="30x30 KitKat"><span>30x30 KitKat</span></label><label class="fopt"><input type="checkbox" data-group="size" value="30x30 Mistro Mosaic"><span>30x30 Mistro Mosaic</span></label><label class="fopt"><input type="checkbox" data-group="size" value="30x60 Feature Tile"><span>30x60 Feature Tile</span></label><label class="fopt"><input type="checkbox" data-group="size" value="40x60 Drop Edge Bullnose"><span>40x60 Drop Edge Bullnose</span></label><label class="fopt"><input type="checkbox" data-group="size" value="40x60 Pencil Edge Bullnose"><span>40x60 Pencil Edge Bullnose</span></label><label class="fopt"><input type="checkbox" data-group="size" value="40x60 Round Edge Bullnose"><span>40x60 Round Edge Bullnose</span></label><label class="fopt"><input type="checkbox" data-group="size" value="60x120 3D Strato"><span>60x120 3D Strato</span></label></div></div></details>
+      <details class="fdrop" data-group="finish"><summary><span>Finish</span><b class="fcount" hidden></b><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary><div class="fpanel" role="group" aria-label="Finish"><div class="fopts"><label class="fopt"><input type="checkbox" data-group="finish" value="Matt"><span>Matt</span></label><label class="fopt"><input type="checkbox" data-group="finish" value="Grip"><span>Grip</span></label><label class="fopt"><input type="checkbox" data-group="finish" value="External Bullnose"><span>External Bullnose</span></label><label class="fopt"><input type="checkbox" data-group="finish" value="External Paver"><span>External Paver</span></label><label class="fopt"><input type="checkbox" data-group="finish" value="SilkTec"><span>SilkTec</span></label><label class="fopt"><input type="checkbox" data-group="finish" value="External"><span>External</span></label></div></div></details>
+      <details class="fdrop" data-group="slip"><summary><span>Slip rating</span><b class="fcount" hidden></b><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary><div class="fpanel" role="group" aria-label="Slip rating"><div class="fopts"><label class="fopt"><input type="checkbox" data-group="slip" value="P3"><span>P3</span></label><label class="fopt"><input type="checkbox" data-group="slip" value="P4"><span>P4</span></label><label class="fopt"><input type="checkbox" data-group="slip" value="P5"><span>P5</span></label></div></div></details>
+      <span class="fbar-meta"><span id="count" aria-live="polite">10 products</span><button type="button" id="clear" class="link-btn" hidden>Clear all</button></span>
+    </div>
+    <div class="ftags" id="ftags"></div>
   </section>
   <div class="grid" id="grid">
 <a class="card" href="products/amalfi-argento-amalfi-argento.html" data-size="30x30 Mistro Mosaic|30x30|30x60|60x60|60x120|40x60 Pencil Edge Bullnose|40x60" data-finish="Matt|Grip|External Bullnose|External Paver" data-slip="">
@@ -89,20 +93,23 @@
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script>
 (function(){
-  var chips=[].slice.call(document.querySelectorAll('.chip')),cards=[].slice.call(document.querySelectorAll('.card'));
-  var count=document.getElementById('count'),empty=document.getElementById('empty');
+  var boxes=[].slice.call(document.querySelectorAll('.fopt input')),cards=[].slice.call(document.querySelectorAll('#grid .card')),drops=[].slice.call(document.querySelectorAll('.fdrop'));
+  var count=document.getElementById('count'),empty=document.getElementById('empty'),clear=document.getElementById('clear'),tags=document.getElementById('ftags');
   function apply(){
-    var sel={};
-    chips.forEach(function(c){if(c.getAttribute('aria-pressed')==='true'){(sel[c.dataset.group]=sel[c.dataset.group]||[]).push(c.dataset.value);}});
-    var n=0;
-    cards.forEach(function(card){
-      var ok=Object.keys(sel).every(function(g){var have=(card.dataset[g]||'').split('|');return sel[g].some(function(v){return have.indexOf(v)>-1;});});
-      card.hidden=!ok; if(ok)n++;
-    });
-    count.textContent=n+(n===1?' product':' products'); empty.hidden=n>0;
+    var sel={},n=0,total=0;
+    boxes.forEach(function(b){if(b.checked){(sel[b.dataset.group]=sel[b.dataset.group]||[]).push(b.value);total++;}});
+    cards.forEach(function(card){var ok=Object.keys(sel).every(function(g){var have=(card.dataset[g]||'').split('|');return sel[g].some(function(v){return have.indexOf(v)>-1;});});card.hidden=!ok;if(ok)n++;});
+    drops.forEach(function(d){var c=d.querySelector('.fcount'),k=(sel[d.dataset.group]||[]).length;c.textContent=k;c.hidden=!k;});
+    tags.innerHTML='';
+    boxes.forEach(function(b){if(!b.checked)return;var t=document.createElement('button');t.type='button';t.className='ftag';t.setAttribute('aria-label','Remove filter '+b.value);t.textContent=b.value;var x=document.createElement('span');x.setAttribute('aria-hidden','true');x.textContent='×';t.appendChild(x);t.addEventListener('click',function(){b.checked=false;apply();});tags.appendChild(t);});
+    count.textContent=n+(n===1?' product':' products');empty.hidden=n>0;clear.hidden=!total;
   }
-  chips.forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');apply();});});
-  document.getElementById('clear').addEventListener('click',function(){chips.forEach(function(c){c.setAttribute('aria-pressed','false');});apply();});
+  boxes.forEach(function(b){b.addEventListener('change',apply);});
+  clear.addEventListener('click',function(){boxes.forEach(function(b){b.checked=false;});apply();});
+  drops.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)drops.forEach(function(o){if(o!==d)o.open=false;});});});
+  document.addEventListener('click',function(ev){drops.forEach(function(d){if(d.open&&!d.contains(ev.target))d.open=false;});});
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape')drops.forEach(function(d){if(d.open){d.open=false;d.querySelector('summary').focus();}});});
+  apply();
 })();
 </script>
 </body>
