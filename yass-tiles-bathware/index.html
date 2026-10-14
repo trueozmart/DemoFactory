@@ -55,6 +55,9 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 /* On mobile the fixed bottom call bar is the CTA - keep the header uncluttered */
 @media(max-width:767px) { .header-right { display: none; } }
 @media(min-width:768px) { .header-phone { display: block; } }
+.header-range { color: rgba(255,255,255,.9); font-size: .9rem; font-weight: 600; }
+.header-range:hover { color: var(--accent); }
+.range-cta { display: inline-block; margin-top: 2.2rem; }
 
 /* ============ HERO - bottom-weighted gradient, larger type ============ */
 #hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 0; }
@@ -291,6 +294,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="header-inner">
     <span class="header-logo">Yass Tiles & Bathware</span>
     <div class="header-right">
+      <a href="range/index.html" class="header-range">Our Range</a>
       <span class="header-phone">0416 150 569</span>
       <a href="tel:+61416150569" class="btn btn-accent">Get Expert Advice</a>
     </div>
@@ -360,6 +364,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
       <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="7" rx="2"/><path d="M6 9v9a3 3 0 003 3h6a3 3 0 003-3V9"/></svg></div><h3>Toilets & Bathware</h3><p>A full range of toilets and bathware to complete your renovation.</p></div>
       <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><h3>Design & Selection Advice</h3><p>Personalised guidance to help you choose the right products first time.</p></div>
     </div>
+    <a href="range/index.html" class="btn btn-accent range-cta reveal">Browse our tile range</a>
   </div>
 </section>
 
