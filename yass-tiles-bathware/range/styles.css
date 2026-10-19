@@ -236,6 +236,7 @@ img { display: block; max-width: 100%; }
 .coll-nav a { flex-shrink: 0; font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.86); text-decoration: none; padding: .45rem .85rem; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; transition: border-color .2s, color .2s, background .2s; }
 .coll-nav a:hover { border-color: var(--accent); color: var(--accent); }
 @media(min-width:768px) { .coll-nav { flex-wrap: wrap; overflow: visible; margin-right: 0; padding-right: 0; max-width: 900px; } }
-.coll { scroll-margin-top: 140px; }
+.coll, .coll-name { scroll-margin-top: 190px; }
+@media(min-width:768px) { .coll, .coll-name { scroll-margin-top: 160px; } }
 .fpanel { max-height: min(70vh, 520px); overflow-y: auto; }
 @media (prefers-reduced-motion: reduce) { .card-img img, .card-name { transition: none; } .card:hover .card-img img { transform: none; } }
