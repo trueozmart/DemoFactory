@@ -285,6 +285,26 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 #mobile-bar { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: rgba(22,30,49,.97); backdrop-filter: blur(8px); border-top: 1px solid rgba(217,165,33,.25); padding: .75rem 1rem; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
 @media(min-width:768px) { #mobile-bar { display: none; } }
 .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: 10px; font-weight: 700; font-size: .95rem; text-align: center; }
+/* RANGES-CSS:START */
+#ranges { background: var(--bg); }
+.rgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; text-align: left; }
+@media(min-width:640px) { .rgrid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+@media(min-width:1024px) { .rgrid { grid-template-columns: repeat(4, 1fr); gap: 1.15rem; } }
+.rcard { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--bg-alt); isolation: isolate; }
+.rcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+.rcard::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(10,14,26,.82) 0%, rgba(10,14,26,.25) 45%, transparent 70%); }
+.rcard::after { content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); pointer-events: none; }
+.rcard:hover img { transform: scale(1.05); }
+.rcard-txt { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: .9rem .95rem 1rem; display: flex; flex-direction: column; gap: .2rem; }
+.rcard-name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1.2; color: #fff; }
+.rcard-count { font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.rcard-all { background: var(--primary); }
+.rcard-all::before { background-image: linear-gradient(rgba(217,165,33,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(217,165,33,.16) 1px, transparent 1px); background-size: 40px 40px; }
+.rcard-all .rcard-txt { top: 0; justify-content: flex-end; }
+.rcard-all:hover .rcard-name { color: var(--accent); }
+@media(min-width:768px) { .rcard-name { font-size: 1.2rem; } .rcard-txt { padding: 1.1rem 1.15rem 1.2rem; } }
+@media (prefers-reduced-motion: reduce) { .rcard img { transition: none; } .rcard:hover img { transform: none; } }
+/* RANGES-CSS:END */
 </style>
 </head>
 <body>
@@ -311,7 +331,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <p class="hero-sub2 fade-up d3">A locally owned showroom supplying ceramic, porcelain and natural stone tiles alongside modern bathware, servicing Yass and the wider South West NSW region.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61416150569" class="btn btn-accent">&#9742; Call 0416 150 569</a>
-      <a href="#gallery" class="hero-gallery-link">See our range &darr;</a>
+      <a href="#ranges" class="hero-gallery-link">See our range &darr;</a>
     </div>
     <p class="hero-trust fade-up d4">Expert advice &bull; Wide range in stock &bull; Friendly local service</p>
   </div>
@@ -364,9 +384,20 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
       <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="7" rx="2"/><path d="M6 9v9a3 3 0 003 3h6a3 3 0 003-3V9"/></svg></div><h3>Toilets & Bathware</h3><p>A full range of toilets and bathware to complete your renovation.</p></div>
       <div class="service-card reveal"><div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><h3>Design & Selection Advice</h3><p>Personalised guidance to help you choose the right products first time.</p></div>
     </div>
-    <a href="range/index.html" class="btn btn-accent range-cta reveal">Browse our tile range</a>
   </div>
 </section>
+
+<!-- RANGES:START -->
+<section id="ranges">
+  <div class="section-inner">
+    <p class="section-label reveal">Tile Collections</p>
+    <h2 class="section-title reveal">Browse Our Tile Range</h2>
+    <hr class="section-rule reveal" />
+    <p class="section-sub reveal">Pick a collection to see its colours, sizes, finishes and specs.</p>
+    <div class="rgrid"><a class="rcard reveal" href="range/index.html#c-amalfi"><img src="range/assets/amalfi-argento-amalfi-argento/images/amalfi-argento-amalfi-argento-01.jpg" alt="Amalfi tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Amalfi</span><span class="rcard-count">3 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-anthology"><img src="range/assets/anthology-ash-anthology-ash/images/anthology-ash-anthology-ash-01.jpg" alt="Anthology tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Anthology</span><span class="rcard-count">3 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-avalon"><img src="range/assets/avalon-ivory-avalon-ivory/images/avalon-ivory-avalon-ivory-01.jpg" alt="Avalon tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Avalon</span><span class="rcard-count">2 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-avoca"><img src="range/assets/avoca-bianco/images/avoca-bianco-01.jpg" alt="Avoca tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Avoca</span><span class="rcard-count">2 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-enzo"><img src="range/assets/enzo-cinder-range-pool-areas-tiles/images/enzo-cinder-range-pool-areas-tiles-01.jpg" alt="Enzo tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Enzo</span><span class="rcard-count">6 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-ceppo-stone"><img src="range/assets/ceppo-stone-dark-bathroom-tiles/images/ceppo-stone-dark-bathroom-tiles-01.jpg" alt="Ceppo Stone tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Ceppo Stone</span><span class="rcard-count">3 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-capri"><img src="range/assets/capri-earl-grey-range-bathroom-tiles/images/capri-earl-grey-range-bathroom-tiles-01.jpg" alt="Capri tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Capri</span><span class="rcard-count">5 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-tundra-extra"><img src="range/assets/tundra-extra-grey-tundraextra-grey/images/tundra-extra-grey-tundraextra-grey-01.jpg" alt="Tundra Extra tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Tundra Extra</span><span class="rcard-count">4 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-galaxy"><img src="range/assets/galaxy-beige-range-bathroom-tiles/images/galaxy-beige-range-bathroom-tiles-01.jpg" alt="Galaxy tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Galaxy</span><span class="rcard-count">3 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-portofino"><img src="range/assets/portofino-bone-portofino-bone/images/portofino-bone-portofino-bone-01.jpg" alt="Portofino tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Portofino</span><span class="rcard-count">4 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-hamilton"><img src="range/assets/hamilton-champagne-range-hamilton-champagne/images/hamilton-champagne-range-hamilton-champagne-01.jpg" alt="Hamilton tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Hamilton</span><span class="rcard-count">5 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-dreamy"><img src="range/assets/dreamy-antracite-dreamy-antracite/images/dreamy-antracite-dreamy-antracite-01.jpg" alt="Dreamy tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Dreamy</span><span class="rcard-count">4 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-french-alps"><img src="range/assets/french-alps-canvas-matt-french-alps-canvas/images/french-alps-canvas-matt-french-alps-canvas-01.jpg" alt="French Alps tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">French Alps</span><span class="rcard-count">3 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-taj-mahal"><img src="range/assets/taj-mahal-bianco-taj-mahal-bianco/images/taj-mahal-bianco-taj-mahal-bianco-01.jpg" alt="Taj Mahal tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Taj Mahal</span><span class="rcard-count">2 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-misty-rain"><img src="range/assets/misty-rain-misty-rain/images/misty-rain-misty-rain-01.jpg" alt="Misty Rain tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Misty Rain</span><span class="rcard-count">1 colour</span></span></a><a class="rcard reveal" href="range/index.html#c-chateau"><img src="range/assets/chateau-earth-chateau-earth/images/chateau-earth-chateau-earth-01.jpg" alt="Chateau tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Chateau</span><span class="rcard-count">2 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-crema-marfil"><img src="range/assets/crema-marfil-bianco-crema-marfil-bianco/images/crema-marfil-bianco-crema-marfil-bianco-01.jpg" alt="Crema Marfil tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Crema Marfil</span><span class="rcard-count">2 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-dawn"><img src="range/assets/dawn-coal-dawn-coal/images/dawn-coal-dawn-coal-01.jpg" alt="Dawn tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Dawn</span><span class="rcard-count">4 colours</span></span></a><a class="rcard reveal" href="range/index.html#c-rhythm"><img src="range/assets/rhythm-coke-rhythm-coke/images/rhythm-coke-rhythm-coke-01.jpg" alt="Rhythm tiles" loading="lazy" /><span class="rcard-txt"><span class="rcard-name">Rhythm</span><span class="rcard-count">4 colours</span></span></a><a class="rcard rcard-all reveal" href="range/index.html"><span class="rcard-txt"><span class="rcard-name">View all tiles</span><span class="rcard-count">62 tiles, 19 collections &rarr;</span></span></a></div>
+  </div>
+</section>
+<!-- RANGES:END -->
 
 <section id="testimonials">
   <div class="section-inner">
