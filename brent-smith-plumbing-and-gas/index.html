@@ -45,7 +45,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 /* ============ HEADER, transparent over hero, solid on scroll ============ */
-#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: transparent; border-bottom: 1px solid transparent; height: 68px; display: flex; align-items: center; padding: 0 1.25rem; transition: background .3s, border-color .3s, box-shadow .3s; }
+#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(20,20,20,.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.07); height: 68px; display: flex; align-items: center; padding: 0 1.25rem; transition: background .3s, border-color .3s, box-shadow .3s; }
 #header.scrolled { background: rgba(20,20,20,.97); backdrop-filter: blur(10px); border-bottom-color: rgba(255,255,255,.07); box-shadow: 0 4px 24px rgba(0,0,0,.18); }
 /* Hairline reading-progress bar along the bottom of the header */
 #progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--accent); opacity: 0; transition: opacity .3s; }
@@ -67,11 +67,11 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .hero-bg { position: absolute; inset: -2%; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; animation: heroDrift 26s ease-in-out infinite alternate; }
 @keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.07); } }
 @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,12,12,.84) 0%, rgba(12,12,12,.44) 48%, rgba(12,12,12,.24) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,20,20,.92) 0%, rgba(20,20,20,.6) 48%, rgba(20,20,20,.62) 100%); }
 /* Inset hairline frame, the one detail that makes the hero feel composed */
 /* Open at the bottom, the stats plinth rises out of it */
-#hero::after { content: ''; position: absolute; inset: 11px; border: 1px solid rgba(255,255,255,.15); border-bottom: none; pointer-events: none; z-index: 2; }
-@media(min-width:768px) { #hero::after { inset: 18px; border-bottom: none; } }
+#hero::after { content: ''; position: absolute; inset: 79px 11px 11px; border: 1px solid rgba(255,255,255,.15); border-bottom: none; pointer-events: none; z-index: 2; }
+@media(min-width:768px) { #hero::after { inset: 86px 18px 18px; border-bottom: none; } }
 .hero-content { position: relative; z-index: 1; padding: 5.5rem 1.25rem 6.5rem; max-width: 780px; margin: 0 auto; width: 100%; text-align: center; }
 @media(min-width:768px) { .hero-content { padding: 6rem 1.5rem 4.5rem; } }
 .hero-badge { display: inline-flex; align-items: center; gap: .55rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px); border-radius: 999px; padding: .4rem 1.05rem; margin-bottom: 1.6rem; color: #fff; font-size: .82rem; font-weight: 600; letter-spacing: .04em; }
@@ -198,6 +198,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .gallery-btn-prev { left: .7rem; } .gallery-btn-next { right: .7rem; }
 .gallery-foot { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: .35rem; padding: 0 1.25rem; }
 .gallery-dots { display: flex; gap: .45rem; }
+@media(max-width:767px) { #galleryDots { display: none; } }
 .gallery-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.18); transition: all .3s; border: none; padding: 0; cursor: pointer; }
 .gallery-dot.active { width: 28px; border-radius: 4px; background: var(--accent); }
 .gallery-count { font-family: var(--font-display); display: flex; align-items: baseline; gap: .18rem; color: var(--muted); min-width: 56px; font-variant-numeric: tabular-nums; }
@@ -340,13 +341,38 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Drainage and pipe rough-in during renovation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Drainage and pipe rough-in, Robina</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Bathroom vanity plumbing fit-off, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Bathroom vanity plumbing fit-off, Southport</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Water pump system installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Water pump system installation, Nerang</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-5.jpg" alt="Heat pump hot water system installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Heat pump hot water system installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-6.jpg" alt="Six-burner gas cooktop installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Six-burner gas cooktop installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-7.jpg" alt="Vessel basin and wall mixer fit-off, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Vessel basin and wall mixer fit-off</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-8.jpg" alt="Gas cooktop install and test, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Gas cooktop install and test</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-9.jpg" alt="Toilet suite replacement, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Toilet suite replacement</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-10.jpg" alt="Back-to-wall bath and wall taps installed, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Back-to-wall bath and wall taps installed</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-11.jpg" alt="Stormwater strip drain installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Stormwater strip drain installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-12.jpg" alt="Built-in gas BBQ connection, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Built-in gas BBQ connection</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-13.jpg" alt="Excavating for a new service line, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Excavating for a new service line</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-14.jpg" alt="Hot water element and thermostat replacement, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Hot water element and thermostat replacement</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-15.jpg" alt="Underfloor drainage replacement, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Underfloor drainage replacement</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-16.jpg" alt="Burst water service repair, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Burst water service repair</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-17.jpg" alt="Bathroom water rough-in, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Bathroom water rough-in</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-18.jpg" alt="Floor waste and drainage rough-in, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Floor waste and drainage rough-in</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-19.jpg" alt="Shower rough-in, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Shower rough-in</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-20.jpg" alt="Gas continuous flow hot water installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Gas continuous flow hot water installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-21.jpg" alt="Rainwater pump installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Rainwater pump installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-22.jpg" alt="Concrete cutting for new drainage, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Concrete cutting for new drainage</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-23.jpg" alt="Brushed brass tapware and vanity install, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Brushed brass tapware and vanity install</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-24.jpg" alt="LPG gas bottle installation, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>LPG gas bottle installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-25.jpg" alt="Freestanding gas cooker connection, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Freestanding gas cooker connection</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-26.jpg" alt="Wall-hung toilet and in-wall cistern install, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Wall-hung toilet and in-wall cistern install</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-27.jpg" alt="Freestanding bath and brass wall spout, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Freestanding bath and brass wall spout</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-28.jpg" alt="Trenching for a new water line, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Trenching for a new water line</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-29.jpg" alt="Electric storage hot water replacement, Brent Smith Plumbing and Gas" loading="lazy" /><figcaption>Electric storage hot water replacement</figcaption></figure></div>
         </div>
         <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8249;</button>
         <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8250;</button>
       </div>
       <div class="gallery-foot">
         <div class="gallery-dots" id="galleryDots"></div>
-        <span class="gallery-count" id="galleryCount">1 / 4</span>
+        <span class="gallery-count" id="galleryCount">1 / 29</span>
       </div>
     </div>
   </div>
