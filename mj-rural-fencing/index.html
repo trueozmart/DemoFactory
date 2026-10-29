@@ -48,6 +48,10 @@
     },
     {
       "@type": "AdministrativeArea",
+      "name": "Orara Valley"
+    },
+    {
+      "@type": "AdministrativeArea",
       "name": "Grafton"
     },
     {
@@ -76,7 +80,7 @@
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Sawtell"
+      "name": "Boambee"
     },
     {
       "@type": "AdministrativeArea",
@@ -118,7 +122,7 @@
       "name": "What areas do you service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are based in Coffs Harbour and service rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen. That includes Woolgoolga, Corindi Beach, Glenreagh, Nana Glen, Coutts Crossing, Sawtell and Urunga."
+        "text": "We are based in the Orara Valley near Coffs Harbour and service rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen. That includes Woolgoolga, Corindi Beach, Glenreagh, Nana Glen, Coutts Crossing, Boambee and Urunga."
       }
     },
     {
@@ -206,8 +210,9 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 #header.scrolled #progress { opacity: 1; }
 @media(min-width:768px) { #header { height: 78px; padding: 0 2rem; } }
 .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
-.header-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: -.3px; line-height: 1.2; }
-@media(min-width:768px) { .header-logo { font-size: 1.25rem; letter-spacing: -.5px; } }
+.header-logo { display: flex; align-items: center; line-height: 0; }
+.header-logo img { height: 48px; width: auto; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+@media(min-width:768px) { .header-logo img { height: 62px; } }
 .header-right { display: flex; align-items: center; gap: 1.1rem; }
 .header-phone { display: none; color: rgba(255,255,255,.9); font-size: .9rem; font-weight: 600; }
 /* On mobile the fixed bottom call bar is the CTA - keep the header uncluttered */
@@ -451,7 +456,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <header id="header">
   <div id="progress"></div>
   <div class="header-inner">
-    <span class="header-logo">MJ Rural Fencing</span>
+    <a href="#" class="header-logo" aria-label="MJ Rural Fencing home"><img src="images/logo.webp" alt="MJ Rural Fencing logo" width="69" height="64" /></a>
     <div class="header-right">
       <span class="header-phone">0427 839 598</span>
       <a href="tel:+61427839598" class="btn btn-accent">Get a Free Quote</a>
@@ -466,7 +471,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (31 Reviews)</div>
     <h1 class="hero-h1 fade-up d2">Rural Fencing in <span class="accent">Coffs Harbour</span></h1>
     <p class="hero-sub1 fade-up d3">MJ Rural Fencing. Farm, boundary and post and rail fencing from Grafton to Macksville.</p>
-    <p class="hero-sub2 fade-up d3">A dependable rural fencing contractor based in Coffs Harbour, delivering durable wire and post fencing, custom farm fencing and fence repairs across the Coffs Coast and Clarence Valley.</p>
+    <p class="hero-sub2 fade-up d3">A dependable rural fencing contractor based in the Orara Valley near Coffs Harbour, delivering durable wire and post fencing, custom farm fencing and fence repairs across the Coffs Coast and Clarence Valley.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61427839598" class="btn btn-accent">&#9742; Call 0427 839 598</a>
       <a href="#gallery" class="hero-gallery-link">See our recent work &darr;</a>
@@ -609,7 +614,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <h2 class="section-title reveal">Rural Fencing Questions, Answered</h2>
     <hr class="section-rule reveal" />
     <div class="faq-list">
-      <div class="faq-item reveal"><h3>What areas do you service?</h3><p>We are based in Coffs Harbour and service rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen. That includes Woolgoolga, Corindi Beach, Glenreagh, Nana Glen, Coutts Crossing, Sawtell and Urunga.</p></div>
+      <div class="faq-item reveal"><h3>What areas do you service?</h3><p>We are based in the Orara Valley near Coffs Harbour and service rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen. That includes Woolgoolga, Corindi Beach, Glenreagh, Nana Glen, Coutts Crossing, Boambee and Urunga.</p></div>
       <div class="faq-item reveal"><h3>Do you offer free quotes?</h3><p>Yes. Call 0427 839 598 and we will come out to your property, look at the fence line and give you a clear, no-obligation price.</p></div>
       <div class="faq-item reveal"><h3>What types of fencing do you install?</h3><p>Plain and barbed wire fencing, ringlock and mesh stock fencing, timber and steel post fencing, hardwood post and rail, galvanised rail fencing, farm gates and driveway entrances.</p></div>
       <div class="faq-item reveal"><h3>Do you repair existing fences?</h3><p>Yes. We fix storm and flood damage, sagging or broken wire, rotten posts and failed strainer assemblies, and replace sections that have reached the end of their life.</p></div>
@@ -627,7 +632,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <p class="section-sub reveal">Call today for a free, no obligation quote.</p>
     <div class="contact-grid">
       <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>Call Us</h3><a href="tel:+61427839598" class="phone-link">0427 839 598</a><p>Free quotes, no obligation</p></div>
-      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Based in Coffs Harbour. Servicing rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen.</p></div>
+      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Based in the Orara Valley near Coffs Harbour. Servicing rural properties from Grafton and Ulmarra down to Nambucca Heads and Macksville, and inland to Dorrigo and Bellingen.</p></div>
       <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div><h3>Our Rating</h3><p><span style="color:var(--accent);letter-spacing:2px;">★★★★★</span><br />5.0 (31 Reviews)</p></div>
     </div>
     <a href="tel:+61427839598" class="btn btn-accent reveal">&#9742; Call for a Free Quote</a>
@@ -640,7 +645,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
       <div>
         <span class="footer-logo-text">MJ Rural Fencing</span>
         <p class="footer-about">A dependable rural fencing contractor providing durable wire and post fencing, custom farm fencing solutions and fence repairs for farms and rural properties. We focus on quality workmanship and personalised service for every job.</p>
-        <p class="footer-suburbs">Coffs Harbour &middot; Grafton &middot; Ulmarra &middot; Coutts Crossing &middot; Woolgoolga &middot; Corindi Beach &middot; Glenreagh &middot; Nana Glen &middot; Sawtell &middot; Urunga &middot; Bellingen &middot; Dorrigo &middot; Nambucca Heads &middot; Macksville</p>
+        <p class="footer-suburbs">Coffs Harbour &middot; Orara Valley &middot; Grafton &middot; Ulmarra &middot; Coutts Crossing &middot; Woolgoolga &middot; Corindi Beach &middot; Glenreagh &middot; Nana Glen &middot; Boambee &middot; Urunga &middot; Bellingen &middot; Dorrigo &middot; Nambucca Heads &middot; Macksville</p>
         <div class="footer-stars">★★★★★ <span>5.0 (31 Reviews)</span></div>
       </div>
       <div>
