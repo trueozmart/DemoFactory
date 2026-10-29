@@ -203,7 +203,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 /* ============ HEADER - transparent over hero, solid on scroll ============ */
-#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: transparent; border-bottom: 1px solid transparent; height: 68px; display: flex; align-items: center; padding: 0 1.25rem; transition: background .3s, border-color .3s, box-shadow .3s; }
+#header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(18,26,43,.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.07); box-shadow: 0 4px 24px rgba(0,0,0,.18); height: 68px; display: flex; align-items: center; padding: 0 1.25rem; transition: background .3s, border-color .3s, box-shadow .3s; }
 #header.scrolled { background: rgba(18,26,43,.97); backdrop-filter: blur(10px); border-bottom-color: rgba(255,255,255,.07); box-shadow: 0 4px 24px rgba(0,0,0,.18); }
 /* Hairline reading-progress bar along the bottom of the header */
 #progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--accent); opacity: 0; transition: opacity .3s; }
