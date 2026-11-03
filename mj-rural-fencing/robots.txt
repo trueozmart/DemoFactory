@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://demo.corepages.com.au/mj-rural-fencing/sitemap.xml
+Sitemap: https://mjruralfencing.com.au/sitemap.xml
