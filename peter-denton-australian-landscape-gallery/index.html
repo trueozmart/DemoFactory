@@ -93,13 +93,13 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   width: calc(100% - 2.5rem); max-width: 1040px; margin: -2.9rem auto 0;
   border: 1px solid rgba(255,255,255,.09); border-radius: var(--radius);
   box-shadow: 0 2px 6px rgba(18,26,43,.18), 0 22px 50px rgba(18,26,43,.26); }
-#gallery { padding-top: 3rem; }
+#featured { padding-top: 3rem; }
 .trust-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); }
 .trust-item { text-align: center; padding: 0 .5rem; position: relative; }
 .trust-item + .trust-item::before { content: ''; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; background: rgba(255,255,255,.14); }
 .trust-num { display: block; font-family: var(--font-display); font-size: clamp(1.55rem,5.2vw,2.35rem); font-weight: 900; line-height: 1; letter-spacing: -.02em; color: var(--accent); font-variant-numeric: tabular-nums; }
 .trust-label { display: block; margin-top: .5rem; font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.6); line-height: 1.4; }
-@media(min-width:768px) { #trust { padding: 2.3rem 2rem; margin-top: -3.6rem; } .trust-label { font-size: .72rem; } #gallery { padding-top: 4.5rem; } }
+@media(min-width:768px) { #trust { padding: 2.3rem 2rem; margin-top: -3.6rem; } .trust-label { font-size: .72rem; } #featured { padding-top: 4.5rem; } }
 
 /* ============ SECTION HEADINGS - letterspaced gold eyebrow, no filled rule ============ */
 .section-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
@@ -339,6 +339,26 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   </div>
 </section>
 
+<section id="featured">
+  <div class="feat-grid">
+    <figure class="feat-img reveal"><img src="images/gallery/project-5.jpg" alt="Giza Mrembo, a black leopard seated on a granite rock in Kenya, limited edition print by Peter Denton" loading="lazy" width="1200" height="1200" /></figure>
+    <div class="feat-body">
+      <p class="section-label reveal">Featured Print</p>
+      <h2 class="feat-title reveal">Giza Mrembo</h2>
+      <p class="feat-kicker reveal">The Beautiful Darkness</p>
+      <p class="feat-text reveal">Meet Mrembo, a rare black leopard of southern Kenya. Photographers fly in from around the world hoping for a single frame of her.</p>
+      <p class="feat-text reveal">Black leopards had not been seen in northern Kenya for a hundred years, until a few were spotted recently. Mrembo is beautiful, and she knows it.</p>
+      <div class="feat-specs reveal">
+        <div class="feat-spec"><span>Edition</span><b>Limited to 500</b></div>
+        <div class="feat-spec"><span>Size</span><b>Approx. 70 &times; 70 cm</b></div>
+        <div class="feat-spec"><span>Format</span><b>Print only</b></div>
+        <div class="feat-spec"><span>Price</span><b class="gold">$495</b></div>
+      </div>
+      <a href="tel:+61412749009" class="btn btn-accent reveal">Enquire about this print</a>
+    </div>
+  </div>
+</section>
+
 <section id="gallery">
   <div class="section-inner">
     <p class="section-label reveal">The Collection</p>
@@ -360,26 +380,6 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
         <div class="gallery-dots" id="galleryDots"></div>
         <span class="gallery-count" id="galleryCount">1 / 4</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="featured">
-  <div class="feat-grid">
-    <figure class="feat-img reveal"><img src="images/gallery/project-5.jpg" alt="Giza Mrembo, a black leopard seated on a granite rock in Kenya, limited edition print by Peter Denton" loading="lazy" width="1200" height="1200" /></figure>
-    <div class="feat-body">
-      <p class="section-label reveal">Featured Print</p>
-      <h2 class="feat-title reveal">Giza Mrembo</h2>
-      <p class="feat-kicker reveal">The Beautiful Darkness</p>
-      <p class="feat-text reveal">Meet Mrembo, a rare black leopard of southern Kenya. Photographers fly in from around the world hoping for a single frame of her.</p>
-      <p class="feat-text reveal">Black leopards had not been seen in northern Kenya for a hundred years, until a few were spotted recently. Mrembo is beautiful, and she knows it.</p>
-      <div class="feat-specs reveal">
-        <div class="feat-spec"><span>Edition</span><b>Limited to 500</b></div>
-        <div class="feat-spec"><span>Size</span><b>Approx. 70 &times; 70 cm</b></div>
-        <div class="feat-spec"><span>Format</span><b>Print only</b></div>
-        <div class="feat-spec"><span>Price</span><b class="gold">$495</b></div>
-      </div>
-      <a href="tel:+61412749009" class="btn btn-accent reveal">Enquire about this print</a>
     </div>
   </div>
 </section>
