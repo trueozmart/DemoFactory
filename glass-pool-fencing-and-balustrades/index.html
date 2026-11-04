@@ -232,6 +232,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   .testi-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; overflow: visible; padding: .25rem 0 0; }
   .testi-card { width: auto; flex-shrink: unset; padding: 1.8rem 1.6rem 1.6rem; }
 }
+.testi-single { max-width: 680px; margin: 1.5rem auto 0; }
+.testi-single .testi-card { width: auto; flex-shrink: unset; }
 .testi-quote { font-family: var(--font-display); font-size: 4.5rem; line-height: 1; color: var(--accent); opacity: .16; position: absolute; top: 1.4rem; right: 1.1rem; pointer-events: none; }
 .testi-stars { color: var(--accent); letter-spacing: 2px; margin-bottom: .85rem; font-size: .82rem; }
 .testi-card > p { font-family: var(--font-display); color: var(--fg); font-size: .93rem; font-weight: 400; line-height: 1.8; margin-bottom: 1.35rem; }
@@ -282,6 +284,9 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 @media(min-width:768px) { #mobile-bar { display: none; } }
 .mobile-bar-btn { display: block; width: 100%; padding: .8rem; background: var(--accent); color: var(--primary); border-radius: 10px; font-weight: 700; font-size: .95rem; text-align: center; }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Glass Pool Fencing and Balustrades Pty Limited","telephone":"+61415173159","email":"bradjhart3@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Unit 2/574 George St","addressLocality":"South Windsor","addressRegion":"NSW","postalCode":"2756","addressCountry":"AU"},"areaServed":["Hawkesbury","Greater Sydney","Central Coast","Lake Macquarie"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1"},"sameAs":["https://www.facebook.com/glasspoolfencingandbalustrades","https://www.instagram.com/glass_pool_fencing_balustrades"]}
+</script>
 </head>
 <body>
 
@@ -300,7 +305,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="hero-bg" style="background-image:url('images/hero.jpg')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (33 Reviews)</div>
+    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 on Google</div>
     <h1 class="hero-h1 fade-up d2">Glass Pool Fencing <span class="accent">&amp; Balustrades</span></h1>
     <p class="hero-sub1 fade-up d3">The Hawkesbury's Precision Glass Fencing &amp; Balustrade Specialists</p>
     <p class="hero-sub2 fade-up d3">A dedicated glass fencing and balustrade specialist based in the Hawkesbury and installing across Greater Sydney, the Central Coast and Lake Macquarie.</p>
@@ -314,8 +319,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 
 <section id="trust">
   <div class="trust-inner">
-    <div class="trust-item reveal"><span class="trust-num">5.0</span><span class="trust-label">Average rating</span></div>
-    <div class="trust-item reveal"><span class="trust-num">33</span><span class="trust-label">Google reviews</span></div>
+    <div class="trust-item reveal"><span class="trust-num">5.0</span><span class="trust-label">Google rating</span></div>
+    <div class="trust-item reveal"><span class="trust-num">Free</span><span class="trust-label">On-site quotes</span></div>
   </div>
 </section>
 
@@ -379,18 +384,11 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <p class="section-label">Testimonials</p>
     <h2 class="section-title reveal">What Our Customers Say</h2>
     <hr class="section-rule reveal" />
-    <p class="section-sub reveal">Real feedback from homeowners across South Windsor and the Hawkesbury.</p>
-    <div class="testi-scroller reveal">
-    <div class="testi-wrap">
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>Our new frameless glass pool fence looks incredible, you genuinely cannot see where panel meets panel. They levelled out an awkward sloping yard without it looking patched together. Exactly what we hoped for.</p><div class="testi-person"><div class="testi-avatar">RS</div><div><div class="testi-name">Rachel S.</div><div class="testi-loc">South Windsor</div></div></div></div>
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>I was nervous about having a crew around the pool with young kids about, but they fenced off the work area, turned up on time every day and talked us through each step. Did not put a foot wrong.</p><div class="testi-person"><div class="testi-avatar">MT</div><div><div class="testi-name">Mark and Louise T.</div><div class="testi-loc">Windsor</div></div></div></div>
-      <div class="testi-card reveal"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>Got three quotes for our balustrade and pool fence. These guys were not the cheapest, but the first visit told us everything, proper measurements and honest advice on hardware with no pushy sales. Glad we paid a bit more.</p><div class="testi-person"><div class="testi-avatar">JP</div><div><div class="testi-name">Josh P.</div><div class="testi-loc">McGraths Hill</div></div></div></div>
+    <p class="section-sub reveal">What our customers say on Google.</p>
+    <div class="testi-single reveal">
+      <div class="testi-card"><span class="testi-quote">&ldquo;</span><div class="testi-stars">★★★★★</div><p>Brad and his team did a superb job on the frameless glass panels surrounding my pool area. Professional approach from an expert tradesman who is meticulous in his work. I would highly recommend Brad from Glass pool fencing!</p><div class="testi-person"><div class="testi-avatar">RL</div><div><div class="testi-name">Rob Lukic</div><div class="testi-loc">Google review</div></div></div></div>
     </div>
-    <div class="testi-foot">
-      <div class="gallery-dots" id="testiDots"></div>
-      <span class="gallery-count" id="testiCount"></span>
-      <span class="testi-hint">Swipe</span>
-    </div>
+  </div>
   </div>
 </section>
 
@@ -444,8 +442,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <p class="section-sub reveal">Call today for a free, no obligation quote.</p>
     <div class="contact-grid">
       <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>Call Us</h3><a href="tel:+61415173159" class="phone-link">0415 173 159</a><p>Free quotes, no obligation</p></div>
-      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Based in South Windsor. Recent jobs in Windsor, Grose Vale, Kellyville, Blacktown, Oran Park, Greenacre, Liverpool, Jannali, Oyster Bay, Pearl Beach, Catherine Hill Bay and Twin Creeks.</p></div>
-      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div><h3>Our Rating</h3><p><span style="color:var(--accent);letter-spacing:2px;">★★★★★</span><br />5.0 (33 Reviews)</p></div>
+      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Service Area</h3><p>Based at Unit 2/574 George St, South Windsor NSW 2756. Recent jobs in Windsor, Grose Vale, Kellyville, Blacktown, Oran Park, Greenacre, Liverpool, Jannali, Oyster Bay, Pearl Beach, Catherine Hill Bay and Twin Creeks.</p></div>
+      <div class="contact-card reveal"><div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8L8 14 2 9.2h7.6z"/></svg></div><h3>Our Rating</h3><p><span style="color:var(--accent);letter-spacing:2px;">★★★★★</span><br />5.0 on Google</p></div>
     </div>
     <a href="tel:+61415173159" class="btn btn-accent reveal">&#9742; Call for a Free Quote</a>
   </div>
@@ -458,7 +456,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
         <span class="footer-logo-text">Glass Pool Fencing and Balustrades</span>
         <p class="footer-about">A Hawkesbury-based glass fencing and balustrade specialist focused on safe, code-compliant installations with a clean, modern finish. Licensed, insured and focused on getting the detail right.</p>
         <p class="footer-suburbs">Proudly servicing the Hawkesbury, Greater Sydney, the Central Coast and Lake Macquarie.</p>
-        <div class="footer-stars">★★★★★ <span>5.0 (33 Reviews)</span></div>
+        <div class="footer-stars">★★★★★ <span>5.0 on Google</span></div>
       </div>
       <div>
         <p class="footer-heading">Our Services</p>
@@ -474,7 +472,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
       <div>
         <p class="footer-heading">Contact Us</p>
         <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+61415173159">0415 173 159</a></div>
-        <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg><span>Licensed and Insured. Free quotes.</span></div>
+        <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="10" r="3"/></svg><span>Unit 2/574 George St, South Windsor NSW 2756</span></div>
         <a href="tel:+61415173159" class="footer-contact-cta">Get a Free Quote</a>
       </div>
     </div>
