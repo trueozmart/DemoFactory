@@ -205,6 +205,10 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 /* Hairline mount inside the frame, like a mounted print */
 .gallery-item::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.22); border-radius: inherit; pointer-events: none; }
 .gallery-item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 1.05rem .95rem; color: #fff; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: linear-gradient(to top, rgba(10,14,26,.86) 0%, rgba(10,14,26,.4) 60%, transparent 100%); }
+.gallery-item.fit { background: #0a0e1a; }
+.gallery-item.fit::before { content: ''; position: absolute; inset: -30px; background: var(--bg) center / cover no-repeat; filter: blur(26px) brightness(.5) saturate(1.1); }
+.gallery-item.fit img { position: relative; object-fit: contain; }
+.gallery-item figcaption { z-index: 1; }
 .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(10,14,26,.55); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.35); color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s, border-color .2s, color .2s, opacity .2s; cursor: pointer; font-size: 1.35rem; line-height: 1; z-index: 2; }
 .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); }
 .gallery-btn:disabled { opacity: 0; pointer-events: none; }
@@ -368,6 +372,17 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     <div class="gallery-carousel reveal">
       <div class="gallery-track-wrap">
         <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-6.jpg)"><img src="images/gallery/project-6.jpg" alt="Grevy's zebra lit by golden light, Kenya, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Grevy&rsquo;s zebra in golden light</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-7.jpg)"><img src="images/gallery/project-7.jpg" alt="Giza Mrembo, black leopard seated on a rock, Kenya, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Giza Mrembo, black leopard</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-8.jpg)"><img src="images/gallery/project-8.jpg" alt="Lion Eyes, male lion resting in low scrub, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Lion Eyes</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-9.jpg" alt="Leopard resting on a branch, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Leopard at rest</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-10.jpg)"><img src="images/gallery/project-10.jpg" alt="Still life of roses with a fine china tea set and macarons, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Roses and afternoon tea</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-11.jpg" alt="Brumbies galloping across a dry paddock with a stockman behind, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>The muster, brumbies at full gallop</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-12.jpg)"><img src="images/gallery/project-12.jpg" alt="Brumbies at dawn beneath a dead gum tree, high country, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Brumbies at dawn beneath a dead gum</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-13.jpg)"><img src="images/gallery/project-13.jpg" alt="Waves breaking on rocks at sunrise below a lighthouse headland, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Storm light over the lighthouse</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-14.jpg)"><img src="images/gallery/project-14.jpg" alt="Brumbies splashing across a high country river with riders behind, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Brumbies crossing the river</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-15.jpg)"><img src="images/gallery/project-15.jpg" alt="Brumbies gathered at a misty dam with a stockman on horseback, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Brumbies at the dam</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item fit" style="--bg:url(images/gallery/project-16.jpg)"><img src="images/gallery/project-16.jpg" alt="Green-winged macaw perched on a branch before a waterfall, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Green-winged macaw by the falls</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-1.jpg" alt="Peter Denton at the gallery entrance, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>Peter Denton at the gallery entrance</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-2.jpg" alt="McNamarra's Hut, framed landscape photograph, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>McNamarra&rsquo;s Hut, framed landscape print</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-3.jpg" alt="Peter Denton photographing on location in the outback, Peter Denton Australian Landscape Gallery" loading="lazy" /><figcaption>On location, capturing the outback</figcaption></figure></div>
@@ -378,7 +393,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
       </div>
       <div class="gallery-foot">
         <div class="gallery-dots" id="galleryDots"></div>
-        <span class="gallery-count" id="galleryCount">1 / 4</span>
+        <span class="gallery-count" id="galleryCount">1 / 15</span>
       </div>
     </div>
   </div>
