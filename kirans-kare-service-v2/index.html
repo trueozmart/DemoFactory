@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kiran&#x27;s Kare Service | Home care and disability support | Mudgee NSW</title>
+<meta name="description" content="Kiran&#x27;s Kare Service, in-home care from a qualified Assistant Nurse. Personal care, respite and transport across Hargraves, Mudgee and Gulgong. Call 0488 508 077." />
+<meta name="theme-color" content="#1E3A5F" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#F8FAFD;--bg-alt:#E7EFF8;--ink:#1D2B3F;--muted:#5B6B80;--line:#D7E2EF;--accent:#2F6DB5;--cta-bg:#2F6DB5;--cta-ink:#FFFFFF;--deep:#1E3A5F;--deep-ink:#F1F6FC;--deep-muted:#A9BCD3;--band-bg:#E7EFF8;--band-ink:#1D2B3F;--band-muted:#5B6B80;--visit-bg:#F8FAFD;--visit-ink:#1D2B3F;--visit-muted:#5B6B80;--visit-line:#D7E2EF;--visit-today:#2F6DB5;--radius:18px;--btn-radius:999px;--card-ratio:4 / 5;--font-display:'Lora', Georgia, serif;--font-body:'Nunito Sans', system-ui, sans-serif;--font-utility:'Nunito Sans', system-ui, sans-serif;--display-weight:600;--display-tracking:-0.01em;--display-style:normal;--utility-case:uppercase;--utility-tracking:0.14em;--ticket-bg:#F8FAFD;--ticket-ink:#1D2B3F;--ticket-edge:1px solid #2F6DB5;--open-dot:#2F6DB5;}
+/* CorePages Local - shared layout. Every colour, face and radius comes from the profile tokens. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 1rem; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+@media (max-width: 767px) { body { padding-bottom: 76px; } }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+:where(a, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) { .wrap { padding: 0 2rem; } }
+.section { padding: 4.5rem 0; scroll-margin-top: 64px; }
+@media (min-width: 768px) { .section { padding: 6.5rem 0; } }
+.section-alt { background: var(--bg-alt); }
+
+.utility { font-family: var(--font-utility); text-transform: var(--utility-case); letter-spacing: var(--utility-tracking); font-size: .78rem; font-weight: 500; }
+.eyebrow { color: var(--muted); margin-bottom: .75rem; display: block; }
+.title { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); line-height: 1.05; font-size: clamp(2rem, 5vw, 3.25rem); max-width: 18ch; }
+.title em, .hero-h1 em { font-style: var(--display-style); }
+.lede { color: var(--muted); max-width: 52ch; margin-top: 1rem; }
+.note { margin-top: 2rem; color: var(--muted); font-size: .92rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; padding: .85rem 1.5rem; border-radius: var(--btn-radius); font-weight: 600; font-size: .95rem; transition: transform .2s, opacity .2s; border: 1.5px solid transparent; }
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-cta { background: var(--cta-bg); color: var(--cta-ink); }
+.btn-ghost { border-color: currentColor; }
+
+/* Header */
+#header { position: fixed; inset: 0 0 auto 0; z-index: 50; height: 64px; display: flex; align-items: center; color: #fff; transition: background .3s, color .3s, box-shadow .3s; }
+#header .wrap { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+#header.scrolled { background: var(--bg); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+.logo { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); font-size: 1.3rem; }
+.header-call { display: none; }
+@media (min-width: 768px) { .header-call { display: inline-flex; padding: .55rem 1.15rem; font-size: .9rem; } }
+
+/* Hero */
+#hero { position: relative; min-height: 92svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.04); animation: settle 1.6s ease-out forwards; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.15) 25%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.85) 100%); }
+@media (min-width: 900px) { .hero-bg::after { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.78) 100%), linear-gradient(90deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 60%); } }
+@keyframes settle { to { transform: scale(1); } }
+.hero-inner { position: relative; width: 100%; padding-bottom: 2.5rem; display: grid; gap: 2rem; align-items: end; }
+@media (min-width: 900px) { .hero-inner { grid-template-columns: 1fr auto; padding-bottom: 4rem; } }
+.hero-kicker { color: rgba(255,255,255,.85); }
+.hero-h1 { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); line-height: .95; font-size: clamp(3rem, 11vw, 7.5rem); margin: .6rem 0 1rem; max-width: 12ch; }
+.hero-line { font-size: 1.1rem; max-width: 40ch; color: rgba(255,255,255,.92); }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.hero-ctas .btn-ghost { color: #fff; }
+
+/* Centred hero (salon) */
+.hero-center #hero { align-items: center; }
+.hero-center .hero-bg::after { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,.6) 100%); }
+.hero-center .hero-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-top: 7rem; padding-bottom: 3rem; }
+.hero-center .hero-h1 { max-width: 14ch; margin-left: auto; margin-right: auto; }
+.hero-center .hero-line { margin: 0 auto; }
+.hero-center .hero-ctas { justify-content: center; }
+.hero-center .ticket { text-align: left; }
+
+/* Signature: live open-status ticket */
+.ticket { background: var(--ticket-bg); color: var(--ticket-ink); border-radius: var(--radius); padding: 1.1rem 1.3rem 1rem; min-width: 250px; max-width: 320px; border-top: var(--ticket-edge); box-shadow: 0 18px 40px rgba(0,0,0,.28); }
+.ticket[hidden] { display: none; }
+.ticket-state { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); font-size: 1.6rem; line-height: 1.1; }
+.dot { width: .62rem; height: .62rem; border-radius: 50%; background: var(--open-dot); flex: none; }
+.ticket.is-open .dot { animation: pulse 2.2s infinite; }
+.ticket.is-closed .dot { background: transparent; border: 2px solid currentColor; opacity: .55; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--open-dot) 45%, transparent); } 70%, 100% { box-shadow: 0 0 0 10px transparent; } }
+.ticket-sub { margin-top: .3rem; }
+.ticket-link { display: inline-block; margin-top: .8rem; padding-top: .7rem; border-top: 1px solid rgba(0,0,0,.14); width: 100%; font-size: .85rem; font-weight: 600; }
+
+/* Info band: the practical facts straight after the hero */
+#band { background: var(--band-bg); color: var(--band-ink); padding: 3rem 0; }
+@media (min-width: 768px) { #band { padding: 4rem 0; } }
+.band-grid { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .band-grid { grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start; } }
+.band-intro { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.2; }
+.band-body { color: var(--band-muted); margin-top: 1rem; max-width: 56ch; }
+.band-facts { display: grid; gap: 1rem; }
+@media (min-width: 560px) and (max-width: 899px) { .band-facts { grid-template-columns: repeat(3, 1fr); } }
+.band-facts dt { color: var(--band-muted); margin-bottom: .15rem; }
+.band-facts dd { font-size: 1.05rem; }
+
+/* Photo cards: visual menu (cafe) or services (salon) */
+.cards { margin-top: 2.75rem; display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .cards { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; } }
+.card-img { aspect-ratio: var(--card-ratio); border-radius: var(--radius); overflow: hidden; background: var(--line); }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.card:hover .card-img img { transform: scale(1.03); }
+.card-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.card h3 { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); font-size: 1.4rem; line-height: 1.15; }
+.card p { color: var(--muted); margin-top: .35rem; font-size: .95rem; }
+.price { font-family: var(--font-utility); font-weight: 500; white-space: nowrap; }
+
+/* Text list: more menu (cafe) or price list (salon) */
+.list-groups { margin-top: 2.75rem; display: grid; gap: 2.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.list-group h3 { color: var(--muted); padding-bottom: .7rem; border-bottom: 1.5px solid var(--ink); margin-bottom: .4rem; }
+.list-item { padding: .85rem 0; border-bottom: 1px solid var(--line); }
+.list-row { display: flex; align-items: baseline; gap: .5rem; }
+.list-name { font-weight: 600; font-size: 1.02rem; }
+.leader { flex: 1; border-bottom: 1.5px dotted var(--line); transform: translateY(-.3rem); }
+.list-desc { color: var(--muted); font-size: .92rem; margin-top: .15rem; }
+
+/* Full-bleed photo break */
+.feature { position: relative; height: clamp(320px, 62vw, 680px); overflow: hidden; }
+.feature img { width: 100%; height: 100%; object-fit: cover; }
+.feature figcaption { position: absolute; left: 1.25rem; bottom: 1.1rem; color: #fff; font-size: .85rem; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+
+/* Why list */
+.why { margin-top: 2.5rem; display: grid; gap: 0 2.5rem; }
+@media (min-width: 768px) { .why { grid-template-columns: repeat(2, 1fr); } }
+.why li { display: flex; gap: .9rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+.why li::before { content: ''; width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent); flex: none; transform: translateY(-.1rem); }
+
+/* Photo strip */
+.strip { margin-top: 2.5rem; display: grid; gap: .6rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 768px) { .strip { grid-template-columns: repeat(4, 1fr); gap: .9rem; } }
+.strip figure { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); background: var(--line); }
+.strip img { width: 100%; height: 100%; object-fit: cover; }
+.strip figcaption { position: absolute; left: .6rem; right: .6rem; bottom: .55rem; color: #fff; font-size: .78rem; text-shadow: 0 1px 8px rgba(0,0,0,.65); }
+
+/* Reviews */
+.reviews-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem; }
+.rating-big { display: flex; align-items: baseline; gap: .6rem; }
+.rating-num { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-tracking); font-size: 3.5rem; line-height: 1; }
+.stars { color: #C8962E; letter-spacing: .12em; }
+.reviews { margin-top: 2.5rem; display: grid; gap: 1rem; }
+@media (min-width: 768px) { .reviews { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.review { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; display: flex; flex-direction: column; gap: 1rem; }
+.review-top { display: flex; justify-content: space-between; align-items: center; gap: .75rem; }
+.review-tag { color: var(--muted); }
+.review p { font-size: 1.02rem; }
+.review footer { margin-top: auto; color: var(--muted); font-size: .88rem; }
+.review strong { color: var(--ink); font-weight: 600; }
+
+/* Visit */
+#visit { background: var(--visit-bg); color: var(--visit-ink); }
+#visit .eyebrow, #visit .lede, #visit .hours caption, #visit dt { color: var(--visit-muted); }
+.visit-grid { margin-top: 2.5rem; display: grid; gap: 2.5rem; }
+@media (min-width: 900px) { .visit-grid { grid-template-columns: 5fr 6fr; gap: 4rem; } }
+.hours { width: 100%; border-collapse: collapse; font-family: var(--font-utility); font-size: .95rem; }
+.hours caption { text-align: left; margin-bottom: .6rem; }
+.hours td { padding: .6rem 0; border-bottom: 1px solid var(--visit-line); }
+.hours td:last-child { text-align: right; }
+.hours tr.today td { color: var(--visit-today); font-weight: 600; }
+.hours tr.today td:first-child::after { content: ' \00B7  today'; font-weight: 400; opacity: .8; }
+.visit-facts { margin-top: 2rem; display: grid; gap: 1.1rem; }
+.visit-facts dd { font-size: 1.05rem; }
+.visit-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.map { border-radius: var(--radius); overflow: hidden; min-height: 320px; background: var(--line); }
+.map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; filter: saturate(.85); }
+
+/* Footer */
+#footer { background: var(--deep); color: var(--deep-muted); padding: 2.5rem 0; font-size: .9rem; }
+#footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: center; }
+#footer .logo { color: var(--deep-ink); }
+
+/* Mobile bar */
+#mobile-bar { position: fixed; inset: auto 0 0 0; z-index: 60; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; padding: .7rem 1rem; padding-bottom: max(.7rem, env(safe-area-inset-bottom)); background: var(--deep); }
+#mobile-bar .btn { padding: .8rem .5rem; }
+#mobile-bar .btn-ghost { color: var(--deep-ink); }
+@media (min-width: 768px) { #mobile-bar { display: none; } }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-bg { animation: none; transform: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .ticket.is-open .dot { animation: none; }
+  .card-img img { transition: none; }
+}
+
+</style>
+</head>
+<body class="type-care hero-center">
+
+<header id="header">
+  <div class="wrap">
+    <a href="#hero" class="logo">Kiran&#x27;s Kare Service</a>
+    <a href="tel:+61488508077" class="btn btn-cta header-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>0488 508 077</a>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('images/hero.jpg')" role="img" aria-label="Carer sharing a cup of tea with an older woman in a wheelchair, Kiran&#x27;s Kare Service"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="utility hero-kicker">Home care and disability support · Hargraves</span>
+      <h1 class="hero-h1">Kiran's <em>Kare</em> Service</h1>
+      <p class="hero-line">Independent support for independent living, from a qualified Assistant Nurse across the Mudgee region.</p>
+      <div class="hero-ctas">
+        <a href="tel:+61488508077" class="btn btn-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Kiran 0488 508 077</a>
+        <a href="tel:+61488508077" class="btn btn-ghost">Free chat</a>
+      </div>
+    </div>
+    <aside class="ticket" id="ticket" hidden aria-live="polite">
+      <div class="ticket-state"><i class="dot"></i><span></span></div>
+      <p class="ticket-sub utility"></p>
+      <a href="#visit" class="ticket-link">All opening hours &darr;</a>
+    </aside>
+  </div>
+</section>
+
+<section id="band">
+  <div class="wrap band-grid">
+    <div class="reveal">
+      <p class="band-intro">Care at home that keeps you comfortable, safe and independent.</p>
+      <p class="band-body">Aged care, disability support and help after hospital or surgery, from one familiar face. Based in Hargraves and visiting Mudgee, Gulgong, Hill End and nearby.</p>
+    </div>
+    <dl class="band-facts reveal">
+      <div><dt class="utility">Call</dt><dd><a href="tel:+61488508077">0488 508 077</a></dd></div>
+      <div><dt class="utility">Find us</dt><dd>Hargraves NSW 2850</dd></div>
+      <div><dt class="utility">Availability</dt><dd id="today-hours">Call ahead</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="cards" class="section">
+  <div class="wrap">
+    <span class="utility eyebrow reveal">Services</span>
+    <h2 class="title reveal">Support shaped <em>around you</em></h2>
+    <div class="cards"><article class="card reveal"><div class="card-img"><img src="images/gallery/project-1.jpg" alt="Carer visiting an older woman in her armchair at home" loading="lazy" /></div><div class="card-row"><h3>Personal Care</h3></div><p>Respectful help with showering, dressing, grooming and medication prompts.</p></article><article class="card reveal"><div class="card-img"><img src="images/gallery/project-3.jpg" alt="Carer chatting with an older man" loading="lazy" /></div><div class="card-row"><h3>Community and Social Access</h3></div><p>Getting out to see friends, join groups and enjoy the things you love.</p></article><article class="card reveal"><div class="card-img"><img src="images/gallery/project-4.jpg" alt="Carer holding an older woman&#x27;s hand" loading="lazy" /></div><div class="card-row"><h3>In-Home Respite</h3></div><p>Reliable care at home so family carers can take a well-earned break.</p></article></div>
+  </div>
+</section>
+
+<section id="list" class="section section-alt">
+  <div class="wrap">
+    <span class="utility eyebrow reveal">Everyday support</span>
+    <h2 class="title reveal">More ways I can help</h2>
+    <div class="list-groups"><div class="list-group reveal"><h3 class="utility">Around the home</h3><ul><li class="list-item"><div class="list-row"><span class="list-name">Domestic assistance</span></div><p class="list-desc">Cleaning, laundry and keeping the home safe and tidy.</p></li><li class="list-item"><div class="list-row"><span class="list-name">Meal preparation</span></div><p class="list-desc">Simple, healthy meals made the way you like them.</p></li><li class="list-item"><div class="list-row"><span class="list-name">Shopping and errands</span></div><p class="list-desc">Groceries, chemist runs and the jobs that pile up.</p></li></ul></div><div class="list-group reveal"><h3 class="utility">Out and about</h3><ul><li class="list-item"><div class="list-row"><span class="list-name">Transport to appointments</span></div><p class="list-desc">Safe trips to doctors and specialists in Mudgee and beyond.</p></li><li class="list-item"><div class="list-row"><span class="list-name">Community access</span></div><p class="list-desc">Outings, clubs, church and catching up with friends.</p></li><li class="list-item"><div class="list-row"><span class="list-name">Social support</span></div><p class="list-desc">Company and conversation, at home or out.</p></li></ul></div><div class="list-group reveal"><h3 class="utility">Who I support</h3><ul><li class="list-item"><div class="list-row"><span class="list-name">Older Australians</span></div><p class="list-desc">Aged care that helps you stay in the home you love.</p></li><li class="list-item"><div class="list-row"><span class="list-name">People with disability</span></div><p class="list-desc">Practical support built around your goals and routine.</p></li><li class="list-item"><div class="list-row"><span class="list-name">After hospital or surgery</span></div><p class="list-desc">Short-term help while you get back on your feet.</p></li></ul></div></div><p class="note reveal">Every person&#x27;s needs are different. Call for a free chat about the support that suits you.</p>
+  </div>
+</section>
+
+<figure class="feature"><img src="images/gallery/project-2.jpg" alt="Carer checking an older woman&#x27;s blood pressure in the lounge room" loading="lazy" /><figcaption>Wellbeing check at home</figcaption></figure>
+
+<section id="why" class="section">
+  <div class="wrap">
+    <span class="utility eyebrow reveal">Why families choose Kiran</span>
+    <h2 class="title reveal">Checked, cleared <em>and caring</em></h2>
+    <ul class="why"><li class="reveal">Qualified and experienced Assistant Nurse</li><li class="reveal">NDIS Worker Screening Check</li><li class="reveal">Working with Children Check</li><li class="reveal">National Police Check</li><li class="reveal">Public Liability and Indemnity Insured</li><li class="reveal">Local to Hargraves and the Mudgee region</li></ul>
+  </div>
+</section>
+
+<section id="photos" class="section">
+  <div class="wrap">
+    <span class="utility eyebrow reveal">Care at home</span>
+    <h2 class="title reveal">Life at home, made easier</h2>
+    <div class="strip"><figure class="reveal"><img src="images/gallery/project-5.jpg" alt="Older woman with a birthday cake and candle" loading="lazy" /><figcaption>Celebrating at home</figcaption></figure><figure class="reveal"><img src="images/gallery/project-6.jpg" alt="Visitor talking with an older woman resting in bed" loading="lazy" /><figcaption>Time to talk</figcaption></figure><figure class="reveal"><img src="images/gallery/project-7.jpg" alt="Carer helping a man resting on a bed" loading="lazy" /><figcaption>Rest and recovery</figcaption></figure><figure class="reveal"><img src="images/gallery/project-8.jpg" alt="Smiling older couple outdoors" loading="lazy" /><figcaption>Living well, together</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="reviews" class="section section-alt">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <span class="utility eyebrow reveal">Who I support</span>
+        <h2 class="title reveal">Care for anyone who <em>needs a hand</em></h2>
+      </div>
+      
+    </div>
+    <div class="reviews"><blockquote class="review reveal"><div class="review-top"><span class="utility review-tag">Aged care</span></div><p>Stay in the home you love, with a familiar face to help with personal care, meals, housework and getting out and about.</p><footer><strong>Older Australians</strong> · Living well at home</footer></blockquote><blockquote class="review reveal"><div class="review-top"><span class="utility review-tag">Disability support</span></div><p>Patient, practical support for people living with disability, built around your goals, your routine and the way you like things done.</p><footer><strong>People with disability</strong> · Your goals, your way</footer></blockquote><blockquote class="review reveal"><div class="review-top"><span class="utility review-tag">Recovery</span></div><p>Coming home after hospital or surgery is hard to do alone. Short-term help with care, cleaning and transport while you recover.</p><footer><strong>After hospital or surgery</strong> · Short-term help at home</footer></blockquote></div>
+  </div>
+</section>
+
+<section id="visit" class="section">
+  <div class="wrap">
+    <span class="utility eyebrow reveal">Contact</span>
+    <h2 class="title reveal">Get in touch</h2>
+    <p class="lede reveal">Based in Hargraves and visiting clients across Mudgee, Gulgong, Hill End, Windeyer and surrounding areas. Call for a free, no obligation chat.</p>
+    <div class="visit-grid">
+      <div class="reveal">
+        <table class="hours"><caption class="utility">Availability</caption><tbody><tr><td>Hours</td><td>Call ahead</td></tr></tbody></table>
+        <dl class="visit-facts">
+          <div><dt class="utility">Address</dt><dd>Hargraves NSW 2850</dd></div>
+          <div><dt class="utility">Phone</dt><dd><a href="tel:+61488508077">0488 508 077</a></dd></div>
+        </dl>
+        <div class="visit-ctas">
+          <a href="tel:+61488508077" class="btn btn-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Kiran</a><a href="https://www.google.com/maps/dir/?api=1&destination=Kiran%27s%20Kare%20Service%2C%20Hargraves%20NSW%202850" class="btn btn-ghost" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>View on map</a>
+        </div>
+      </div>
+      <div class="map reveal"><iframe src="https://maps.google.com/maps?q=Kiran%27s%20Kare%20Service%2C%20Hargraves%20NSW%202850&z=16&output=embed" title="Map showing Kiran&#x27;s Kare Service" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap">
+    <span class="logo">Kiran&#x27;s Kare Service</span>
+    <span>Hargraves NSW 2850 · <a href="tel:+61488508077">0488 508 077</a></span>
+    <span>&copy; <script>document.write(new Date().getFullYear())</script> Kiran&#x27;s Kare Service</span>
+  </div>
+</footer>
+
+<nav id="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+61488508077" class="btn btn-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Kiran</a><a href="https://www.google.com/maps/dir/?api=1&destination=Kiran%27s%20Kare%20Service%2C%20Hargraves%20NSW%202850" class="btn btn-ghost" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Map</a>
+</nav>
+
+<script>window.PAGE_HOURS = null;</script>
+<script>
+// CorePages Local - header state, reveals and the live open-status ticket.
+(function () {
+  var header = document.getElementById('header');
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Hours are minutes from midnight per weekday, Monday = 0. Times use the business's own timezone.
+  var data = window.PAGE_HOURS;
+  var ticket = document.getElementById('ticket');
+  if (!data || !ticket) return;
+  var DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  var SHORT = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  var parts = {};
+  new Intl.DateTimeFormat('en-AU', { timeZone: data.tz, weekday: 'long', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+    .formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
+  var today = DAYS.indexOf(parts.weekday);
+  var now = (parseInt(parts.hour, 10) % 24) * 60 + parseInt(parts.minute, 10);
+  if (today < 0) return;
+
+  function fmt(m) {
+    m = m % 1440;
+    var h = Math.floor(m / 60), min = m % 60, ap = h < 12 ? 'am' : 'pm';
+    h = h % 12 || 12;
+    return h + (min ? ':' + (min < 10 ? '0' : '') + min : '') + ' ' + ap;
+  }
+
+  var row = document.querySelector('.hours tr[data-day="' + today + '"]');
+  if (row) row.classList.add('today');
+  var todayEl = document.getElementById('today-hours');
+  if (todayEl && row) todayEl.textContent = row.lastElementChild.textContent;
+
+  // Ranges from yesterday can run past midnight, so check those first.
+  var y = (today + 6) % 7, open = null;
+  (data.days[y] || []).forEach(function (r) { if (r[1] > 1440 && now < r[1] - 1440) open = r[1] - 1440; });
+  (data.days[today] || []).forEach(function (r) { if (now >= r[0] && now < r[1]) open = r[1]; });
+
+  var state = ticket.querySelector('.ticket-state span');
+  var sub = ticket.querySelector('.ticket-sub');
+  if (open !== null) {
+    ticket.classList.add('is-open');
+    state.textContent = 'Open now';
+    sub.textContent = open >= 1440 && (data.days[today] || []).some(function (r) { return r[1] - r[0] >= 1439; })
+      ? 'Open 24 hours' : 'Until ' + fmt(open) + ' today';
+  } else {
+    ticket.classList.add('is-closed');
+    state.textContent = 'Closed now';
+    var next = null;
+    for (var i = 0; i < 7 && next === null; i++) {
+      var d = (today + i) % 7;
+      (data.days[d] || []).forEach(function (r) {
+        if (next === null && (i > 0 || r[0] > now)) next = { day: i, at: r[0] };
+      });
+    }
+    sub.textContent = next === null ? 'Call for hours'
+      : 'Opens ' + fmt(next.at) + (next.day === 0 ? ' today' : next.day === 1 ? ' tomorrow' : ' ' + SHORT[(today + next.day) % 7]);
+  }
+  ticket.hidden = false;
+})();
+
+</script>
+</body>
+</html>
