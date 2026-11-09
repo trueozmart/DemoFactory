@@ -188,6 +188,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 /* Hairline mount inside the frame, like a mounted print */
 .gallery-item::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.22); border-radius: inherit; pointer-events: none; }
 .gallery-item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 1.05rem .95rem; color: #fff; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: linear-gradient(to top, rgba(10,14,26,.86) 0%, rgba(10,14,26,.4) 60%, transparent 100%); }
+.gallery-item video { width: 100%; height: 100%; object-fit: cover; display: block; background: #0a0e1a; }
+.gallery-item.is-video figcaption { top: 0; bottom: auto; padding: .95rem 1.05rem 3rem; background: linear-gradient(to bottom, rgba(10,14,26,.8) 0%, rgba(10,14,26,.3) 60%, transparent 100%); pointer-events: none; }
 .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(10,14,26,.55); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.35); color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s, border-color .2s, color .2s, opacity .2s; cursor: pointer; font-size: 1.35rem; line-height: 1; z-index: 2; }
 .gallery-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--primary); }
 .gallery-btn:disabled { opacity: 0; pointer-events: none; }
@@ -335,13 +337,26 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-2.jpg" alt="Timber paling fence beside garden landscaping, JFK Fencing" loading="lazy" /><figcaption>Timber paling fence and garden</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-3.jpg" alt="New steel fencing alongside a freshly built home, JFK Fencing" loading="lazy" /><figcaption>New fencing, freshly built home</figcaption></figure></div>
           <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-4.jpg" alt="Timber fence construction detail, JFK Fencing" loading="lazy" /><figcaption>Timber fence construction detail</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-5.jpg" alt="White Colorbond double gates with black frame, JFK Fencing" loading="lazy" /><figcaption>White Colorbond double gates</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-1.mp4" poster="images/gallery/video-1.jpg" muted loop playsinline controls preload="none" aria-label="Colorbond front fence and driveway, JFK Fencing"></video><figcaption>Colorbond front fence and driveway</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-6.jpg" alt="Cream Colorbond boundary fence along a backyard, JFK Fencing" loading="lazy" /><figcaption>Cream Colorbond boundary fence</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-2.mp4" poster="images/gallery/video-2.jpg" muted loop playsinline controls preload="none" aria-label="White Colorbond fence walkthrough, JFK Fencing"></video><figcaption>White Colorbond fence walkthrough</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-7.jpg" alt="Timber paling fence with galvanised steel posts, JFK Fencing" loading="lazy" /><figcaption>Timber paling fence, steel posts</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-6.mp4" poster="images/gallery/video-6.jpg" muted loop playsinline controls preload="none" aria-label="Timber paling fence on a new build, JFK Fencing"></video><figcaption>Timber paling fence on a new build</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-8.jpg" alt="Cream Colorbond street frontage fence with picket gate, JFK Fencing" loading="lazy" /><figcaption>Colorbond street frontage</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-3.mp4" poster="images/gallery/video-3.jpg" muted loop playsinline controls preload="none" aria-label="Cream Colorbond corner run, JFK Fencing"></video><figcaption>Cream Colorbond corner run</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-9.jpg" alt="Dark grey Colorbond boundary fence beside a garden bed, JFK Fencing" loading="lazy" /><figcaption>Dark Colorbond boundary fence</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-7.mp4" poster="images/gallery/video-7.jpg" muted loop playsinline controls preload="none" aria-label="Dark Colorbond fence and gate, JFK Fencing"></video><figcaption>Dark Colorbond fence and gate</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item"><img src="images/gallery/project-10.jpg" alt="Colorbond fence frame going in, JFK Fencing" loading="lazy" /><figcaption>Fence frame installation</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-4.mp4" poster="images/gallery/video-4.jpg" muted loop playsinline controls preload="none" aria-label="Colorbond fence with brick pier, JFK Fencing"></video><figcaption>Colorbond fence with brick pier</figcaption></figure></div>
+          <div class="gallery-slide"><figure class="gallery-item is-video"><video src="images/gallery/video-5.mp4" poster="images/gallery/video-5.jpg" muted loop playsinline controls preload="none" aria-label="Timber plinth and paling detail, JFK Fencing"></video><figcaption>Timber plinth and paling detail</figcaption></figure></div>
         </div>
         <button class="gallery-btn gallery-btn-prev" id="galPrev" aria-label="Previous image">&#8249;</button>
         <button class="gallery-btn gallery-btn-next" id="galNext" aria-label="Next image">&#8250;</button>
       </div>
       <div class="gallery-foot">
         <div class="gallery-dots" id="galleryDots"></div>
-        <span class="gallery-count" id="galleryCount">1 / 4</span>
+        <span class="gallery-count" id="galleryCount">1 / 17</span>
       </div>
     </div>
   </div>
@@ -599,7 +614,13 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     const pad = n => String(n).padStart(2, '0');
     countEl.innerHTML = '<b>' + pad(current + 1) + '</b><i>/</i><s>' + pad(total) + '</s>';
     dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    slides.forEach((s, i) => {
+      s.classList.toggle('is-active', i === current);
+      const v = s.querySelector('video');
+      if (!v) return;
+      if (i === current) { v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else if (!v.paused) { v.pause(); }
+    });
   }
   btnPrev.addEventListener('click', () => goTo(current - 1));
   btnNext.addEventListener('click', () => goTo(current + 1));
