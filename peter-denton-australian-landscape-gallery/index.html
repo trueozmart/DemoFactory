@@ -482,6 +482,10 @@ section { scroll-margin-top: 108px; }
 .contact-card a.email-link:hover { color: var(--accent); }
 @media(min-width:768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
 @media(min-width:1100px) { .contact-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* H1 wraps brand + service line so Google reads both; spans keep the original look */
+.hero-title { font-size: inherit; font-weight: inherit; margin: 0; }
+.hero-title > span { display: block; }
 </style>
 </head>
 <body>
@@ -503,8 +507,7 @@ section { scroll-margin-top: 108px; }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 5.0 (29 Reviews)</div>
-    <h1 class="hero-h1 fade-up d2">Peter Denton <span class="accent">Landscape Gallery</span></h1>
-    <p class="hero-sub1 fade-up d3">Somersby&rsquo;s Home of Fine Art Landscape Photography</p>
+    <h1 class="hero-title"><span class="hero-h1 fade-up d2">Peter Denton <span class="accent">Landscape Gallery</span></span><span class="hero-sub1 fade-up d3">Somersby&rsquo;s Home of Fine Art Landscape Photography</span></h1>
     <p class="hero-sub2 fade-up d3">Original, limited edition landscape photography capturing the beauty of rural and outback Australia, on show in our Central Coast gallery.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61412749009" class="btn btn-accent">&#9742; Call 0412 749 009</a>

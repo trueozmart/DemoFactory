@@ -462,6 +462,10 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .faq-item { max-width: 760px; margin: 0 auto 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; text-align: left; }
 .faq-item h3 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: .5rem; color: var(--primary); }
 .faq-item p { color: var(--muted); line-height: 1.65; margin: 0; }
+
+/* H1 wraps brand + service line so Google reads both; spans keep the original look */
+.hero-title { font-size: inherit; font-weight: inherit; margin: 0; }
+.hero-title > span { display: block; }
 </style>
 </head>
 <body>
@@ -482,8 +486,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge fade-up d1"><span class="hero-stars">&#10003;</span> Qualified Assistant Nurse</div>
-    <h1 class="hero-h1 fade-up d2">Kiran's Kare <span class="accent">Service</span></h1>
-    <p class="hero-sub1 fade-up d3">Independent Support for Independent Living</p>
+    <h1 class="hero-title"><span class="hero-h1 fade-up d2">Kiran's Kare <span class="accent">Service</span></span><span class="hero-sub1 fade-up d3">In-Home Care and Disability Support in Mudgee, Gulgong and Hargraves</span></h1>
     <p class="hero-sub2 fade-up d3">Personal care and in-home support from a qualified Assistant Nurse, servicing Hargraves, Mudgee, Gulgong and the wider Mid-Western Region.</p>
     <div class="hero-cta fade-up d4">
       <a href="tel:+61488508077" class="btn btn-accent">&#9742; Call 0488 508 077</a>
