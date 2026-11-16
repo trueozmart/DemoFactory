@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jfkfencing.com.au/sitemap.xml
+Sitemap: https://jfk-fencing.com.au/sitemap.xml
