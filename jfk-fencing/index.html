@@ -880,6 +880,35 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
     else if (dx > 50) goTo(current - 1);
   });
   window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+  // Background video preload: after the page has loaded, and once the gallery is near the screen,
+  // fetch the videos one at a time in slide order so they are ready before the visitor swipes to them.
+  (function bgVideoQueue() {
+    const conn = navigator.connection || {};
+    if (conn.saveData || /2g/.test(conn.effectiveType || '')) return;
+    const vids = slides.map(sl => sl.querySelector('video')).filter(Boolean);
+    if (!vids.length) return;
+    let started = false;
+    function next(i) {
+      if (i >= vids.length) return;
+      const v = vids[i];
+      if (v.readyState >= 3 || !v.paused) return next(i + 1);
+      let done = false;
+      const go = () => { if (done) return; done = true; next(i + 1); };
+      v.addEventListener('canplaythrough', go, { once: true });
+      v.addEventListener('error', go, { once: true });
+      setTimeout(go, 20000);
+      v.preload = 'auto';
+      v.load();
+    }
+    function start() { if (started) return; started = true; next(0); }
+    function arm() {
+      const gal = track.closest('section') || track;
+      if (!('IntersectionObserver' in window)) return setTimeout(start, 2000);
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '1200px 0px' });
+      io.observe(gal);
+    }
+    if (document.readyState === 'complete') arm(); else window.addEventListener('load', arm, { once: true });
+  })();
   buildDots();
   goTo(0);
 })();
