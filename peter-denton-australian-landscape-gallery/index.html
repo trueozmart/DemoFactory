@@ -209,7 +209,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .hero-bg { position: absolute; inset: -2%; background-image: url('images/hero.jpg'); background-size: cover; background-position: center center; animation: heroDrift 26s ease-in-out infinite alternate; }
 @keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.07); } }
 @media(max-width:767px) { .hero-bg { background-position: 60% center; } }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,14,26,.84) 0%, rgba(10,14,26,.44) 48%, rgba(10,14,26,.24) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(10,14,26,.45) 0%, rgba(10,14,26,0) 100%), linear-gradient(to top, rgba(10,14,26,.88) 0%, rgba(10,14,26,.6) 50%, rgba(10,14,26,.45) 100%); }
 /* Inset hairline frame - the one detail that makes the hero feel composed */
 /* Open at the bottom - the stats plinth rises out of it */
 #hero::after { content: ''; position: absolute; inset: 11px; border: 1px solid rgba(255,255,255,.15); border-bottom: none; pointer-events: none; z-index: 2; }
@@ -218,13 +218,13 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 @media(min-width:768px) { .hero-content { padding: 6rem 1.5rem 4.5rem; } }
 .hero-badge { display: inline-flex; align-items: center; gap: .55rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px); border-radius: 999px; padding: .4rem 1.05rem; margin-bottom: 1.6rem; color: #fff; font-size: .82rem; font-weight: 600; letter-spacing: .04em; }
 .hero-stars { color: var(--accent); letter-spacing: 1px; }
-.hero-h1 { font-family: var(--font-display); font-size: clamp(2.2rem,6.2vw,4.1rem); font-weight: 900; color: #fff; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.15rem; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+.hero-h1 { font-family: var(--font-display); font-size: clamp(2.2rem,6.2vw,4.1rem); font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -.005em; margin-bottom: 1.15rem; text-shadow: 0 2px 4px rgba(0,0,0,.55), 0 4px 24px rgba(0,0,0,.5); }
 .accent { color: var(--accent); }
 /* The headline's second half swings into italic - editorial, and it makes the
    brand name read as a signature rather than a label. */
-.hero-h1 .accent { font-style: italic; font-weight: 700; }
-.hero-sub1 { font-size: clamp(1.15rem,2.6vw,1.5rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-.hero-sub2 { font-size: clamp(.95rem,2vw,1.08rem); color: rgba(255,255,255,.88); margin-bottom: 2rem; line-height: 1.7; max-width: 560px; margin-left: auto; margin-right: auto; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+.hero-h1 .accent { font-style: normal; font-weight: 800; display: block; }
+.hero-sub1 { font-size: clamp(1.15rem,2.6vw,1.5rem); color: #fff; font-weight: 700; margin-bottom: .6rem; line-height: 1.35; text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 2px 12px rgba(0,0,0,.45); }
+.hero-sub2 { font-size: clamp(.95rem,2vw,1.08rem); color: #fff; margin-bottom: 2rem; line-height: 1.7; max-width: 560px; margin-left: auto; margin-right: auto; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
 .hero-cta { display: flex; flex-direction: column; align-items: center; gap: .9rem; }
 .hero-cta .btn-accent { display: inline-flex; align-items: center; gap: .5rem; font-size: 1.02rem; padding: .95rem 2.2rem; max-width: 340px; width: 100%; justify-content: center; }
 .hero-gallery-link { color: rgba(255,255,255,.85); font-size: .9rem; font-weight: 600; border-bottom: 1px solid rgba(217,165,33,.6); padding-bottom: 2px; transition: color .2s; }
@@ -490,7 +490,7 @@ section { scroll-margin-top: 108px; }
 </head>
 <body>
 
-<div id="news" role="region" aria-label="Latest news"><span><b>Latest news</b>&nbsp; <span class="news-long">All photographs are now also available as print only, in limited editions.</span><span class="news-short">All photos now available as limited edition prints.</span></span><a href="mailto:peterdentonphotos@gmail.com?subject=Print%20enquiry">Contact now</a></div>
+<div id="news" role="region" aria-label="Black Friday sale"><span><b>Black Friday Sale</b>&nbsp; <span class="news-long">25% off prints and 10% off framed prints in stock.</span><span class="news-short">25% off prints, 10% off framed.</span></span><a href="mailto:peterdentonphotos@gmail.com?subject=Black%20Friday%20print%20enquiry">Enquire now</a></div>
 <header id="header">
   <div id="progress"></div>
   <div class="header-inner">
