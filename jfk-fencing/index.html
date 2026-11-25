@@ -285,7 +285,8 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 @media(min-width:768px) { #hero::after { inset: 18px; border-bottom: none; } }
 .hero-content { position: relative; z-index: 1; padding: 5.5rem 1.25rem 6.5rem; max-width: 780px; margin: 0 auto; width: 100%; text-align: center; }
 @media(min-width:768px) { .hero-content { padding: 6rem 1.5rem 4.5rem; } }
-.hero-badge { display: inline-flex; align-items: center; gap: .55rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px); border-radius: 999px; padding: .4rem 1.05rem; margin-bottom: 1.6rem; color: #fff; font-size: .82rem; font-weight: 600; letter-spacing: .04em; }
+a.hero-badge:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.4); }
+.hero-badge { text-decoration: none; cursor: pointer; transition: background .2s, border-color .2s; display: inline-flex; align-items: center; gap: .55rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px); border-radius: 999px; padding: .4rem 1.05rem; margin-bottom: 1.6rem; color: #fff; font-size: .82rem; font-weight: 600; letter-spacing: .04em; }
 .hero-stars { color: var(--accent); letter-spacing: 1px; }
 .hero-h1 { font-family: var(--font-display); font-size: clamp(2.2rem,6.2vw,4.1rem); font-weight: 900; color: #fff; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.15rem; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
 .accent { color: var(--accent); }
@@ -538,7 +539,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-up d1"><span class="hero-stars">★★★★★</span> 4.6 (42 Google Reviews)</div>
+    <a href="#testimonials" class="hero-badge fade-up d1" aria-label="Read our 42 Google reviews"><span class="hero-stars">★★★★★</span> 4.6 (42 Google Reviews)</a>
     <p class="hero-h1 fade-up d2">JFK <span class="accent">Fencing</span></p>
     <h1 class="hero-sub1 fade-up d3">Timber, Colorbond and Steel Fencing in Nar Nar Goon and South East Melbourne</h1>
     <p class="hero-sub2 fade-up d3">A professional fencing team delivering durable timber, steel and Colorbond fencing solutions for homes and businesses from Nar Nar Goon across South East Melbourne.</p>
