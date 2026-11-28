@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#121A2B" />
+<meta name="theme-color" content="#000000" />
 <link rel="preload" as="image" href="images/hero-800.webp" media="(max-width: 799px)" fetchpriority="high" />
 <link rel="preload" as="image" href="images/hero.webp" media="(min-width: 800px)" fetchpriority="high" />
 <script type="application/ld+json">
@@ -493,6 +493,9 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-grid { display: grid; gap: 2.5rem; }
 @media(min-width:768px) { .footer-grid { grid-template-columns: 1.4fr 1.3fr 1fr; gap: 3rem; } }
+.header-logo-img { height: 34px; width: auto; display: block; }
+@media(min-width:768px) { .header-logo-img { height: 42px; } }
+.footer-logo-img { height: 46px; width: auto; display: block; margin-bottom: .85rem; }
 .footer-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: .85rem; }
 .footer-about { font-size: .9rem; line-height: 1.75; margin-bottom: .6rem; }
 .footer-suburbs { font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 1rem; line-height: 1.6; }
@@ -531,7 +534,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
 <header id="header">
   <div id="progress"></div>
   <div class="header-inner">
-    <span class="header-logo">Full Circle Project Group</span>
+    <img class="header-logo-img" src="images/logo-white.png" width="467" height="132" alt="Full Circle Project Group logo" />
     <div class="header-right">
       <span class="header-phone">0432 175 114</span>
       <a href="tel:+61432175114" class="btn btn-accent">Get a Free Quote</a>
@@ -713,7 +716,7 @@ section { padding: 4rem 1.25rem; scroll-margin-top: 68px; }
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <span class="footer-logo-text">Full Circle Project Group</span>
+        <img class="footer-logo-img" src="images/logo-white.png" width="467" height="132" alt="Full Circle Project Group logo" loading="lazy" decoding="async" />
         <p class="footer-about">A locally owned Maitland building and renovation team known for clear project management and quality finishes. From roof replacements to full home renovations, we manage every job from planning through completion with honesty and care.</p>
         <p class="footer-suburbs">Proudly servicing Maitland, East Maitland, Lorn, Bolwarra, Morpeth, Telarah, Largs, Tenambit, Rutherford, Aberglasslyn, Thornton, Metford, Gillieston Heights, Chisholm and the wider Hunter Valley.</p>
         <div class="footer-stars">★★★★★ <span>Local reviews</span></div>
