@@ -526,7 +526,7 @@ section { scroll-margin-top: 108px; }
 
 <section id="featured">
   <div class="feat-grid">
-    <figure class="feat-img reveal"><img src="images/gallery/project-5.jpg" alt="Giza Mrembo, a black leopard seated on a granite rock in Kenya, limited edition print by Peter Denton" loading="lazy" width="1200" height="1200" /></figure>
+    <figure class="feat-img reveal"><img src="images/gallery/project-5.jpg" alt="Giza Mrembo, a black leopard seated on a granite rock in Kenya, limited edition print by Peter Denton" loading="lazy" width="800" height="800" /></figure>
     <div class="feat-body">
       <p class="section-label reveal">Featured Print</p>
       <h2 class="feat-title reveal">Giza Mrembo</h2>
@@ -544,7 +544,7 @@ section { scroll-margin-top: 108px; }
     </div>
   </div>
   <div class="feat-grid flip">
-    <figure class="feat-img wide reveal"><span class="feat-tag">Selling fast</span><img src="images/gallery/project-11.jpg" alt="Brumbies galloping downhill to the yards with stockman Craig Orchard riding behind, rehearsal of the 2025 Man From Snowy River Festival, Corryong, limited edition print by Peter Denton" loading="lazy" width="1292" height="720" /></figure>
+    <figure class="feat-img wide reveal"><span class="feat-tag">Selling fast</span><img src="images/gallery/project-11.jpg" alt="Brumbies galloping downhill to the yards with stockman Craig Orchard riding behind, rehearsal of the 2025 Man From Snowy River Festival, Corryong, limited edition print by Peter Denton" loading="lazy" width="800" height="446" /></figure>
     <div class="feat-body">
       <p class="section-label reveal">Featured Print</p>
       <h2 class="feat-title reveal">The Muster</h2>
@@ -893,6 +893,11 @@ section { scroll-margin-top: 108px; }
   buildDots();
   goTo(0);
 })();
+</script>
+<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<script>
+document.addEventListener('contextmenu',function(e){if(e.target.closest('img,figure,#hero,.hero')){e.preventDefault();}});
+document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'){e.preventDefault();}});
 </script>
 </body>
 </html>
